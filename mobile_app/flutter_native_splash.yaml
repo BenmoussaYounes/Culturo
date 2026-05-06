@@ -1,0 +1,19 @@
+flutter_native_splash:
+  # uncomment this if you want to disable this package for specific platform:
+  # android: false
+  # ios: false
+  web: false
+  color: "#F3EAD8" ##====================================[REQUIRED]==========
+
+  # image: assets/splash.png
+  fullscreen: true # default false
+  # if you dont want to hide notif bar, for android just set this to false,
+  # but for ios, add this to your flutter main():
+  # WidgetsFlutterBinding.ensureInitialized();
+  # SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top], );
+
+  #! ANDROID 12+ configuration:
+  android_12:
+    color: "#F3EAD8"
+    #image: assets/images/logo/blank.png
+    icon_background_color: "#111111"

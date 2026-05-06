@@ -34,12 +34,20 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  # Adapts UI dimensions (font sizes, paddings, widths) to any screen size using a reference design size.
+  flutter_screenutil: ^5.9.3
+  # Provides easy access to Google Fonts — load any font by name at runtime.
+  google_fonts: ^8.1.0
+  # Service locator for dependency injection — register and retrieve singletons, factories, and lazy singletons.
+  get_it: ^9.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   # A package which simplifies the task of updating your Flutter app's launcher icon.
   flutter_launcher_icons: "^0.14.4"
+  # Customize Flutter's default white native splash screen with background color and splash image. Supports dark mode, full screen, and more.
+  flutter_native_splash: ^2.4.7
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
