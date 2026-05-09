@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
-import 'core/theming/colors_manager.dart' show DesertColors;
+import 'core/theming/colors_manager.dart';
 
 class CulturoApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -19,12 +18,8 @@ class CulturoApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Culturo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: DesertColors.primary,
-            dynamicSchemeVariant: DynamicSchemeVariant.fidelity,
-          ),
-          scaffoldBackgroundColor: DesertColors.bg,
-          textTheme: GoogleFonts.interTextTheme(),
+          colorScheme: ColorScheme.fromSeed(seedColor: DesertColors.primary),
+          scaffoldBackgroundColor: DesertColors.paper,
         ),
         debugShowCheckedModeBanner: true,
         initialRoute: Routes.onboarding,
