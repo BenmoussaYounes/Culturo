@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/inter_font_style.dart';
+import '../../logic/onboarding_cubit.dart';
 
 class ChoseYourCountryBottomButton extends StatelessWidget {
   const ChoseYourCountryBottomButton({super.key});
@@ -15,7 +17,7 @@ class ChoseYourCountryBottomButton extends StatelessWidget {
       mainAxisSize: .min,
       children: [
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () => context.read<OnboardingCubit>().navigateToSignUpPage(),
           style: ElevatedButton.styleFrom(
             minimumSize: Size(double.infinity, 48.h),
             backgroundColor: ColorsManager.primaryBlack,

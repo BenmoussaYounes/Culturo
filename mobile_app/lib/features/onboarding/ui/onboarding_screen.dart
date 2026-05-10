@@ -41,6 +41,7 @@ class OnboardingScreen extends StatelessWidget {
                 ],
               ),
             ),
+            OnboardingBlocListner(),
           ],
         ),
       ),

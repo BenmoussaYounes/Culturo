@@ -14,7 +14,7 @@ class CountryQuizGrid extends StatelessWidget {
     return Transform.rotate(
       angle: -0.12,
       child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
+        scrollDirection: .horizontal,
         physics: NeverScrollableScrollPhysics(),
         child: Container(
           margin: EdgeInsets.only(left: 24.w),
@@ -24,7 +24,7 @@ class CountryQuizGrid extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               Column(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisSize: .min,
                 children: [
                   _buildRow(['DZ', 'FR', 'TN', 'EG', 'LY', 'MA']),
                   verticalSpace(8),
