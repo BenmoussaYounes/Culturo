@@ -1,234 +1,203 @@
-# SKILL: create-pr
-Trigger: /create-pr
-Purpose: Create a branch, commit, and produce a PR description after /code-review passes.
+# SKILL: code-review
+Trigger: /code-review
+Purpose: Review all changes since the last commit before marking any task done.
 
 ---
 
-## Prerequisites
-- /code-review must have run and returned ✅ or ⚠️
-- Never run if /code-review returned ❌
+## Step 1 — Read what changed
+
+Run `git diff HEAD` to see all uncommitted changes.
+Run `git diff --staged` to see staged changes.
+Run `git status` to get the full picture.
+
+List every file that was touched before starting the review.
+Read each file fully before making any judgment.
 
 ---
 
-## Step 1 — Extract context from current branch
+## Step 2 — Review each file
 
-Run `git branch --show-current` to get the current branch name.
-
-Parse the branch name using the project convention:
-```
-TaskType/FeatureName/GH-{IssueNumber}-Description
-```
-
-Extract automatically:
-- **TaskType** → first segment (Feature, Bug, Refactoring, HotFix, Docs)
-- **FeatureName** → second segment (Auth, Onboarding, Tasks, etc.)
-- **IssueNumber** → number after `GH-`
-- **Description** → everything after `GH-{N}-`
-
-### Examples of what to extract:
-
-| Branch | TaskType | Feature | Issue | Description |
-|---|---|---|---|---|
-| `Feature/Auth/GH-12-Add-Login-Flow` | Feature | Auth | 12 | Add Login Flow |
-| `Bug/Onboarding/GH-21-Fix-Navigation` | Bug | Onboarding | 21 | Fix Navigation |
-| `Refactoring/Core/GH-18-Sealed-States` | Refactoring | Core | 18 | Sealed States |
-
-If the branch name does NOT follow this convention, stop and warn:
-```
-⚠️ Current branch name does not follow the required convention:
-   TaskType/FeatureName/GH-{IssueNumber}-Description
-
-   Current branch: {branch-name}
-   Please rename it before running /create-pr.
-```
+For every changed file, check ALL of the following rules.
 
 ---
 
-## Step 2 — Determine commit message
+### A) Architecture & Layer Boundaries
 
-Build the commit message from the extracted branch context.
-
-### Format:
-```
-type(scope) :emoji: clear and concise message
-
-- bullet: what changed
-- bullet: why if not obvious
-- bullet: breaking changes if any
-
-Closes #IssueNumber
-```
-
-### Map TaskType → commit type + emoji:
-
-| TaskType | Commit type | Default emoji |
-|---|---|---|
-| Feature | feat | ✨ |
-| Bug | fix | 🐛 |
-| HotFix | fix | 🚑 |
-| Refactoring | refactor | ♻️ |
-| Docs | docs | 📝 |
-
-### Full emoji reference (pick the most specific one):
-
-| Intent | Emoji |
-|---|---|
-| New feature | ✨ |
-| Bug fix | 🐛 |
-| Critical hotfix | 🚑 |
-| Refactor | ♻️ |
-| Architecture change | 🏗️ |
-| Tests | 🧪 |
-| Documentation | 📝 |
-| UI / styles | 🚀 |
-| Performance | ⚡ |
-| Remove code or files | 🔥 |
-| Add dependency | ➕ |
-| Remove dependency | ➖ |
-| Upgrade dependency | ⬆️ |
-| Downgrade dependency | ⬇️ |
-| Config change | 🔧 |
-| Security fix | 🔒 |
-| CI/CD | 👷 |
-| Revert | ⏪ |
-| Code review feedback | 👌 |
-| WIP | 🚧 |
-
-### Rules:
-- First line max 72 characters
-- Present tense, imperative mood ("add feature" not "added feature")
-- Scope is the FeatureName in lowercase (auth, onboarding, tasks, etc.)
-- No period at the end of the first line
-- Always close the issue at the end with `Closes #N`
-
-### Built examples from branch name:
-
-Branch: `Feature/Auth/GH-12-Add-Login-Flow`
-```
-feat(auth) ✨ add login flow
-
-- add LoginUseCase in domain layer
-- implement AuthRepositoryImpl in data layer
-- use sealed AuthState with Dart 3 switch expression
-
-Closes #12
-```
-
-Branch: `Bug/Onboarding/GH-21-Fix-Navigation-State`
-```
-fix(onboarding) 🐛 fix navigation state handling
-
-- replace NavigateToSignUpPageState string routing with sealed states
-- use _ => null wildcard to handle unrelated states in BlocListener
-
-Closes #21
-```
-
-Branch: `Refactoring/Core/GH-18-Replace-Freezed-Sealed`
-```
-refactor(core) ♻️ replace Freezed with native sealed classes
-
-- remove build_runner and freezed from dev dependencies
-- rewrite all state classes using Dart 3 sealed class syntax
-- use switch expressions for exhaustive pattern matching
-
-Closes #18
-```
-
-Ask the user to confirm the commit message before proceeding.
+- [ ] No layer violations — data never imports presentation, domain never imports data
+- [ ] Presentation layer has ZERO business logic — only rendering, interaction, state observation
+- [ ] Business logic lives in domain layer only
+- [ ] Data access (APIs, DB, storage) lives in data layer only
+- [ ] No Flutter imports (`package:flutter/...`) in any file under `domain/` or `logic/`
+- [ ] Cubits depend ONLY on use cases — never directly on repositories or datasources
+- [ ] No new abstractions or patterns introduced without clear justification
 
 ---
 
-## Step 3 — Output the PR description as a markdown file
+### B) State Management
 
-Filename: `PR_DESCRIPTION.md`
+- [ ] Cubit/Bloc used for feature and application state
+- [ ] `setState` used ONLY for local UI state (toggles, form focus)
+- [ ] `setState` never used for business logic
+- [ ] `setState` scoped to the smallest widget possible
+- [ ] `BlocBuilder`/`BlocSelector` placed on the smallest widget that needs the state
+- [ ] `BlocBuilder`/`BlocSelector` never placed at the top of the tree unnecessarily
 
-```markdown
-## 🔗 Related Issue
-Closes #IssueNumber
+---
 
-## 📋 Summary
-<!-- 2-3 sentences: what this PR does and why -->
+### C) No Code Generation
 
-## 🔄 Changes
-<!-- List of meaningful changes grouped by layer -->
+- [ ] No `freezed` annotations added
+- [ ] No `build_runner` added or referenced
+- [ ] Sealed classes used for state unions instead of Freezed
+- [ ] Switch expressions used for exhaustive pattern matching
 
-### Presentation
--
+---
 
-### Domain / Logic
--
+### D) Error Handling
 
-### Data
--
+- [ ] Errors caught at the data layer boundary — not deep inside business logic
+- [ ] Exceptions mapped to typed `Failure` classes in data layer
+- [ ] Use cases and repositories return `ApiResult<T>` — never throw across layers
+- [ ] Presentation layer maps failures to user-friendly messages and UI states
+- [ ] No silent failures — null, empty, loading, and error states handled explicitly
 
-### Tests
--
+---
 
-## 🧪 How to test
-<!-- Step by step to verify the feature works -->
-1.
-2.
-3.
+### E) Dependency Injection
 
-## 📸 Screenshots
-<!-- If UI changed, add before/after — otherwise write N/A -->
+- [ ] No new packages added without justification
+- [ ] Any new package is latest stable, well-maintained, production-grade
+- [ ] Dependencies registered in `core/di/` — not instantiated manually
+- [ ] Cubits, use cases, and repositories resolved via `get_it`
 
-## ✅ Checklist
-- [ ] /code-review passed (✅ or ⚠️)
-- [ ] No layer violations (presentation → domain → data)
-- [ ] No Flutter imports in logic/domain layer
-- [ ] No Freezed / build_runner added
-- [ ] Sealed classes used for state unions
-- [ ] Switch expressions used for exhaustive matching
-- [ ] Tests written for domain/data logic
-- [ ] Branch follows naming: TaskType/FeatureName/GH-{N}-Description
-- [ ] Commit follows emoji convention
-- [ ] PR linked to GitHub Issue #IssueNumber
+---
+
+### F) Build Method Discipline
+
+- [ ] `const` constructors used wherever possible
+- [ ] No `TextEditingController`, `AnimationController`, `FocusNode` created inside `build()`
+- [ ] No heavy work inside `build()` methods
+- [ ] Controllers and focus nodes disposed in `StatefulWidget.dispose()`
+- [ ] Small, composed widgets preferred to minimize rebuild scope
+- [ ] UI files do not exceed 200 lines
+- [ ] Sections extracted into dedicated widget classes when file approaches 200 lines
+- [ ] Widgets only extracted when actually needed — no premature splitting
+
+---
+
+### G) Shared Code
+
+- [ ] No logic, utility, constant, extension, or helper duplicated across features
+- [ ] Reusable code used in 2+ places lives in `core/`
+- [ ] `core/` checked before creating any new shared code
+
+---
+
+### H) Security
+
+- [ ] No hardcoded secrets, tokens, or credentials
+- [ ] No sensitive information logged
+- [ ] External and API input validated
+- [ ] No security risks introduced (flag any spotted)
+
+---
+
+### I) Change Discipline
+
+- [ ] Smallest change that solves the problem — no over-engineering
+- [ ] Root cause fixed — not the symptom
+- [ ] No unrelated code refactored
+- [ ] No existing functionality, APIs, flows, or UX broken
+- [ ] Relevant code was read before modifying
+
+---
+
+### J) Testing
+
+- [ ] Domain and data layer logic has test coverage
+- [ ] Bug fixes include a reproducing test
+- [ ] Tests are deterministic — no flaky or timing-dependent logic
+- [ ] One behavior per test case
+
+---
+
+### K) Feature Folder Structure
+
+- [ ] New files placed in the correct layer folder:
+  - `features/{feature_name}/data/`
+  - `features/{feature_name}/domain/`
+  - `features/{feature_name}/presentation/`
+- [ ] Shared code placed in `core/` not duplicated in feature folders
+
+---
+
+## Step 3 — Output format
+
+For every file reviewed output exactly this:
+
+```
+──────────────────────────────────────────
+📄 {filename}
+──────────────────────────────────────────
+Status: ✅ Clean | ⚠️ Warnings | ❌ Violations
+
+Issues:
+  ⚠️ [WARNING] {description} — line {N}
+  ❌ [VIOLATION] {description} — line {N}
+
+Suggestions:
+  → {concrete fix for each issue}
+──────────────────────────────────────────
+```
+
+If a file has no issues, output:
+```
+📄 {filename} ✅ Clean — no issues found
 ```
 
 ---
 
-## Step 4 — Output git commands
+## Step 4 — Summary
 
-Output these for the user to run — never run them automatically:
+After reviewing all files output a summary:
 
-```bash
-# 1. Stage all changes
-git add .
-
-# 2. Commit with the confirmed message
-git commit -m "type(scope) emoji short description
-
-- bullet one
-- bullet two
-
-Closes #N"
-
-# 3. Push the branch
-git push origin TaskType/FeatureName/GH-N-Description
 ```
+══════════════════════════════════════════
+  CODE REVIEW SUMMARY
+══════════════════════════════════════════
+  Files reviewed:    {N}
+  Clean:             {N} ✅
+  Warnings:          {N} ⚠️
+  Violations:        {N} ❌
+══════════════════════════════════════════
+  Violations found:
+  - {filename}: {short description}
+  - {filename}: {short description}
 
-Note: no `git checkout -b` here — the branch already exists (extracted in Step 1).
+  Warnings found:
+  - {filename}: {short description}
+══════════════════════════════════════════
+```
 
 ---
 
-## Step 5 — Final summary
+## Step 5 — Final verdict
+
+Output ONE of these three verdicts and nothing else after it:
 
 ```
-╔══════════════════════════════════════════════════════════╗
-║  PR READY                                                ║
-╠══════════════════════════════════════════════════════════╣
-║  Issue:    #12                                           ║
-║  Branch:   Feature/Auth/GH-12-Add-Login-Flow             ║
-║  Commit:   feat(auth) ✨ add login flow                  ║
-║  PR file:  PR_DESCRIPTION.md                             ║
-╚══════════════════════════════════════════════════════════╝
+✅ APPROVED
+   No violations found. Ready to run /commit.
+```
 
-Next steps:
-1. Run the git commands above
-2. Open a PR on GitHub
-3. Paste the content of PR_DESCRIPTION.md as the PR body
-4. Link the PR to Issue #12
-5. Request a review
+```
+⚠️ APPROVED WITH WARNINGS
+   Minor issues noted above. Can proceed with /commit
+   but consider addressing warnings soon.
+```
+
+```
+❌ BLOCKED
+   Violations must be fixed before running /commit.
+   Fix the issues listed above then re-run /code-review.
 ```

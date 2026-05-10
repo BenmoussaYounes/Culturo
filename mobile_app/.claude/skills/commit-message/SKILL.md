@@ -1,5 +1,5 @@
 # SKILL: commit-message
-Trigger: /commit
+Trigger: /commit-message
 Purpose: Generate a proper commit message from staged changes following the project Git conventions.
 
 ---
