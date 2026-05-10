@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/inter_font_style.dart';
-import '../../logic/onboarding_cubit.dart';
+import '../cubit/onboarding_cubit.dart';
 
 class ChoseYourCountryBottomButton extends StatelessWidget {
   const ChoseYourCountryBottomButton({super.key});
