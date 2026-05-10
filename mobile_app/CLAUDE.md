@@ -83,6 +83,7 @@ Rules below only cover things that OVERRIDE defaults or encode project decisions
 - `features/{feature_name}/data/`
 - `features/{feature_name}/domain/`
 - `features/{feature_name}/presentation/`
+- Widgets that compose a screen must live in `features/{feature_name}/presentation/screens/widgets/` or directly in `features/{feature_name}/presentation/widgets/` case we have 1 screen only — keep screen files focused on layout and composition only, not widget implementation
 
 ## 5) Error Handling Contract
 - Data layer: catch exceptions and map to typed `Failure` classes
@@ -94,10 +95,22 @@ Rules below only cover things that OVERRIDE defaults or encode project decisions
 - Register dependencies in a single `core/di/` setup file
 - Cubits, use cases, and repositories are resolved via `get_it`, not instantiated manually
 
-## 7) Build Method Discipline (IMPORTANT)
+## 8) Icons & Custom Graphics (IMPORTANT)
+- Avoid `CustomPainter` unless there is no viable alternative — it is hard to maintain and debug
+- Always prefer SVG or PNG assets for icons and custom graphics
+- If an asset is missing from the repo, ask the user to upload it — never recreate it via `CustomPainter`
+
+## 9) Typography (IMPORTANT)
+- Never hardcode font families, font sizes, font weights, or text styles directly in the UI
+- Always use the text styles and constants defined in `lib/core/theming/`
+- If a new font or style is needed, add it to the appropriate file in `lib/core/theming/` first, then import it in the UI
+
+## 9) Build Method Discipline (IMPORTANT)
 - Prefer `const` constructors wherever possible
 - NEVER create `TextEditingController`, `AnimationController`, `FocusNode`, or other expensive objects inside `build()`
 - Avoid heavy work inside `build()` methods
 - Dispose controllers and focus nodes in `StatefulWidget.dispose()`
 - Prefer small, composed widgets to minimize rebuild scope
 - Use `BlocBuilder`/`BlocSelector` on the smallest widget that needs the state — never at the top of the tree
+- UI files must not exceed 200 lines — if a file approaches this limit, extract sections into dedicated widget classes
+- Only extract widgets when the file actually needs it — do not split prematurely
