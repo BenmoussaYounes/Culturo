@@ -8,8 +8,8 @@ import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/inter_font_style.dart';
 import '../cubit/onboarding_cubit.dart';
 
-class ChoseYourCountryBottomButton extends StatelessWidget {
-  const ChoseYourCountryBottomButton({super.key});
+class ChooseYourCountryBottomButton extends StatelessWidget {
+  const ChooseYourCountryBottomButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ChoseYourCountryBottomButton extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
           ),
-          child: Text('Chose Your Country →', style: InterFontStyle.font16W600White),
+          child: Text('Choose Your Country →', style: InterFontStyle.font16W600White),
         ),
         verticalSpace(16),
         RichText(

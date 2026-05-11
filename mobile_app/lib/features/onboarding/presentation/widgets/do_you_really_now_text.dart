@@ -7,8 +7,8 @@ import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/instrument_serif_font_style.dart';
 import '../../../../core/theming/inter_font_style.dart';
 
-class DoYouRellayNowText extends StatelessWidget {
-  const DoYouRellayNowText({super.key});
+class DoYouReallyNowText extends StatelessWidget {
+  const DoYouReallyNowText({super.key});
 
   @override
   Widget build(BuildContext context) {

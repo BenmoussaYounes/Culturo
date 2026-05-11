@@ -37,17 +37,17 @@ class OnboardingScreen extends StatelessWidget {
                 children: [
                   Text('✦ THE CULTURAL QUIZ', style: JetBrainsMonoFontStyle.font10W700Primary(DesertColors.primary)),
                   verticalSpace(8),
-                  DoYouRellayNowText(),
+                  DoYouReallyNowText(),
                 ],
               ),
             ),
-            OnboardingBlocListner(),
+            OnboardingBlocListener(),
           ],
         ),
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
-        child: ChoseYourCountryBottomButton(),
+        child: ChooseYourCountryBottomButton(),
       ),
     );
   }

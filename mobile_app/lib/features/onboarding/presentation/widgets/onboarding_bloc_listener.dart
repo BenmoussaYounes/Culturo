@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../cubit/onboarding_cubit.dart';
 
-class OnboardingBlocListner extends StatelessWidget {
-  const OnboardingBlocListner({super.key});
+class OnboardingBlocListener extends StatelessWidget {
+  const OnboardingBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
