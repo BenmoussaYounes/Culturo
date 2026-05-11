@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dart analyze *)",
+      "Bash(Get-ChildItem -Recurse \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\" -Directory)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Sort-Object)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "dart format ."
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "dart analyze"
+          }
+        ]
+      }
+    ]
+  }
+}

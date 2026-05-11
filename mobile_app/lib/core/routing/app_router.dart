@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../features/onboarding/logic/onboarding_cubit.dart';
-import '../../features/onboarding/ui/onboarding_screen.dart';
+import '../../features/onboarding/presentation/cubit/onboarding_cubit.dart';
+import '../../features/onboarding/presentation/onboarding_screen.dart';
 import 'routes.dart';
 
 class AppRouter {
