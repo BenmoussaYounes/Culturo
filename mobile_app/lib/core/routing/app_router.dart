@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../features/auth/ui/cubit/sign_in_cubit.dart';
+import '../../features/auth/ui/screens/sign_in_screen.dart';
 import '../../features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../di/dependency_injection.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -11,7 +14,12 @@ class AppRouter {
     switch (settings.name) {
       case Routes.onboarding:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(create: (context) => OnboardingCubit(), child: const OnboardingScreen()),
+          builder: (_) => BlocProvider(create: (_) => getIt<OnboardingCubit>(), child: const OnboardingScreen()),
+        );
+
+      case Routes.signIn:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(create: (_) => getIt<SignInCubit>(), child: const SignInScreen()),
         );
 
       default:

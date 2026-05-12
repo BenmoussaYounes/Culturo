@@ -95,13 +95,97 @@ Rules below only cover things that OVERRIDE defaults or encode decisions specifi
 - Views must NOT transform, format, or compute data — all of that belongs in the Cubit
 - Views and ViewModels have a one-to-one relationship — one screen = one Cubit
 - `BlocBuilder`/`BlocSelector` placed on the smallest widget that needs the state — never at the top of the tree
+- **Always use `switch` expressions for state matching** — never `if/else if` chains with `is` checks
+
+```dart
+// ❌ Never do this
+if (state is SignInSuccess) {
+  ScaffoldMessenger.of(context).showSnackBar(...);
+} else if (state is SignInError) {
+  ScaffoldMessenger.of(context).showSnackBar(...);
+}
+
+// ✅ Always do this
+listener: (context, state) => switch (state) {
+  SignInSuccess() => ScaffoldMessenger.of(context).showSnackBar(...),
+  SignInError(:final message) => ScaffoldMessenger.of(context).showSnackBar(...),
+  _ => null,
+},
+```
+
+- **Never hardcode `BlocListener` directly inside a screen widget** — always extract it into a dedicated listener widget
+
+```dart
+// ❌ Never do this — BlocListener hardcoded inside the screen
+class SignInScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<SignInCubit, SignInState>(
+      listener: (context, state) => switch (state) { ... },
+      child: Scaffold(...),
+    );
+  }
+}
+
+// ✅ Always do this — dedicated listener widget
+class SignInBlocListener extends StatelessWidget {
+  final Widget child;
+  const SignInBlocListener({super.key, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<SignInCubit, SignInState>(
+      listener: (context, state) => switch (state) { ... },
+      child: child,
+    );
+  }
+}
+
+// Screen stays clean
+class SignInScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SignInBlocListener(
+      child: Scaffold(...),
+    );
+  }
+}
+```
+
+Listener widgets live in `ui/widgets/` alongside other feature widgets.
 
 ## 3) No Code Generation
 - **No Freezed. No build_runner.** Use Dart 3+ native features instead:
   - `sealed class` for state unions with exhaustive pattern matching
   - `switch` expressions and records for lightweight data
 
-## 4) Domain Layer — Optional, Add Only When Necessary
+## 4) Dot Shorthands (Dart 3.10+)
+- **Always use dot shorthand syntax** when the type can be inferred from context — never repeat the type name unnecessarily
+- Applies to: enum values, static members, and constructors
+
+```dart
+// ❌ Never do this when type is clear from context
+mainAxisAlignment: MainAxisAlignment.center,
+crossAxisAlignment: CrossAxisAlignment.start,
+color: Colors.blue,
+final EdgeInsets padding = EdgeInsets.all(16);
+
+// ✅ Always do this
+mainAxisAlignment: .center,
+crossAxisAlignment: .start,
+color: .blue,
+final EdgeInsets padding = .all(16);
+```
+
+Constraints — dot shorthands only work when Dart has an expected type from context:
+- ✅ Named parameters: `mainAxisAlignment: .center`
+- ✅ Typed variable declarations: `Color color = .blue`
+- ✅ Return types: `Color getColor() => .blue`
+- ✅ Right side of `==` comparisons: `if (color == .blue)`
+- ❌ `var` declarations — no type context: `var x = .center` → fails
+- ❌ Left side of `==`: `.blue == color` → not allowed
+
+## 5) Domain Layer — Optional, Add Only When Necessary
 
 The domain layer is **optional**. Do NOT add it by default — only introduce it when one of these conditions is met:
 - The same business logic would be duplicated across two or more Cubits
@@ -119,7 +203,7 @@ When the domain layer does NOT exist:
 - Simple data transformation happens inside the Cubit
 - Repository contracts can live directly in `data/`
 
-## 5) Feature Folder Structure
+## 6) Feature Folder Structure
 
 ```
 features/{feature_name}/
@@ -138,35 +222,35 @@ features/{feature_name}/
     │   ├── {name}_cubit.dart
     │   └── {name}_state.dart   ← carries pre-formatted, UI-ready fields
     ├── screens/           ← one file per screen (layout + composition only)
-    └── widgets/           ← screens-specific widgets
+    │   └── widgets/       ← screen-specific widgets
+    └── widgets/           ← feature-level reusable widgets (1 screen features)
 ```
 
 - Screen files focus on layout and composition only — no widget implementation inline
-- Screen-specific widgets live in `widgets/`
-- if we have 1 screen only in the feature add the screen directly into ui no need to create a folder for screens
+- Screen-specific widgets live in `screens/widgets/`, reusable feature widgets in `ui/widgets/`
 
-## 6) Error Handling Contract
+## 7) Error Handling Contract
 - Data layer: catch exceptions and map to typed `Failure` classes
 - Domain layer (when it exists): return `ApiResult<T>` from use cases and repositories
 - UI layer (Cubit): map failures to user-friendly messages and UI states — never pass raw error strings up from the data layer
 
-## 7) Dependency Injection
+## 8) Dependency Injection
 - Use **`get_it`** as the service locator — not `Provider` or constructor-only injection
 - Register dependencies in a single `core/di/` setup file
 - Cubits, use cases (when they exist), and repositories are resolved via `get_it`, not instantiated manually
 - Repositories and ViewModels (Cubits) have a many-to-many relationship — one Cubit can use several repositories or use cases, one repository can serve many Cubits
 
-## 8) Icons & Custom Graphics (IMPORTANT)
+## 9) Icons & Custom Graphics (IMPORTANT)
 - Avoid `CustomPainter` unless there is no viable alternative — it is hard to maintain and debug
 - Always prefer SVG or PNG assets for icons and custom graphics
 - If an asset is missing from the repo, ask the user to upload it — never recreate it via `CustomPainter`
 
-## 9) Typography (IMPORTANT)
+## 10) Typography (IMPORTANT)
 - Never hardcode font families, font sizes, font weights, or text styles directly in the UI
 - Always use the text styles and constants defined in `lib/core/theming/`
 - If a new font or style is needed, add it to the appropriate file in `lib/core/theming/` first, then import it in the UI
 
-## 10) Build Method Discipline (IMPORTANT)
+## 11) Build Method Discipline (IMPORTANT)
 - Prefer `const` constructors wherever possible
 - NEVER create `TextEditingController`, `AnimationController`, `FocusNode`, or other expensive objects inside `build()`
 - Avoid heavy work inside `build()` methods
