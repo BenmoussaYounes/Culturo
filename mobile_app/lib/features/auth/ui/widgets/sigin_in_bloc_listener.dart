@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/helpers/helpers.dart';
 import '../cubit/sign_in_cubit.dart';
 
 class SiginInBlocListener extends StatelessWidget {
@@ -16,16 +17,13 @@ class SiginInBlocListener extends StatelessWidget {
           current is ForgotPasswordState ||
           current is CreateAccountState,
       listener: (context, state) => switch (state) {
-        SignInSuccess() => ScaffoldMessenger.of(
+        SignInSuccess() => showSuccessSnackbar(context, 'Signed in successfully!'),
+        SignInError(:final message) => showErrorSnackbar(context, message),
+        ForgotPasswordState(:final email) => showSuccessSnackbar(context, 'Password reset link sent to $email'),
+        CreateAccountState(:final email) => showSuccessSnackbar(
           context,
-        ).showSnackBar(const SnackBar(content: Text('Signed in successfully!'))),
-        SignInError(:final message) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message))),
-        ForgotPasswordState(:final email) => ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text('Password reset link sent to $email'))),
-        CreateAccountState(:final email) => ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text('Account created successfully! Please check your email at $email'))),
+          'Account created successfully! Please check your email at $email',
+        ),
         _ => null,
       },
       child: const SizedBox.shrink(),

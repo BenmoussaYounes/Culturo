@@ -1,8 +1,8 @@
 class ApiConstants {
-  static const String apiBaseUrl = "https://vcare.integration25.com/api/";
+  static const String baseUrl = "https://culturo-backend.onrender.com/";
 
-  static const String siginIn = "auth/login";
-  static const String signup = "auth/register";
+  static const String siginIn = "auth/signin";
+  static const String signup = "auth/signup";
 }
 
 enum ApiErrorType {

@@ -9,6 +9,8 @@ class AppTextFormField extends StatelessWidget {
   const AppTextFormField({
     required this.controller,
     this.onChanged,
+    this.validator,
+    this.hintText,
     this.obscureText = false,
     this.suffixIcon,
     super.key,
@@ -16,6 +18,9 @@ class AppTextFormField extends StatelessWidget {
 
   final TextEditingController controller;
   final ValueChanged<String>? onChanged;
+  final FormFieldValidator<String>? validator;
+
+  final String? hintText;
 
   final bool obscureText;
 
@@ -26,9 +31,12 @@ class AppTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       onChanged: onChanged,
+      validator: validator,
       obscureText: obscureText,
       style: InterFontStyle.font15W500Ink,
       decoration: InputDecoration(
+        hintText: hintText,
+        hintStyle: InterFontStyle.font15W500Ink.copyWith(color: ColorsManager.primaryBlack.withValues(alpha: 0.5)),
         fillColor: Colors.white,
         filled: true,
         border: OutlineInputBorder(

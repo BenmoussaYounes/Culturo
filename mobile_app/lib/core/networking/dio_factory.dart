@@ -3,6 +3,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../helpers/constants.dart';
 import '../helpers/shared_pref_helper.dart';
+import 'api_constants.dart';
 
 class DioFactory {
   DioFactory._();
@@ -13,10 +14,7 @@ class DioFactory {
     Duration timeOut = const Duration(seconds: 30);
 
     if (dio == null) {
-      dio = Dio();
-      dio!
-        ..options.connectTimeout = timeOut
-        ..options.receiveTimeout = timeOut;
+      dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl, connectTimeout: timeOut, receiveTimeout: timeOut));
       addDioHeaders();
       addDioInterceptor();
       return dio!;
