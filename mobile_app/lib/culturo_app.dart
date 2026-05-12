@@ -19,7 +19,7 @@ class CulturoApp extends StatelessWidget {
         title: 'Culturo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: DesertColors.primary),
-          scaffoldBackgroundColor: DesertColors.paper,
+          scaffoldBackgroundColor: DesertColors.surface,
         ),
         debugShowCheckedModeBanner: true,
         initialRoute: Routes.onboarding,

@@ -31,7 +31,7 @@ class ChooseYourCountryBottomButton extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: 'Already have an account?',
-            style: InterFontStyle.font12W400GreyGreen,
+            style: InterFontStyle.font12W600GreyGreen,
             children: [
               WidgetSpan(child: horizontalSpace(6)),
               TextSpan(
