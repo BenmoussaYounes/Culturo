@@ -7,7 +7,9 @@
       "Bash(Sort-Object)",
       "Bash(Get-ChildItem -Recurse -Path \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\" -Depth 3 -ErrorAction SilentlyContinue)",
       "Bash(Select-Object FullName, PSIsContainer)",
-      "Bash(ConvertTo-Json)"
+      "Bash(ConvertTo-Json)",
+      "Bash(git commit -m ' *)",
+      "Bash(Get-ChildItem -Recurse \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\" -File)"
     ]
   },
   "hooks": {
