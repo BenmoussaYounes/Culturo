@@ -9,7 +9,8 @@
       "Bash(Select-Object FullName, PSIsContainer)",
       "Bash(ConvertTo-Json)",
       "Bash(git commit -m ' *)",
-      "Bash(Get-ChildItem -Recurse \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\" -File)"
+      "Bash(Get-ChildItem -Recurse \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\" -File)",
+      "Bash(gh pr create --title 'feat\\(categories\\) ✨ add categories screen with 2-column grid' --body ' *)"
     ]
   },
   "hooks": {

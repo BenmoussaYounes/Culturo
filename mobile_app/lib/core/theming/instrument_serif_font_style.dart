@@ -12,11 +12,24 @@ class InstrumentSerifFontStyle {
     color: const Color(0xFFFFFFFF),
   );
 
-  // primary white
-  static TextStyle font18W400PrimaryWhite = GoogleFonts.instrumentSerif(
+  static TextStyle font22W700WhiteItalic = GoogleFonts.instrumentSerif(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w700,
+    color: const Color(0xFFFFFFFF),
+    fontStyle: FontStyle.italic,
+  );
+
+  // Ink
+  static TextStyle font18W400Ink = GoogleFonts.instrumentSerif(
     fontSize: 18.sp,
     fontWeight: FontWeight.w400,
-    color: ColorsManager.primaryWhite,
+    color: ColorsManager.ink,
+  );
+
+  static TextStyle font16W400Ink = GoogleFonts.instrumentSerif(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    color: ColorsManager.ink,
   );
 
   //
@@ -77,6 +90,34 @@ class InstrumentSerifFontStyle {
     fontSize: 22.sp,
     fontWeight: FontWeight.w400,
     color: ColorsManager.primaryBlack,
+  );
+  // Vanilla
+  static TextStyle font24W400ItalicVanilla = GoogleFonts.instrumentSerif(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w400,
+    color: ColorsManager.vanilla,
+    fontStyle: FontStyle.italic,
+  );
+  //
+  static TextStyle font24W400ItalicWhite = GoogleFonts.instrumentSerif(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w400,
+    color: const Color(0xFFFFFFFF),
+    fontStyle: FontStyle.italic,
+  );
+
+  static TextStyle font18W400Italic(Color color) => GoogleFonts.instrumentSerif(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w400,
+    color: color,
+    fontStyle: FontStyle.italic,
+  );
+
+  static TextStyle font26W500ItalicInk = GoogleFonts.instrumentSerif(
+    fontSize: 26.sp,
+    fontWeight: FontWeight.w500,
+    color: DesertColors.ink,
+    fontStyle: FontStyle.italic,
   );
 
   static TextStyle font26W400ItalicInk = GoogleFonts.instrumentSerif(

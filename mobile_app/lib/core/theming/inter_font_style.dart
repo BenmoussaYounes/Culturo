@@ -13,6 +13,13 @@ class InterFontStyle {
     color: DesertColors.primary,
   );
 
+  // Vanilla
+  static TextStyle font12W500Vanilla = GoogleFonts.inter(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.vanilla,
+  );
+
   //
   static TextStyle font16W600White = GoogleFonts.inter(
     fontSize: 16.sp,
@@ -93,6 +100,12 @@ class InterFontStyle {
     color: const Color(0xFFFFFFFF),
   );
 
+  static TextStyle font12W600White = GoogleFonts.inter(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w600,
+    color: const Color(0xFFFFFFFF),
+  );
+
   static TextStyle font12W500White = GoogleFonts.inter(
     fontSize: 12.sp,
     fontWeight: FontWeight.w500,
@@ -136,6 +149,24 @@ class InterFontStyle {
     color: DesertColors.accent,
   );
 
+  static TextStyle font22W700White = GoogleFonts.inter(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w700,
+    color: const Color(0xFFFFFFFF),
+  );
+
+  static TextStyle font14W600Ink = GoogleFonts.inter(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    color: DesertColors.ink,
+  );
+
+  static TextStyle font12W400GreyGreen = GoogleFonts.inter(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: ColorsManager.greyGreen,
+  );
+
   static TextStyle font10W600GreyGreen = GoogleFonts.inter(
     fontSize: 10.sp,
     fontWeight: FontWeight.w600,
@@ -149,5 +180,12 @@ class InterFontStyle {
     fontWeight: FontWeight.w600,
     color: ColorsManager.mediumGrey,
     letterSpacing: 0.8,
+  );
+
+  // Ink
+  static TextStyle font13W700Ink = GoogleFonts.inter(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w700,
+    color: ColorsManager.ink,
   );
 }
