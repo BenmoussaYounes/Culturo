@@ -48,6 +48,24 @@ class JetBrainsMonoFontStyle {
     color: const Color(0xFFFFFFFF),
   );
 
+  static TextStyle font9W600(Color color) =>
+      GoogleFonts.jetBrainsMono(fontSize: 9.sp, fontWeight: FontWeight.w600, color: color);
+
+  static TextStyle font22W700White = GoogleFonts.jetBrainsMono(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w700,
+    color: const Color(0xFFFFFFFF),
+  );
+
+  static TextStyle font13W600Ink = GoogleFonts.jetBrainsMono(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w600,
+    color: DesertColors.ink,
+  );
+
+  static TextStyle font11W600(Color color) =>
+      GoogleFonts.jetBrainsMono(fontSize: 11.sp, fontWeight: FontWeight.w600, color: color);
+
   // Medium Grey
   static TextStyle font10W500MediumGrey = GoogleFonts.jetBrainsMono(
     fontSize: 10.sp,
@@ -59,5 +77,12 @@ class JetBrainsMonoFontStyle {
     fontSize: 11.sp,
     fontWeight: FontWeight.w500,
     color: ColorsManager.mediumGrey,
+  );
+
+  // Vanilla
+  static TextStyle font10W500Vanilla = GoogleFonts.jetBrainsMono(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.vanilla,
   );
 }

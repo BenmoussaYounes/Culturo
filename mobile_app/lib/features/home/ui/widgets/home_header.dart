@@ -28,10 +28,10 @@ class HomeHeader extends StatelessWidget {
               crossAxisAlignment: .start,
               children: [
                 Text(
-                  '${userInfo.name}!',
+                  'Welcome, ${userInfo.name}!',
                   style: InstrumentSerifFontStyle.font16W400GreyGreenItalic.copyWith(height: 0.8.h),
                 ),
-                Text(userInfo.name, style: InstrumentSerifFontStyle.font18W400PrimaryWhite),
+                Text(userInfo.name, style: InstrumentSerifFontStyle.font18W400Ink),
               ],
             ),
           ],

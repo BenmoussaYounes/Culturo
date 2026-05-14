@@ -7,6 +7,8 @@ import '../core/theming/colors_manager.dart';
 import '../core/theming/inter_font_style.dart';
 import 'categories/ui/categories_screen.dart';
 import 'categories/ui/cubit/categories_cubit.dart';
+import 'ranking/ui/cubit/ranking_cubit.dart';
+import 'ranking/ui/ranking_screen.dart';
 import 'home/ui/cubit/home_cubit.dart';
 import 'home/ui/home_screen.dart';
 
@@ -29,7 +31,7 @@ class _AppScaffoldState extends State<AppScaffold> {
           BlocProvider(create: (_) => getIt<HomeCubit>()..loadHome(), child: const HomeScreen()),
           BlocProvider(create: (_) => getIt<CategoriesCubit>()..loadCategories(), child: const CategoriesScreen()),
           const _PlaceholderTab(label: 'Battle'),
-          const _PlaceholderTab(label: 'Classement'),
+          BlocProvider(create: (_) => getIt<RankingCubit>()..loadRanking(), child: const RankingScreen()),
           const _PlaceholderTab(label: 'Moi'),
         ],
       ),
