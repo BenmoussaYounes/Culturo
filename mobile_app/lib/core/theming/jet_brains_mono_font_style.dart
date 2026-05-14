@@ -28,4 +28,30 @@ class JetBrainsMonoFontStyle {
     fontWeight: FontWeight.w600,
     color: ColorsManager.lightGrey,
   );
+
+  // White
+  static TextStyle font10W600White = GoogleFonts.jetBrainsMono(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w600,
+    color: const Color(0xFFFFFFFF),
+  );
+
+  static TextStyle font10W500White = GoogleFonts.jetBrainsMono(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w500,
+    color: const Color(0xFFFFFFFF),
+  );
+
+  static TextStyle font9W600White = GoogleFonts.jetBrainsMono(
+    fontSize: 9.sp,
+    fontWeight: FontWeight.w600,
+    color: const Color(0xFFFFFFFF),
+  );
+
+  // Medium Grey
+  static TextStyle font10W500MediumGrey = GoogleFonts.jetBrainsMono(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.mediumGrey,
+  );
 }

@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 
 class ColorsManager {
   static const Color primaryBlack = Color(0xFF16201b);
+  static const Color primaryWhite = Color(0xFF1f2a24);
 
   static const Color lightGrey = Color(0xFF9a9a8e);
+  static const Color mediumGrey = Color(0xFF8a8478);
   static const Color greyGreen = Color(0xFF5a6660);
+  static const Color greyBlue = Color(0xFF5b6660);
 }
 
 /// Desert — default theme (warm cream paper, deep emerald, Casbah terracotta)
