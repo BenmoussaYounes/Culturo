@@ -79,10 +79,32 @@ class InstrumentSerifFontStyle {
     color: ColorsManager.primaryBlack,
   );
 
+  static TextStyle font26W400ItalicInk = GoogleFonts.instrumentSerif(
+    fontSize: 26.sp,
+    fontWeight: FontWeight.w400,
+    color: DesertColors.ink,
+    fontStyle: FontStyle.italic,
+  );
+
+  static TextStyle font15W400ItalicInk = GoogleFonts.instrumentSerif(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w400,
+    color: DesertColors.ink,
+    fontStyle: FontStyle.italic,
+  );
+
   // Medium Grey
   static TextStyle font13W400MediumGrey = GoogleFonts.instrumentSerif(
     fontSize: 13.sp,
     fontWeight: FontWeight.w400,
     color: ColorsManager.mediumGrey,
+  );
+
+  // Accent
+  static TextStyle font13W500AccentItalic = GoogleFonts.instrumentSerif(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w500,
+    color: DesertColors.accent,
+    fontStyle: FontStyle.italic,
   );
 }

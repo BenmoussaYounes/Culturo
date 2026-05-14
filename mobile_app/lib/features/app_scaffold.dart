@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../core/di/dependency_injection.dart';
 import '../core/theming/colors_manager.dart';
 import '../core/theming/inter_font_style.dart';
+import 'categories/ui/categories_screen.dart';
+import 'categories/ui/cubit/categories_cubit.dart';
 import 'home/ui/cubit/home_cubit.dart';
 import 'home/ui/home_screen.dart';
 
@@ -25,7 +27,7 @@ class _AppScaffoldState extends State<AppScaffold> {
         index: _currentIndex,
         children: [
           BlocProvider(create: (_) => getIt<HomeCubit>()..loadHome(), child: const HomeScreen()),
-          const _PlaceholderTab(label: 'Catégories'),
+          BlocProvider(create: (_) => getIt<CategoriesCubit>()..loadCategories(), child: const CategoriesScreen()),
           const _PlaceholderTab(label: 'Battle'),
           const _PlaceholderTab(label: 'Classement'),
           const _PlaceholderTab(label: 'Moi'),

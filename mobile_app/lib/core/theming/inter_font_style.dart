@@ -123,4 +123,31 @@ class InterFontStyle {
     fontWeight: FontWeight.w700,
     color: DesertColors.accent,
   );
+
+  static TextStyle font13W500Accent = GoogleFonts.inter(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w500,
+    color: DesertColors.accent,
+  );
+
+  static TextStyle font13W400Accent = GoogleFonts.inter(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w400,
+    color: DesertColors.accent,
+  );
+
+  static TextStyle font10W600GreyGreen = GoogleFonts.inter(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w600,
+    color: ColorsManager.greyGreen,
+    letterSpacing: 0.8,
+  );
+
+  // Medium Grey
+  static TextStyle font10W600MediumGrey = GoogleFonts.inter(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w600,
+    color: ColorsManager.mediumGrey,
+    letterSpacing: 0.8,
+  );
 }

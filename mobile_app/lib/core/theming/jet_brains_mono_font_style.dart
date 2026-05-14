@@ -54,4 +54,10 @@ class JetBrainsMonoFontStyle {
     fontWeight: FontWeight.w500,
     color: ColorsManager.mediumGrey,
   );
+  // Medium Grey
+  static TextStyle font11W500MediumGrey = GoogleFonts.jetBrainsMono(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.mediumGrey,
+  );
 }
