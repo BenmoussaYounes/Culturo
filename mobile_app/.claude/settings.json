@@ -4,7 +4,10 @@
       "Bash(dart analyze *)",
       "Bash(Get-ChildItem -Recurse \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\" -Directory)",
       "Bash(Select-Object -ExpandProperty FullName)",
-      "Bash(Sort-Object)"
+      "Bash(Sort-Object)",
+      "Bash(Get-ChildItem -Recurse -Path \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\" -Depth 3 -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(ConvertTo-Json)"
     ]
   },
   "hooks": {

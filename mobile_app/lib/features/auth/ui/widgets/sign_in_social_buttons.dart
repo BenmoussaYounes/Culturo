@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/helpers/extentions.dart';
 import '../../../../core/helpers/spacing.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/theming.dart';
 
 class SignInSocialButtons extends StatelessWidget {
@@ -65,7 +67,8 @@ class _SocialButton extends StatelessWidget {
       width: double.infinity,
       height: 52.h,
       child: OutlinedButton(
-        onPressed: onTap,
+        // TODO: Remove hardcoded navigation and use onTap callback instead
+        onPressed: () => context.pushNamed(Routes.home), //onTap,
         style: OutlinedButton.styleFrom(
           side: BorderSide(color: ColorsManager.primaryBlack.withValues(alpha: 0.2)),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.r)),
