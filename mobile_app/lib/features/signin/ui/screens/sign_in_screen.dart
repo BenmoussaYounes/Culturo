@@ -51,7 +51,7 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
-        child: SignInFooter(onSignIn: _onSignIn, onCreateAccount: () => context.pushNamed(Routes.onboarding)),
+        child: SignInFooter(onSignIn: _onSignIn, onCreateAccount: () => context.pushNamed(Routes.signUp)),
       ),
     );
   }

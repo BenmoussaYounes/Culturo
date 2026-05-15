@@ -3,6 +3,8 @@ class ApiConstants {
 
   static const String siginIn = "auth/signin";
   static const String signup = "auth/signup";
+  static const String verifyEmail = "auth/verify";
+  static const String resendCode = "auth/resend-code";
 }
 
 enum ApiErrorType {
