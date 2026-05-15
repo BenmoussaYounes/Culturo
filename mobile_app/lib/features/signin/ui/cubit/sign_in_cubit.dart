@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/networking/api_result.dart';
-import '../../data/repositories/auth_repository.dart';
+import '../../data/repositories/sign_in_repository.dart';
 
 part 'sign_in_state.dart';
 
 class SignInCubit extends Cubit<SignInState> {
-  final AuthRepository _authRepository;
+  final SignInRepository _authRepository;
 
   SignInCubit(this._authRepository) : super(SignInInitial());
 

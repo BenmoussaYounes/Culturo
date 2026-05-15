@@ -3,12 +3,12 @@ import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/dio_factory.dart';
 import '../models/sigin_in_response.dart';
 import '../models/sign_in_request_body.dart';
-import '../service/auth_api.dart';
+import '../service/sign_in_api.dart';
 
-class AuthRepository {
-  final AuthApi _api;
+class SignInRepository {
+  final SignInApi _api;
 
-  AuthRepository(this._api);
+  SignInRepository(this._api);
 
   Future<ApiResult<void>> createAccount({required String email, required String password}) async {
     try {

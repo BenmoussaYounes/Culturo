@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:culturo/core/helpers/spacing.dart';
 import 'package:culturo/core/theming/theming.dart';
-import 'package:culturo/features/auth/ui/cubit/sign_in_cubit.dart';
+import '../cubit/sign_in_cubit.dart';
 
 class SignInFooter extends StatelessWidget {
   final VoidCallback onSignIn;

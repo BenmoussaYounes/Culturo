@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../features/auth/data/repositories/auth_repository.dart';
-import '../../features/auth/data/service/auth_api.dart';
-import '../../features/auth/ui/cubit/sign_in_cubit.dart';
+import '../../features/signin/data/repositories/sign_in_repository.dart';
+import '../../features/signin/data/service/sign_in_api.dart';
+import '../../features/signin/ui/cubit/sign_in_cubit.dart';
 import '../../features/categories/ui/cubit/categories_cubit.dart';
 import '../../features/profile/ui/cubit/profile_cubit.dart';
 import '../../features/quiz/ui/cubit/quiz_cubit.dart';
@@ -19,8 +19,8 @@ Future<void> setupGetIt() async {
 
   getIt.registerLazySingleton<OnboardingCubit>(() => OnboardingCubit());
 
-  getIt.registerLazySingleton<AuthApi>(() => AuthApi(dio));
-  getIt.registerLazySingleton<AuthRepository>(() => AuthRepository(getIt()));
+  getIt.registerLazySingleton<SignInApi>(() => SignInApi(dio));
+  getIt.registerLazySingleton<SignInRepository>(() => SignInRepository(getIt()));
   getIt.registerFactory<SignInCubit>(() => SignInCubit(getIt()));
 
   getIt.registerFactory<HomeCubit>(() => HomeCubit());
