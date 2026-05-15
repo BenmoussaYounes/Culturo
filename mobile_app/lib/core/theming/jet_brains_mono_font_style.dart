@@ -9,6 +9,20 @@ class JetBrainsMonoFontStyle {
   static TextStyle font10W700Primary(Color color) =>
       GoogleFonts.jetBrainsMono(fontSize: 10.sp, fontWeight: FontWeight.w700, color: color);
 
+  // Gold
+  static TextStyle font10W700Gold = GoogleFonts.jetBrainsMono(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w700,
+    color: DesertColors.gold,
+  );
+
+  // Ink
+  static TextStyle font12W600Ink = GoogleFonts.jetBrainsMono(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w600,
+    color: DesertColors.ink,
+  );
+
   // white
   static TextStyle font12W400White = GoogleFonts.jetBrainsMono(
     fontSize: 12.sp,

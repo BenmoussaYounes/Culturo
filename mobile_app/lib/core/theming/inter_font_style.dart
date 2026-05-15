@@ -94,6 +94,12 @@ class InterFontStyle {
     color: DesertColors.ink,
   );
 
+  static TextStyle font13W400Ink = GoogleFonts.inter(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w400,
+    color: DesertColors.ink,
+  );
+
   static TextStyle font13W700White = GoogleFonts.inter(
     fontSize: 13.sp,
     fontWeight: FontWeight.w700,
@@ -175,6 +181,13 @@ class InterFontStyle {
   );
 
   // Medium Grey
+  static TextStyle font12W500MediumGrey = GoogleFonts.inter(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.mediumGrey,
+    letterSpacing: 0.8,
+  );
+
   static TextStyle font10W600MediumGrey = GoogleFonts.inter(
     fontSize: 10.sp,
     fontWeight: FontWeight.w600,

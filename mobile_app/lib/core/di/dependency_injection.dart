@@ -5,6 +5,7 @@ import '../../features/auth/data/repositories/auth_repository.dart';
 import '../../features/auth/data/service/auth_api.dart';
 import '../../features/auth/ui/cubit/sign_in_cubit.dart';
 import '../../features/categories/ui/cubit/categories_cubit.dart';
+import '../../features/profile/ui/cubit/profile_cubit.dart';
 import '../../features/ranking/ui/cubit/ranking_cubit.dart';
 import '../../features/home/ui/cubit/home_cubit.dart';
 import '../../features/onboarding/presentation/cubit/onboarding_cubit.dart';
@@ -26,4 +27,6 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<CategoriesCubit>(() => CategoriesCubit());
 
   getIt.registerFactory<RankingCubit>(() => RankingCubit());
+
+  getIt.registerFactory<ProfileCubit>(() => ProfileCubit());
 }
