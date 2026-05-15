@@ -39,6 +39,13 @@ class InstrumentSerifFontStyle {
     color: ColorsManager.ink,
   );
 
+  static TextStyle font14W600InkItalic = GoogleFonts.instrumentSerif(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    color: ColorsManager.ink,
+    fontStyle: FontStyle.italic,
+  );
+
   //
   static TextStyle font18W400GreyGreenItalic = GoogleFonts.instrumentSerif(
     fontSize: 18.sp,
@@ -146,6 +153,20 @@ class InstrumentSerifFontStyle {
     fontSize: 13.sp,
     fontWeight: FontWeight.w400,
     color: ColorsManager.mediumGrey,
+  );
+
+  static TextStyle font96W400ItalicMediumGrey = GoogleFonts.instrumentSerif(
+    fontSize: 96.sp,
+    fontWeight: FontWeight.w400,
+    color: ColorsManager.mediumGrey,
+    fontStyle: FontStyle.italic,
+  );
+
+  static TextStyle font56W400ItalicMediumGrey = GoogleFonts.instrumentSerif(
+    fontSize: 56.sp,
+    fontWeight: FontWeight.w400,
+    color: ColorsManager.mediumGrey,
+    fontStyle: FontStyle.italic,
   );
 
   // Accent

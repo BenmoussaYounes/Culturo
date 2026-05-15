@@ -11,8 +11,9 @@ import '../../domain/models/daily_challenge_model.dart';
 
 class DailyChallengeCard extends StatelessWidget {
   final DailyChallengeModel data;
+  final VoidCallback? onPlay;
 
-  const DailyChallengeCard({super.key, required this.data});
+  const DailyChallengeCard({super.key, required this.data, this.onPlay});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class DailyChallengeCard extends StatelessWidget {
             style: InstrumentSerifFontStyle.font30W500WhiteItalic.copyWith(height: 1.1.h),
           ),
           verticalSpace(14),
-          _CardBottomRow(playsCount: data.playsCountFormatted),
+          _CardBottomRow(playsCount: data.playsCountFormatted, onPlay: onPlay),
         ],
       ),
     );
@@ -76,8 +77,9 @@ class _CardTopRow extends StatelessWidget {
 
 class _CardBottomRow extends StatelessWidget {
   final String playsCount;
+  final VoidCallback? onPlay;
 
-  const _CardBottomRow({required this.playsCount});
+  const _CardBottomRow({required this.playsCount, this.onPlay});
 
   @override
   Widget build(BuildContext context) {
@@ -85,11 +87,14 @@ class _CardBottomRow extends StatelessWidget {
       mainAxisAlignment: .start,
       children: [
         Expanded(
-          child: Container(
-            height: 48.h,
-            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16.r)),
-            alignment: Alignment.center,
-            child: Text('Jouer maintenant', style: InterFontStyle.font15W700PrimaryGreen),
+          child: GestureDetector(
+            onTap: onPlay,
+            child: Container(
+              height: 48.h,
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16.r)),
+              alignment: Alignment.center,
+              child: Text('Jouer maintenant', style: InterFontStyle.font15W700PrimaryGreen),
+            ),
           ),
         ),
         horizontalSpace(16),

@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theming/colors_manager.dart';
 import '../../../core/widgets/app_circular_progress_indicator.dart';
+import '../../quiz/ui/quiz_screen.dart';
 import 'cubit/home_cubit.dart';
 import 'widgets/widgets.dart';
 
@@ -27,7 +28,10 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   HomeHeader(userInfo: state.userInfo),
                   verticalSpace(8),
-                  DailyChallengeCard(data: state.dailyChallenge),
+                  DailyChallengeCard(
+                    data: state.dailyChallenge,
+                    onPlay: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const QuizScreen())),
+                  ),
                   verticalSpace(16),
                   StatsRow(stats: state.stats),
                   verticalSpace(24),
