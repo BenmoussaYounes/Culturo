@@ -6,6 +6,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'colors_manager.dart';
 
 class InstrumentSerifFontStyle {
+  static TextStyle font30W400WhiteItalic = GoogleFonts.instrumentSerif(
+    fontSize: 30.sp,
+    fontWeight: FontWeight.w400,
+    color: const Color(0xFFFFFFFF),
+    fontStyle: FontStyle.italic,
+  );
+
   static TextStyle font18W400White = GoogleFonts.instrumentSerif(
     fontSize: 18.sp,
     fontWeight: FontWeight.w400,
