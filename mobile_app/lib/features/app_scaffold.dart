@@ -12,6 +12,8 @@ import 'profile/ui/profile_screen.dart';
 import 'ranking/ui/cubit/ranking_cubit.dart';
 import 'ranking/ui/ranking_screen.dart';
 import 'home/ui/cubit/home_cubit.dart';
+import 'battle/ui/battle_screen.dart';
+import 'battle/ui/cubit/battle_cubit.dart';
 import 'home/ui/home_screen.dart';
 
 class AppScaffold extends StatefulWidget {
@@ -32,7 +34,7 @@ class _AppScaffoldState extends State<AppScaffold> {
         children: [
           BlocProvider(create: (_) => getIt<HomeCubit>()..loadHome(), child: const HomeScreen()),
           BlocProvider(create: (_) => getIt<CategoriesCubit>()..loadCategories(), child: const CategoriesScreen()),
-          const _PlaceholderTab(label: 'Battle'),
+          BlocProvider(create: (_) => getIt<BattleCubit>()..loadBattle(), child: const BattleScreen()),
           BlocProvider(create: (_) => getIt<RankingCubit>()..loadRanking(), child: const RankingScreen()),
           BlocProvider(create: (_) => getIt<ProfileCubit>()..loadProfile(), child: const ProfileScreen()),
         ],
@@ -82,19 +84,6 @@ class _BottomNav extends StatelessWidget {
           label: 'Moi',
         ),
       ],
-    );
-  }
-}
-
-class _PlaceholderTab extends StatelessWidget {
-  final String label;
-
-  const _PlaceholderTab({required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text(label, style: InterFontStyle.font15W500Ink)),
     );
   }
 }

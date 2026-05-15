@@ -21,7 +21,9 @@
       "Bash(git mv *)",
       "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\" -Recurse -Directory)",
       "Bash(Select-Object FullName)",
-      "Bash(Sort-Object FullName)"
+      "Bash(Sort-Object FullName)",
+      "Bash(Get-ChildItem -Path c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib -Recurse -Directory)",
+      "Bash(Out-String)"
     ]
   },
   "hooks": {

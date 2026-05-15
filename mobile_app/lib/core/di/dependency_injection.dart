@@ -13,6 +13,9 @@ import '../../features/profile/ui/cubit/profile_cubit.dart';
 import '../../features/quiz/ui/cubit/quiz_cubit.dart';
 import '../../features/ranking/ui/cubit/ranking_cubit.dart';
 import '../../features/home/ui/cubit/home_cubit.dart';
+import '../../features/battle/ui/cubit/battle_cubit.dart';
+import '../../features/battle/ui/cubit/battle_game_cubit.dart';
+import '../../features/battle/ui/cubit/battle_matchmaking_cubit.dart';
 import '../../features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import '../networking/dio_factory.dart';
 
@@ -41,4 +44,10 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<ProfileCubit>(() => ProfileCubit());
 
   getIt.registerFactory<QuizCubit>(() => QuizCubit());
+
+  getIt.registerFactory<BattleCubit>(() => BattleCubit());
+
+  getIt.registerFactory<BattleMatchmakingCubit>(() => BattleMatchmakingCubit());
+
+  getIt.registerFactory<BattleGameCubit>(() => BattleGameCubit());
 }
