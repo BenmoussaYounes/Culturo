@@ -13,6 +13,12 @@ class InterFontStyle {
     color: DesertColors.primary,
   );
 
+  static TextStyle font11W600PrimaryGreen = GoogleFonts.inter(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w600,
+    color: DesertColors.primary,
+  );
+
   // Vanilla
   static TextStyle font12W500Vanilla = GoogleFonts.inter(
     fontSize: 12.sp,
@@ -164,6 +170,12 @@ class InterFontStyle {
   static TextStyle font14W600Ink = GoogleFonts.inter(
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
+    color: DesertColors.ink,
+  );
+
+  static TextStyle font14W500Ink = GoogleFonts.inter(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
     color: DesertColors.ink,
   );
 
