@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theming/colors_manager.dart';
 import '../../../core/widgets/app_circular_progress_indicator.dart';
+import '../domain/models/category_domain_model.dart';
 import 'cubit/categories_cubit.dart';
 import 'widgets/widgets.dart';
 
@@ -16,34 +17,37 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: DesertColors.bg,
-      body: BlocBuilder<CategoriesCubit, CategoriesState>(
-        builder: (context, state) => switch (state) {
-          CategoriesInitial() => const AppCircularProgressIndicator(),
-          CategoriesLoaded() => SafeArea(
+      body: BlocBuilder<CategoriesCubit, BaseState<List<CategoryDomainModel>>>(
+        builder: (context, state) => state.maybeWhen(
+          initial: () => const AppCircularProgressIndicator(),
+          loaded: (categories) => SafeArea(
             child: Padding(
               padding: EdgeInsets.only(left: 18.w, top: 12.h, right: 18.w),
               child: Column(
+                crossAxisAlignment: .start,
                 children: [
-                  CategoriesHeader(unlockedCount: state.unlockedCount, totalCount: state.totalCount),
+                  CategoriesHeader(unlockedCount: 5, totalCount: 7),
                   verticalSpace(16),
                   SizedBox(
                     height: 626.h,
                     child: GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         mainAxisSpacing: 10.h,
                         crossAxisSpacing: 10.w,
                         childAspectRatio: 1.15.h,
                       ),
-                      itemBuilder: (context, index) => CategoryCard(category: state.categories[index]),
-                      itemCount: state.categories.length,
+                      itemBuilder: (context, index) => CategoryCard(category: categories[index]),
+                      itemCount: categories.length,
                     ),
                   ),
                 ],
               ),
             ),
           ),
-        },
+          orElse: () => const SizedBox(),
+        ),
       ),
     );
   }

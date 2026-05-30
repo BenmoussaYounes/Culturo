@@ -13,18 +13,17 @@ class AppTextFormField extends StatelessWidget {
     this.hintText,
     this.obscureText = false,
     this.suffixIcon,
+    this.keyboardType,
     super.key,
   });
 
   final TextEditingController controller;
   final ValueChanged<String>? onChanged;
   final FormFieldValidator<String>? validator;
-
   final String? hintText;
-
   final bool obscureText;
-
   final Widget? suffixIcon;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +32,7 @@ class AppTextFormField extends StatelessWidget {
       onChanged: onChanged,
       validator: validator,
       obscureText: obscureText,
+      keyboardType: keyboardType,
       style: InterFontStyle.font15W500Ink,
       decoration: InputDecoration(
         hintText: hintText,

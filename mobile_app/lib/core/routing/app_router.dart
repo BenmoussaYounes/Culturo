@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../features/auth/ui/cubit/sign_in_cubit.dart';
-import '../../features/auth/ui/screens/sign_in_screen.dart';
+import '../../features/signin/ui/cubit/sign_in_cubit.dart';
+import '../../features/signin/ui/screens/sign_in_screen.dart';
+import '../../features/signup/ui/cubit/sign_up_cubit.dart';
+import '../../features/signup/ui/cubit/verify_email_cubit.dart';
+import '../../features/signup/ui/screens/sign_up_screen.dart';
+import '../../features/signup/ui/screens/verify_email_screen.dart';
 import '../../features/app_scaffold.dart';
 import '../../features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
@@ -21,6 +25,20 @@ class AppRouter {
       case Routes.signIn:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(create: (_) => getIt<SignInCubit>(), child: const SignInScreen()),
+        );
+
+      case Routes.signUp:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(create: (_) => getIt<SignUpCubit>(), child: const SignUpScreen()),
+        );
+
+      case Routes.verifyEmail:
+        final email = settings.arguments as String;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => getIt<VerifyEmailCubit>()..init(email),
+            child: VerifyEmailScreen(email: email),
+          ),
         );
 
       case Routes.home:

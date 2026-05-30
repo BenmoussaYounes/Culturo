@@ -1,8 +1,12 @@
 class ApiConstants {
-  static const String baseUrl = "https://culturo-backend.onrender.com/";
+  static const String baseUrl = "https://culturo-backend-g5n9.onrender.com/api/";
 
   static const String siginIn = "auth/signin";
   static const String signup = "auth/signup";
+  static const String verifyEmail = "auth/verify";
+  static const String resendCode = "auth/resend-code";
+
+  static const String category = "category/";
 }
 
 enum ApiErrorType {

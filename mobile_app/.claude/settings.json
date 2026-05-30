@@ -15,23 +15,26 @@
       "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\" -Recurse | Select-Object FullName | ForEach-Object { $_.FullName -replace [regex]::Escape\\(\"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\"\\), \"\" })",
       "Bash(gh pr create --title 'feat\\(profile\\) ✨ add profile screen with stats, heatmap, and category accuracy' --base main --body ' *)",
       "Bash(gh pr create --title 'feat\\(profile\\) ✨ add profile screen with stats, heatmap, and category accuracy' --base development --body ' *)",
-      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\\\\features\\\\ranking\\\\\" -Recurse -File | Select-Object FullName)"
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\\\\features\\\\ranking\\\\\" -Recurse -File | Select-Object FullName)",
+      "Bash(gh pr create --title 'feat\\(quiz\\) ✨ add quiz game with timer, answers, and result screen' --base development --body ' *)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\\\\features\\\\auth\" -Recurse -File)",
+      "Bash(git mv *)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\" -Recurse -Directory)",
+      "Bash(Select-Object FullName)",
+      "Bash(Sort-Object FullName)",
+      "Bash(Get-ChildItem -Path c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib -Recurse -Directory)",
+      "Bash(Out-String)"
     ]
   },
   "hooks": {
-    "Stop": [
+    "PostToolUse": [
       {
-        "matcher": "",
+        "matcher": "Write|Edit|MultiEdit",
         "hooks": [
           {
             "type": "command",
             "command": "dart format ."
-          }
-        ]
-      },
-      {
-        "matcher": "",
-        "hooks": [
+          },
           {
             "type": "command",
             "command": "dart analyze"

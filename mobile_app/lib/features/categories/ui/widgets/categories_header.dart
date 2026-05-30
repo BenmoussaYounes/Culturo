@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/instrument_serif_font_style.dart';
 import '../../../../core/theming/inter_font_style.dart';
-import '../../../../core/theming/jet_brains_mono_font_style.dart';
 
 class CategoriesHeader extends StatelessWidget {
   final int unlockedCount;
@@ -16,14 +15,7 @@ class CategoriesHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: .start,
       children: [
-        Row(
-          mainAxisAlignment: .spaceBetween,
-          crossAxisAlignment: .center,
-          children: [
-            Text('Catégories', style: InstrumentSerifFontStyle.font26W400ItalicInk),
-            Text('$unlockedCount / $totalCount DÉBLOQUÉES', style: JetBrainsMonoFontStyle.font11W500MediumGrey),
-          ],
-        ),
+        Text('Catégories', style: InstrumentSerifFontStyle.font26W400ItalicInk),
         verticalSpace(4),
         Text.rich(
           TextSpan(
