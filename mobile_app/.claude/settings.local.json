@@ -5,7 +5,8 @@
       "mcp__claude_ai_Canva__get-design-content",
       "mcp__claude_ai_Canva__get-design-pages",
       "Bash(flutter analyze *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(Get-ChildItem -Recurse \"c:\\\\Users\\\\youne\\\\Desktop\\\\repos\\\\culturo\\\\mobile_app\\\\lib\\\\features\" -Directory)"
     ]
   }
 }
