@@ -15,6 +15,6 @@ class SignUpCubit extends Cubit<SignUpState> {
     final result = await _repository.signUp(email: email, password: password);
     emit(SignUpCodeSent('test@example.com'));
 
-    //result.when(success: (_) => emit(SignUpCodeSent(email)), failure: (error) => emit(SignUpError(error.message)));
+    result.when(success: (_) => emit(SignUpCodeSent(email)), failure: (error) => emit(SignUpError(error.message)));
   }
 }

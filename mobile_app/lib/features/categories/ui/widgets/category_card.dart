@@ -6,10 +6,11 @@ import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/instrument_serif_font_style.dart';
 import '../../../../core/theming/inter_font_style.dart';
 import '../../../../core/theming/jet_brains_mono_font_style.dart';
-import '../../domain/models/category_model.dart';
+import '../../../../core/widgets/app_cached_network_image.dart';
+import '../../domain/models/category_domain_model.dart';
 
 class CategoryCard extends StatelessWidget {
-  final CategoryModel category;
+  final CategoryDomainModel category;
 
   const CategoryCard({super.key, required this.category});
 
@@ -28,10 +29,14 @@ class CategoryCard extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 8.h),
-            decoration: BoxDecoration(color: category.iconBg, borderRadius: BorderRadius.circular(10.r)),
-            child: Icon(category.icon, color: category.iconColor, size: 20.sp),
+            decoration: BoxDecoration(color: category.theme.bgColor, borderRadius: BorderRadius.circular(10.r)),
+            child: AppCachedNetworkImage(
+              imageUrl: category.iconUrl,
+              width: 24.w,
+              height: 24.h,
+              errorWidget: Icon(Icons.error_outline, size: 24.h),
+            ),
           ),
-
           Column(
             crossAxisAlignment: .start,
             children: [
@@ -41,14 +46,13 @@ class CategoryCard extends StatelessWidget {
                 maxLines: 1,
                 overflow: .ellipsis,
               ),
-              Text(category.subtitle, style: InterFontStyle.font11W500LightGrey, maxLines: 2, overflow: .ellipsis),
+              Text("category.subtitle", style: InterFontStyle.font11W500LightGrey, maxLines: 2, overflow: .ellipsis),
             ],
           ),
-
           Row(
             mainAxisAlignment: .spaceBetween,
             children: [
-              Text('${category.questionCount} Q', style: JetBrainsMonoFontStyle.font11W500MediumGrey),
+              Text('7 Q', style: JetBrainsMonoFontStyle.font11W500MediumGrey),
               if (category.isPremium)
                 Icon(Icons.diamond_outlined, size: 14.sp, color: DesertColors.gold)
               else

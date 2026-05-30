@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/helpers/extentions.dart';
 import '../../../../core/helpers/helpers.dart';
+import '../../../../core/routing/routes.dart';
 import '../cubit/sign_in_cubit.dart';
 
 class SiginInBlocListener extends StatelessWidget {
@@ -17,7 +19,7 @@ class SiginInBlocListener extends StatelessWidget {
           current is ForgotPasswordState ||
           current is CreateAccountState,
       listener: (context, state) => switch (state) {
-        SignInSuccess() => showSuccessSnackbar(context, 'Signed in successfully!'),
+        SignInSuccess() => context.pushNamed(Routes.home),
         SignInError(:final message) => showErrorSnackbar(context, message),
         ForgotPasswordState(:final email) => showSuccessSnackbar(context, 'Password reset link sent to $email'),
         CreateAccountState(:final email) => showSuccessSnackbar(

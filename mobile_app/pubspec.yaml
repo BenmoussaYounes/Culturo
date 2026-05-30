@@ -52,6 +52,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   # Adapts UI dimensions (font sizes, paddings, widths) to any screen size using a reference design size.
   flutter_screenutil: ^5.9.3
+  # Flutter library to load and cache network images. Can also be used with placeholder and error widgets.
+  cached_network_image: ^3.4.1
   # Provides easy access to Google Fonts — load any font by name at runtime.
   google_fonts: ^8.1.0
 
