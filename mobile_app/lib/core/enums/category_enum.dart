@@ -9,7 +9,8 @@ enum CategoryThemeEnum {
   crimson(Color(0xFF8B2A2A), Color(0xFFEDD5D5), "CRIMSON", 6),
   purple(Color(0xFF5E2A8B), Color(0xFFE8D5F0), "PURPLE", 7),
   orange(Color(0xFFB5632A), Color(0xFFF5D9C9), "ORANGE", 8),
-  cyan(Color(0xFF2A8B8B), Color(0xFFD5EDED), "CYAN", 9);
+  cyan(Color(0xFF2A8B8B), Color(0xFFD5EDED), "CYAN", 9),
+  violet(Color(0xFF6A2A8B), Color(0xFFE8D5F5), "VIOLET", 10);
 
   const CategoryThemeEnum(this.primaryColor, this.bgColor, this.name, this.themeIndex);
 
@@ -18,8 +19,8 @@ enum CategoryThemeEnum {
   final String name;
   final int themeIndex;
 
-  static CategoryThemeEnum getThemeFromName(String name) =>
-      CategoryThemeEnum.values.firstWhere((element) => element.name == name);
+  static CategoryThemeEnum getThemeFromName(String themeName) =>
+      CategoryThemeEnum.values.firstWhere((element) => element.name == themeName);
 
   static CategoryThemeEnum getThemeFromIndex(int index) =>
       CategoryThemeEnum.values.firstWhere((element) => element.themeIndex == index);
