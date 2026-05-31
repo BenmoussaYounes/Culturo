@@ -6,19 +6,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helpers/extentions.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/theming.dart';
-import '../cubit/verify_email_cubit.dart';
+import '../cubit/enter_email_otp_cubit.dart';
 import '../widgets/widgets.dart';
 
-class VerifyEmailScreen extends StatefulWidget {
+class EnterEmailOtpScreen extends StatefulWidget {
   final String email;
+  final String password;
 
-  const VerifyEmailScreen({super.key, required this.email});
+  const EnterEmailOtpScreen({super.key, required this.email, required this.password});
 
   @override
-  State<VerifyEmailScreen> createState() => _VerifyEmailScreenState();
+  State<EnterEmailOtpScreen> createState() => _EnterEmailOtpScreenState();
 }
 
-class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
+class _EnterEmailOtpScreenState extends State<EnterEmailOtpScreen> {
   late TextEditingController _otpController;
 
   @override
@@ -43,8 +44,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
               verticalSpace(32),
               OtpInput(controller: _otpController),
               verticalSpace(24),
-              const VerifyEmailInboxPreview(),
-              const VerifyEmailBlocListener(),
+              const EnterEmailOtpBlocListener(),
             ],
           ),
         ),
@@ -53,14 +53,19 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
         child: ValueListenableBuilder(
           valueListenable: _otpController,
-          builder: (context, value, _) => VerifyEmailFooter(isOtpComplete: value.text.length == 6, onVerify: _onVerify),
+          builder: (context, value, _) =>
+              EnterOtpFooter(isOtpComplete: value.text.length == 6, onOtpValidation: _onOtpValidation),
         ),
       ),
     );
   }
 
-  void _onVerify() {
-    context.read<VerifyEmailCubit>().verify(code: _otpController.text);
+  void _onOtpValidation() {
+    context.read<EnterEmailOtpCubit>().signUp(
+      email: widget.email,
+      password: widget.password,
+      code: _otpController.text,
+    );
   }
 
   @override

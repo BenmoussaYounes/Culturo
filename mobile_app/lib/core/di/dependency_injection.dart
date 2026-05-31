@@ -7,9 +7,9 @@ import '../../features/signin/data/repositories/sign_in_repository.dart';
 import '../../features/signin/data/service/sign_in_api.dart';
 import '../../features/signin/ui/cubit/sign_in_cubit.dart';
 import '../../features/signup/data/repositories/sign_up_repository.dart';
-import '../../features/signup/data/services/sign_up_api.dart';
+import '../../features/signup/data/services/sign_up_api_service.dart';
 import '../../features/signup/ui/cubit/sign_up_cubit.dart';
-import '../../features/signup/ui/cubit/verify_email_cubit.dart';
+import '../../features/signup/ui/cubit/enter_email_otp_cubit.dart';
 import '../../features/categories/ui/cubit/categories_cubit.dart';
 import '../../features/profile/ui/cubit/profile_cubit.dart';
 import '../../features/quiz/ui/cubit/quiz_cubit.dart';
@@ -32,10 +32,10 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<SignInRepository>(() => SignInRepository(getIt()));
   getIt.registerFactory<SignInCubit>(() => SignInCubit(getIt()));
 
-  getIt.registerLazySingleton<SignUpApi>(() => SignUpApi(dio));
+  getIt.registerLazySingleton<SignUpApiService>(() => SignUpApiService(dio));
   getIt.registerLazySingleton<SignUpRepository>(() => SignUpRepository(getIt()));
   getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
-  getIt.registerFactory<VerifyEmailCubit>(() => VerifyEmailCubit(getIt()));
+  getIt.registerFactory<EnterEmailOtpCubit>(() => EnterEmailOtpCubit(getIt()));
 
   getIt.registerFactory<HomeCubit>(() => HomeCubit());
 
