@@ -1,10 +1,12 @@
 import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
+import '../../../../core/states/action_state.dart';
 import '../../../../core/theming/theming.dart';
 import '../cubit/sign_up_cubit.dart';
 
@@ -18,29 +20,27 @@ class SignUpFooter extends StatelessWidget {
     return Column(
       mainAxisSize: .min,
       children: [
-        BlocBuilder<SignUpCubit, SignUpState>(
-          builder: (context, state) {
-            final isLoading = state is SignUpLoading;
-            return SizedBox(
+        BlocBuilder<SignUpCubit, ActionState>(
+          builder: (context, state) => state.maybeWhen(
+            processing: () => SizedBox(
+              width: double.infinity,
+              height: 52.h,
+              child: const Center(child: CircularProgressIndicator(strokeWidth: 2)),
+            ),
+            orElse: () => SizedBox(
               width: double.infinity,
               height: 52.h,
               child: ElevatedButton(
-                onPressed: isLoading ? null : onSendCode,
+                onPressed: onSendCode,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: ColorsManager.primaryBlack,
                   disabledBackgroundColor: ColorsManager.primaryBlack.withValues(alpha: 0.6),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
                 ),
-                child: isLoading
-                    ? SizedBox(
-                        width: 20.w,
-                        height: 20.w,
-                        child: const CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-                      )
-                    : Text('Send verification code', style: InterFontStyle.font16W600White),
+                child: Text('Send verification code', style: InterFontStyle.font16W600White),
               ),
-            );
-          },
+            ),
+          ),
         ),
         verticalSpace(12),
         Text.rich(

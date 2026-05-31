@@ -3,11 +3,12 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/networking/api_result.dart';
+import '../../data/models/sign_up_request_body.dart';
 import '../../data/repositories/sign_up_repository.dart';
 
-part 'verify_email_state.dart';
+part 'enter_email_otp_state.dart';
 
-class VerifyEmailCubit extends Cubit<VerifyEmailState> {
+class EnterEmailOtpCubit extends Cubit<EnterEmailOtpState> {
   final SignUpRepository _repository;
   Timer? _resendTimer;
   String _email = '';
@@ -15,43 +16,35 @@ class VerifyEmailCubit extends Cubit<VerifyEmailState> {
 
   static const int _resendCooldown = 42;
 
-  VerifyEmailCubit(this._repository) : super(const VerifyEmailReady(_resendCooldown));
+  EnterEmailOtpCubit(this._repository) : super(const EmailOtpReady(_resendCooldown));
 
   void init(String email) {
     _email = email;
     _startResendTimer();
   }
 
-  Future<void> verify({required String code}) async {
+  Future<void> resendCode() async {
     _resendTimer?.cancel();
-    emit(VerifyEmailLoading());
-    final result = await _repository.verifyEmail(email: _email, code: code);
+    emit(EmailOtpResending());
+    final result = await _repository.resendCode(_email);
     result.when(
-      success: (_) => emit(VerifyEmailSuccess()),
+      success: (_) {
+        emit(EmailOtpResendSuccess());
+        _countdown = _resendCooldown;
+        emit(const EmailOtpReady(_resendCooldown));
+        _startResendTimer();
+      },
       failure: (error) {
-        emit(VerifyEmailError(error.message));
-        if (_countdown > 0) _startResendTimer();
-        emit(VerifyEmailReady(_countdown));
+        emit(EmailOtpResendError(error.message));
+        emit(EmailOtpReady(_countdown));
       },
     );
   }
 
-  Future<void> resendCode() async {
-    _resendTimer?.cancel();
-    emit(VerifyEmailResending());
-    final result = await _repository.resendCode(_email);
-    result.when(
-      success: (_) {
-        emit(VerifyEmailResendSuccess());
-        _countdown = _resendCooldown;
-        emit(const VerifyEmailReady(_resendCooldown));
-        _startResendTimer();
-      },
-      failure: (error) {
-        emit(VerifyEmailResendError(error.message));
-        emit(VerifyEmailReady(_countdown));
-      },
-    );
+  Future<void> signUp({required String email, required String password, required String code}) async {
+    emit(SignUpProcessing());
+    final result = await _repository.signUp(SignUpRequestBody(email: email, password: password, code: code));
+    result.when(success: (_) => emit(SignUpSuccess(email)), failure: (error) => emit(SignUpFailure(error.message)));
   }
 
   void _startResendTimer() {
@@ -62,7 +55,7 @@ class VerifyEmailCubit extends Cubit<VerifyEmailState> {
         return;
       }
       _countdown--;
-      emit(VerifyEmailReady(_countdown));
+      emit(EmailOtpReady(_countdown));
       if (_countdown <= 0) timer.cancel();
     });
   }

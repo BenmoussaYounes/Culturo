@@ -5,9 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/signin/ui/cubit/sign_in_cubit.dart';
 import '../../features/signin/ui/screens/sign_in_screen.dart';
 import '../../features/signup/ui/cubit/sign_up_cubit.dart';
-import '../../features/signup/ui/cubit/verify_email_cubit.dart';
+import '../../features/signup/ui/cubit/enter_email_otp_cubit.dart';
 import '../../features/signup/ui/screens/sign_up_screen.dart';
-import '../../features/signup/ui/screens/verify_email_screen.dart';
+import '../../features/signup/ui/screens/enter_email_otp_screen.dart';
 import '../../features/app_scaffold.dart';
 import '../../features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
@@ -33,11 +33,12 @@ class AppRouter {
         );
 
       case Routes.verifyEmail:
-        final email = settings.arguments as String;
+        final args = settings.arguments as Map<String, String>;
+        final email = args['email'] ?? '';
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (_) => getIt<VerifyEmailCubit>()..init(email),
-            child: VerifyEmailScreen(email: email),
+            create: (_) => getIt<EnterEmailOtpCubit>()..init(email),
+            child: EnterEmailOtpScreen(email: email, password: args['password'] ?? ''),
           ),
         );
 

@@ -3,8 +3,8 @@ class ApiConstants {
 
   static const String siginIn = "auth/signin";
   static const String signup = "auth/signup";
-  static const String verifyEmail = "auth/verify";
-  static const String resendCode = "auth/resend-code";
+  static const String verifyEmail = "auth/signup-otp";
+  static const String signUpOtp = "auth/signup-otp";
 
   static const String category = "category/";
 }
