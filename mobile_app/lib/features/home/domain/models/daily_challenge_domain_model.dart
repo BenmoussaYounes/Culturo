@@ -1,10 +1,10 @@
-class DailyChallengeModel {
+class DailyChallengeDomainModel {
   final String date;
   final String resetCountdown;
   final int questionCount;
   final String playsCountFormatted;
 
-  const DailyChallengeModel({
+  const DailyChallengeDomainModel({
     required this.date,
     required this.resetCountdown,
     required this.questionCount,

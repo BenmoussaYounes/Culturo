@@ -7,10 +7,10 @@ import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/instrument_serif_font_style.dart';
 import '../../../../core/theming/inter_font_style.dart';
 import '../../../../core/theming/jet_brains_mono_font_style.dart';
-import '../../domain/models/daily_challenge_model.dart';
+import '../../domain/models/daily_challenge_domain_model.dart';
 
 class DailyChallengeCard extends StatelessWidget {
-  final DailyChallengeModel data;
+  final DailyChallengeDomainModel data;
   final VoidCallback? onPlay;
 
   const DailyChallengeCard({super.key, required this.data, this.onPlay});

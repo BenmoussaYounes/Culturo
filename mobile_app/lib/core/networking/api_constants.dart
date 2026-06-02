@@ -7,6 +7,7 @@ class ApiConstants {
   static const String signUpOtp = "auth/signup-otp";
 
   static const String category = "category/";
+  static const String usersGetMe = "/users/getme";
 }
 
 enum ApiErrorType {

@@ -18,4 +18,9 @@ extension Navigation on BuildContext {
 
 extension StringExtension on String? {
   bool isNullOrEmpty() => this == null || this == "";
+
+  String getInitial() {
+    if (this == null || this!.isEmpty) throw Exception("Cannot get initial from a null or empty string");
+    return this![0].toUpperCase();
+  }
 }

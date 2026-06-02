@@ -30,12 +30,7 @@ class CategoryCard extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 8.h),
             decoration: BoxDecoration(color: category.theme.bgColor, borderRadius: BorderRadius.circular(10.r)),
-            child: AppCachedNetworkImage(
-              imageUrl: category.iconUrl,
-              width: 24.w,
-              height: 24.h,
-              errorWidget: Icon(Icons.error_outline, size: 24.h),
-            ),
+            child: AppCachedNetworkImage(imageUrl: category.iconUrl, width: 24.w, height: 24.h),
           ),
           Column(
             crossAxisAlignment: .start,
@@ -46,13 +41,13 @@ class CategoryCard extends StatelessWidget {
                 maxLines: 1,
                 overflow: .ellipsis,
               ),
-              Text("category.subtitle", style: InterFontStyle.font11W500LightGrey, maxLines: 2, overflow: .ellipsis),
+              Text(category.subtitle, style: InterFontStyle.font11W500LightGrey, maxLines: 2, overflow: .ellipsis),
             ],
           ),
           Row(
             mainAxisAlignment: .spaceBetween,
             children: [
-              Text('7 Q', style: JetBrainsMonoFontStyle.font11W500MediumGrey),
+              Text('${category.quizCount} Q', style: JetBrainsMonoFontStyle.font11W500MediumGrey),
               if (category.isPremium)
                 Icon(Icons.diamond_outlined, size: 14.sp, color: DesertColors.gold)
               else

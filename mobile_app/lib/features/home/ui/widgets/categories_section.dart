@@ -6,11 +6,11 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/instrument_serif_font_style.dart';
 import '../../../../core/theming/inter_font_style.dart';
 
-import '../../domain/models/category_model.dart';
+import '../../../categories/domain/models/category_domain_model.dart';
 import 'category_item.dart';
 
 class CategoriesSection extends StatelessWidget {
-  final List<CategoryModel> categories;
+  final List<CategoryDomainModel> categories;
 
   const CategoriesSection({super.key, required this.categories});
 
@@ -30,7 +30,7 @@ class CategoriesSection extends StatelessWidget {
         ),
         verticalSpace(4),
         SizedBox(
-          height: 294.h,
+          height: 292.h,
           child: ListView.builder(
             itemBuilder: (context, index) => Padding(
               padding: EdgeInsets.only(bottom: 10.h),
