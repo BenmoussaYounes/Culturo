@@ -5,10 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/inter_font_style.dart';
-import '../../domain/models/category_model.dart';
+import '../../../../core/widgets/app_cached_network_image.dart';
+import '../../../categories/domain/models/category_domain_model.dart';
 
 class CategoryItem extends StatelessWidget {
-  final CategoryModel category;
+  final CategoryDomainModel category;
 
   const CategoryItem({super.key, required this.category});
 
@@ -26,9 +27,9 @@ class CategoryItem extends StatelessWidget {
           Container(
             width: 44.w,
             height: 44.w,
-            decoration: BoxDecoration(color: category.iconBg, borderRadius: BorderRadius.circular(10.r)),
+            decoration: BoxDecoration(color: category.theme.bgColor, borderRadius: BorderRadius.circular(10.r)),
             alignment: Alignment.center,
-            child: Icon(Icons.auto_awesome_outlined, color: category.iconColor, size: 20.sp),
+            child: AppCachedNetworkImage(imageUrl: category.iconUrl, width: 20.sp, height: 20.sp),
           ),
           horizontalSpace(14),
           Expanded(
@@ -37,7 +38,7 @@ class CategoryItem extends StatelessWidget {
               children: [
                 Text(category.name, style: InterFontStyle.font13W600Ink),
                 verticalSpace(2),
-                Text(category.description, style: InterFontStyle.font11W500LightGrey),
+                Text(category.subtitle, style: InterFontStyle.font11W500LightGrey),
               ],
             ),
           ),

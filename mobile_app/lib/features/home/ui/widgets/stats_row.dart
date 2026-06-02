@@ -6,10 +6,10 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/instrument_serif_font_style.dart';
 import '../../../../core/theming/jet_brains_mono_font_style.dart';
-import '../../domain/models/user_stats_model.dart';
+import '../../domain/models/user_stats_domain_model.dart';
 
 class StatsRow extends StatelessWidget {
-  final UserStatsModel stats;
+  final UserStatsDomainModel stats;
 
   const StatsRow({super.key, required this.stats});
 
@@ -17,11 +17,11 @@ class StatsRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        _StatCard(value: '${stats.streakDays}', unit: ' jours', label: 'SÉRIE'),
+        _StatCard(value: '${stats.xp}', label: 'Xp'),
         horizontalSpace(10),
-        _StatCard(value: '${stats.precisionPercent}', unit: ' %', label: 'PRÉCISION'),
+        _StatCard(value: '${stats.level}', label: 'LEVEL'),
         horizontalSpace(10),
-        _StatCard(value: '#${stats.rank}', unit: stats.city, label: 'RANG'),
+        _StatCard(value: '#${stats.rank}', label: 'RANG'),
       ],
     );
   }
@@ -29,10 +29,9 @@ class StatsRow extends StatelessWidget {
 
 class _StatCard extends StatelessWidget {
   final String value;
-  final String unit;
   final String label;
 
-  const _StatCard({required this.value, required this.unit, required this.label});
+  const _StatCard({required this.value, required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -47,14 +46,7 @@ class _StatCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: .start,
         children: [
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(text: value, style: InstrumentSerifFontStyle.font26W500Ink),
-                if (unit.isNotEmpty) TextSpan(text: unit, style: InstrumentSerifFontStyle.font13W400MediumGrey),
-              ],
-            ),
-          ),
+          Text(value, style: InstrumentSerifFontStyle.font26W500Ink),
           verticalSpace(1),
           Text(label, style: JetBrainsMonoFontStyle.font10W500MediumGrey),
         ],

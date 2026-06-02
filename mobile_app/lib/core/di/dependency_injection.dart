@@ -3,6 +3,8 @@ import 'package:get_it/get_it.dart';
 
 import '../../features/categories/data/repositories/categories_repository.dart';
 import '../../features/categories/data/services/categories_api_service.dart';
+import '../../features/home/data/repositories/home_repository.dart';
+import '../../features/home/data/services/home_api_service.dart';
 import '../../features/signin/data/repositories/sign_in_repository.dart';
 import '../../features/signin/data/service/sign_in_api.dart';
 import '../../features/signin/ui/cubit/sign_in_cubit.dart';
@@ -37,7 +39,9 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
   getIt.registerFactory<EnterEmailOtpCubit>(() => EnterEmailOtpCubit(getIt()));
 
-  getIt.registerFactory<HomeCubit>(() => HomeCubit());
+  getIt.registerFactory<HomeApiService>(() => HomeApiService(dio));
+  getIt.registerFactory<HomeRepository>(() => HomeRepository(getIt()));
+  getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt(), getIt()));
 
   getIt.registerFactory<CategoriesApiService>(() => CategoriesApiService(dio));
   getIt.registerFactory<CategoriesRepository>(() => CategoriesRepository(getIt()));

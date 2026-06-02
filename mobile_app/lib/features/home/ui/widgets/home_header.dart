@@ -7,10 +7,10 @@ import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/instrument_serif_font_style.dart';
 import '../../../../core/theming/inter_font_style.dart';
 import '../../../../core/widgets/app_avatar.dart';
-import '../../domain/models/user_info_model.dart';
+import '../../domain/models/user_info_domain_model.dart';
 
 class HomeHeader extends StatelessWidget {
-  final UserInfoModel userInfo;
+  final UserInfoDomainModel userInfo;
 
   const HomeHeader({super.key, required this.userInfo});
 

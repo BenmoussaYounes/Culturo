@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppCachedNetworkImage extends StatelessWidget {
   const AppCachedNetworkImage({
@@ -8,13 +9,14 @@ class AppCachedNetworkImage extends StatelessWidget {
     required this.imageUrl,
     required this.width,
     required this.height,
+    this.color,
     this.errorWidget,
   });
 
   final String imageUrl;
   final double width;
   final double height;
-
+  final Color? color;
   final Widget? errorWidget;
 
   @override
@@ -24,7 +26,15 @@ class AppCachedNetworkImage extends StatelessWidget {
       width: width,
       height: height,
       fit: BoxFit.contain,
-      errorWidget: errorWidget != null ? (context, url, error) => errorWidget! : null,
+      color: color,
+      errorWidget: (context, url, error) {
+        return errorWidget ??
+            SizedBox(
+              width: width,
+              height: height,
+              child: Icon(Icons.error_outline, size: 24.h, color: Colors.red),
+            );
+      },
     );
   }
 }

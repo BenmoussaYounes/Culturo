@@ -1,4 +1,3 @@
-export 'category_model.dart';
-export 'daily_challenge_model.dart';
-export 'user_info_model.dart';
-export 'user_stats_model.dart';
+export 'daily_challenge_domain_model.dart';
+export 'user_info_domain_model.dart';
+export 'user_stats_domain_model.dart';
