@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/helpers/constants.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
 import 'core/theming/colors_manager.dart';
@@ -22,7 +23,7 @@ class CulturoApp extends StatelessWidget {
           scaffoldBackgroundColor: DesertColors.surface,
         ),
         debugShowCheckedModeBanner: true,
-        initialRoute: Routes.onboarding,
+        initialRoute: isUserLoggedIn ? Routes.home : Routes.onboarding,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
