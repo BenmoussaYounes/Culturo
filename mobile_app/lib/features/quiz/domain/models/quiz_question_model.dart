@@ -1,17 +1,8 @@
 class QuizQuestionModel {
-  final String textBefore;
-  final String? textHighlight;
-  final String textAfter;
+  final String quizId;
+  final String questionText;
   final List<String> options;
-  final int correctIndex;
-  final String category;
+  final String? categoryName;
 
-  const QuizQuestionModel({
-    required this.textBefore,
-    this.textHighlight,
-    this.textAfter = '',
-    required this.options,
-    required this.correctIndex,
-    required this.category,
-  });
+  const QuizQuestionModel({required this.quizId, required this.questionText, required this.options, this.categoryName});
 }

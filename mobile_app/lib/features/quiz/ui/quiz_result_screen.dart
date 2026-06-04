@@ -39,17 +39,20 @@ class QuizResultScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              if (result.xpEarned > 0) ...[verticalSpace(12), _XpBadge(xpEarned: result.xpEarned, level: result.level)],
               verticalSpace(20),
               QuizResultShareCard(result: result),
-              verticalSpace(26),
-              Row(
-                mainAxisAlignment: .start,
-                children: [Text('PAR CATÉGORIE', style: JetBrainsMonoFontStyle.font10W500MediumGrey)],
-              ),
-              verticalSpace(12),
-              for (int i = 0; i < result.categoryResults.length; i++) ...[
-                QuizResultCategoryRow(category: result.categoryResults[i]),
-                if (i < result.categoryResults.length - 1) verticalSpace(10),
+              if (result.categoryResults.isNotEmpty) ...[
+                verticalSpace(26),
+                Row(
+                  mainAxisAlignment: .start,
+                  children: [Text('PAR CATÉGORIE', style: JetBrainsMonoFontStyle.font10W500MediumGrey)],
+                ),
+                verticalSpace(12),
+                for (int i = 0; i < result.categoryResults.length; i++) ...[
+                  QuizResultCategoryRow(category: result.categoryResults[i]),
+                  if (i < result.categoryResults.length - 1) verticalSpace(10),
+                ],
               ],
             ],
           ),
@@ -58,7 +61,7 @@ class QuizResultScreen extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: .min,
           children: [
             _WhatsAppButton(),
             verticalSpace(12),
@@ -110,6 +113,36 @@ class _ScoreDisplay extends StatelessWidget {
         children: [
           TextSpan(text: '$score', style: InstrumentSerifFontStyle.font96W400ItalicMediumGrey),
           TextSpan(text: '/$total', style: InstrumentSerifFontStyle.font56W400ItalicMediumGrey),
+        ],
+      ),
+    );
+  }
+}
+
+class _XpBadge extends StatelessWidget {
+  final int xpEarned;
+  final int level;
+
+  const _XpBadge({required this.xpEarned, required this.level});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+      decoration: BoxDecoration(
+        color: DesertColors.primary.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: DesertColors.primary.withValues(alpha: 0.3)),
+      ),
+      child: Row(
+        mainAxisSize: .min,
+        children: [
+          Icon(Icons.bolt_rounded, size: 16.sp, color: DesertColors.primary),
+          SizedBox(width: 4.w),
+          Text(
+            '+$xpEarned XP  ·  Niveau $level',
+            style: InterFontStyle.font13W400Ink.copyWith(color: DesertColors.primary),
+          ),
         ],
       ),
     );

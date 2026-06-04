@@ -25,14 +25,14 @@ class AppCachedNetworkImage extends StatelessWidget {
       imageUrl: imageUrl,
       width: width,
       height: height,
-      fit: BoxFit.contain,
+      fit: BoxFit.cover,
       color: color,
       errorWidget: (context, url, error) {
         return errorWidget ??
             SizedBox(
               width: width,
               height: height,
-              child: Icon(Icons.error_outline, size: 24.h, color: Colors.red),
+              child: Icon(Icons.error_outline_outlined, size: 24.h, color: Colors.red),
             );
       },
     );

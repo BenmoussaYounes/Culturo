@@ -33,9 +33,15 @@ class _QuizContent extends StatelessWidget {
     return Scaffold(
       backgroundColor: DesertColors.bg,
       body: BlocBuilder<QuizCubit, QuizState>(
+        buildWhen: (_, curr) => curr is! QuizSubmitError,
         builder: (context, state) => switch (state) {
           QuizInitial() => const AppCircularProgressIndicator(),
+          QuizLoadError(:final message) => _QuizErrorView(
+            message: message,
+            onRetry: () => context.read<QuizCubit>().loadQuiz(),
+          ),
           QuizCompleted() => const AppCircularProgressIndicator(),
+          QuizSubmitError() => const AppCircularProgressIndicator(),
           QuizInProgress() => SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 16.h),
@@ -47,7 +53,11 @@ class _QuizContent extends StatelessWidget {
                   Row(
                     mainAxisAlignment: .spaceBetween,
                     children: [
-                      _CategoryTag(label: '${state.currentQuestion.category} · facile'),
+                      _CategoryTag(
+                        label: state.currentQuestion.categoryName != null
+                            ? '${state.currentQuestion.categoryName} · ${state.difficultyLabel}'
+                            : state.difficultyLabel,
+                      ),
                       _TimerCircle(secondsLeft: state.timerSecondsLeft),
                     ],
                   ),
@@ -57,7 +67,7 @@ class _QuizContent extends StatelessWidget {
                     style: JetBrainsMonoFontStyle.font10W500MediumGrey.copyWith(letterSpacing: 1.5),
                   ),
                   verticalSpace(6),
-                  _QuestionText(question: state.currentQuestion),
+                  _QuestionText(questionText: state.currentQuestion.questionText),
                   verticalSpace(24),
                   for (int i = 0; i < state.currentQuestion.options.length; i++) ...[
                     QuizAnswerOption(
@@ -65,7 +75,7 @@ class _QuizContent extends StatelessWidget {
                       text: state.currentQuestion.options[i],
                       selectedOptionIndex: state.selectedOptionIndex,
                       validated: state.validated,
-                      correctIndex: state.currentQuestion.correctIndex,
+                      correctIndex: state.correctAnswerIndex,
                       onTap: () => context.read<QuizCubit>().selectOption(i),
                     ),
                     if (i < state.currentQuestion.options.length - 1) verticalSpace(10),
@@ -84,32 +94,13 @@ class _QuizContent extends StatelessWidget {
 }
 
 class _QuestionText extends StatelessWidget {
-  final dynamic question;
+  final String questionText;
 
-  const _QuestionText({required this.question});
+  const _QuestionText({required this.questionText});
 
   @override
   Widget build(BuildContext context) {
-    final highlight = question.textHighlight as String?;
-    if (highlight == null) {
-      return Text(
-        question.textBefore as String,
-        style: InstrumentSerifFontStyle.font26W400ItalicInk.copyWith(height: 1.25),
-      );
-    }
-    return Text.rich(
-      TextSpan(
-        style: InstrumentSerifFontStyle.font26W400ItalicInk.copyWith(height: 1.25),
-        children: [
-          TextSpan(text: question.textBefore as String),
-          TextSpan(
-            text: highlight,
-            style: InstrumentSerifFontStyle.font26W400ItalicInk.copyWith(height: 1.25, color: DesertColors.accent),
-          ),
-          TextSpan(text: question.textAfter as String),
-        ],
-      ),
-    );
+    return Text(questionText, style: InstrumentSerifFontStyle.font26W400ItalicInk.copyWith(height: 1.25));
   }
 }
 
@@ -122,7 +113,7 @@ class _CategoryTag extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      decoration: BoxDecoration(color: Color(0xFFd9e7de), borderRadius: BorderRadius.circular(16.r)),
+      decoration: BoxDecoration(color: const Color(0xFFd9e7de), borderRadius: BorderRadius.circular(16.r)),
       child: Text(label, style: InterFontStyle.font11W600PrimaryGreen),
     );
   }
@@ -174,13 +165,19 @@ class _ActionButton extends StatelessWidget {
         width: double.infinity,
         height: 52.h,
         child: ElevatedButton(
-          onPressed: state.selectedOptionIndex != null ? cubit.validateAnswer : null,
+          onPressed: (!state.isSubmitting && state.selectedOptionIndex != null) ? cubit.validateAnswer : null,
           style: ElevatedButton.styleFrom(
             backgroundColor: DesertColors.ink,
             disabledBackgroundColor: ColorsManager.mediumGrey.withValues(alpha: 0.3),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
           ),
-          child: Text('Valider la réponse', style: InterFontStyle.font16W600White),
+          child: state.isSubmitting
+              ? SizedBox(
+                  width: 20.w,
+                  height: 20.w,
+                  child: const CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
+                )
+              : Text('Valider la réponse', style: InterFontStyle.font16W600White),
         ),
       );
     }
@@ -189,14 +186,55 @@ class _ActionButton extends StatelessWidget {
       width: double.infinity,
       height: 52.h,
       child: ElevatedButton(
-        onPressed: cubit.nextQuestion,
+        onPressed: state.isSubmitting ? null : cubit.nextQuestion,
         style: ElevatedButton.styleFrom(
           backgroundColor: DesertColors.primary,
+          disabledBackgroundColor: ColorsManager.mediumGrey.withValues(alpha: 0.3),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
         ),
-        child: Text(
-          state.isLastQuestion ? 'Voir les résultats →' : 'Question suivante →',
-          style: InterFontStyle.font16W600White,
+        child: state.isSubmitting
+            ? SizedBox(
+                width: 20.w,
+                height: 20.w,
+                child: const CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
+              )
+            : Text(
+                state.isLastQuestion ? 'Voir les résultats →' : 'Question suivante →',
+                style: InterFontStyle.font16W600White,
+              ),
+      ),
+    );
+  }
+}
+
+class _QuizErrorView extends StatelessWidget {
+  final String message;
+  final VoidCallback onRetry;
+
+  const _QuizErrorView({required this.message, required this.onRetry});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: DesertColors.bg,
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 32.w),
+          child: Column(
+            mainAxisAlignment: .center,
+            children: [
+              Text(message, style: InterFontStyle.font14W500Ink, textAlign: .center),
+              verticalSpace(20),
+              ElevatedButton(
+                onPressed: onRetry,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: DesertColors.ink,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+                ),
+                child: Text('Réessayer', style: InterFontStyle.font16W600White),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -8,6 +8,10 @@ class ApiConstants {
 
   static const String category = "category/";
   static const String usersGetMe = "/users/getme";
+
+  static const String gameSessionStart = "game/session/start";
+  static const String gameSessionAnswer = "game/session/answer";
+  static const String gameSessionComplete = "game/session/complete";
 }
 
 enum ApiErrorType {
