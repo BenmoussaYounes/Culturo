@@ -12,6 +12,8 @@ class ApiConstants {
   static const String gameSessionStart = "game/session/start";
   static const String gameSessionAnswer = "game/session/answer";
   static const String gameSessionComplete = "game/session/complete";
+
+  static const String leaderboard = "progression/leaderboard";
 }
 
 enum ApiErrorType {

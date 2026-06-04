@@ -43,17 +43,9 @@ class TopEntryCard extends StatelessWidget {
                       color: ColorsManager.vanilla.withValues(alpha: 0.6),
                     ),
                   ),
-                  Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(text: entry.username, style: InstrumentSerifFontStyle.font24W400ItalicVanilla),
-                        WidgetSpan(child: horizontalSpace(6)),
-                        TextSpan(text: entry.countryCode, style: InterFontStyle.font12W500Vanilla),
-                      ],
-                    ),
-                  ),
+                  Text(entry.username, style: InstrumentSerifFontStyle.font24W400ItalicVanilla),
                   Text(
-                    '${entry.ptsFormatted} pts cette saison',
+                    'Niveau ${entry.level} · ${entry.ptsFormatted} XP',
                     style: InterFontStyle.font12W500Vanilla.copyWith(
                       color: ColorsManager.vanilla.withValues(alpha: 0.6),
                     ),
@@ -62,7 +54,6 @@ class TopEntryCard extends StatelessWidget {
               ),
             ],
           ),
-
           Text(
             '★',
             style: TextStyle(color: DesertColors.gold, fontSize: 32.sp, fontStyle: FontStyle.italic),
