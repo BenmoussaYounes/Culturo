@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theming/theming.dart';
+import 'cubit/onboarding_cubit.dart';
 import 'widgets/widgets.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -47,7 +49,17 @@ class OnboardingScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
-        child: ChooseYourCountryBottomButton(),
+        child: ElevatedButton(
+          onPressed: () => context.read<OnboardingCubit>().navigateToSignUpPage(),
+          style: ElevatedButton.styleFrom(
+            minimumSize: Size(double.infinity, 48.h),
+            backgroundColor: ColorsManager.primaryBlack,
+            foregroundColor: Colors.white,
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+          ),
+          child: Text('Get Started →', style: InterFontStyle.font16W600White),
+        ),
       ),
     );
   }

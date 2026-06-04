@@ -4,6 +4,12 @@ sealed class RankingState {}
 
 final class RankingInitial extends RankingState {}
 
+final class RankingError extends RankingState {
+  final String message;
+
+  RankingError(this.message);
+}
+
 final class RankingLoaded extends RankingState {
   final String weekLabel;
   final String scopePrefix;

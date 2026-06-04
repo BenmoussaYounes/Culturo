@@ -6,7 +6,6 @@ import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/instrument_serif_font_style.dart';
 import '../../../../core/theming/inter_font_style.dart';
-import '../../../../core/theming/jet_brains_mono_font_style.dart';
 import '../../domain/models/ranking_entry_model.dart';
 import '../../../../core/widgets/app_avatar.dart';
 
@@ -38,16 +37,8 @@ class RankingRow extends StatelessWidget {
           Column(
             crossAxisAlignment: .start,
             children: [
-              Row(
-                children: [
-                  Text(entry.username, style: InterFontStyle.font14W600Ink, overflow: .ellipsis),
-                  if (entry.isVerified) ...[
-                    horizontalSpace(4),
-                    Icon(Icons.diamond, size: 10.sp, color: DesertColors.primary),
-                  ],
-                ],
-              ),
-              Text(entry.country, style: InterFontStyle.font11W500LightGrey),
+              Text(entry.username, style: InterFontStyle.font14W600Ink, overflow: .ellipsis),
+              Text('Niv. ${entry.level}', style: InterFontStyle.font11W500LightGrey),
             ],
           ),
           Spacer(),
@@ -55,7 +46,7 @@ class RankingRow extends StatelessWidget {
             crossAxisAlignment: .end,
             children: [
               Text(entry.scoreFormatted, style: InstrumentSerifFontStyle.font16W400Ink),
-              Text(entry.deltaFormatted, style: JetBrainsMonoFontStyle.font11W600(entry.deltaColor)),
+              Text('XP', style: InterFontStyle.font11W500LightGrey),
             ],
           ),
         ],

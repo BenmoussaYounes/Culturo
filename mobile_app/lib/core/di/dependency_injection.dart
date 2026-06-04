@@ -17,6 +17,8 @@ import '../../features/profile/ui/cubit/profile_cubit.dart';
 import '../../features/quiz/data/repositories/quiz_repository.dart';
 import '../../features/quiz/data/services/quiz_api_service.dart';
 import '../../features/quiz/ui/cubit/quiz_cubit.dart';
+import '../../features/ranking/data/repositories/ranking_repository.dart';
+import '../../features/ranking/data/services/ranking_api_service.dart';
 import '../../features/ranking/ui/cubit/ranking_cubit.dart';
 import '../../features/home/ui/cubit/home_cubit.dart';
 import '../../features/battle/ui/cubit/battle_cubit.dart';
@@ -49,7 +51,9 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<CategoriesRepository>(() => CategoriesRepository(getIt()));
   getIt.registerFactory<CategoriesCubit>(() => CategoriesCubit(getIt()));
 
-  getIt.registerFactory<RankingCubit>(() => RankingCubit());
+  getIt.registerFactory<RankingApiService>(() => RankingApiService(dio));
+  getIt.registerFactory<RankingRepository>(() => RankingRepository(getIt()));
+  getIt.registerFactory<RankingCubit>(() => RankingCubit(getIt()));
 
   getIt.registerFactory<ProfileCubit>(() => ProfileCubit());
 
