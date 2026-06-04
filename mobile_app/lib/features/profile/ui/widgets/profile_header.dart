@@ -1,11 +1,9 @@
-import 'package:culturo/core/theming/instrument_serif_font_style.dart';
-import 'package:culturo/core/theming/jet_brains_mono_font_style.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/instrument_serif_font_style.dart';
 import '../../../../core/theming/inter_font_style.dart';
 import '../../domain/models/profile_model.dart';
 
@@ -29,40 +27,14 @@ class ProfileHeader extends StatelessWidget {
           child: Column(
             crossAxisAlignment: .start,
             children: [
-              Row(
-                children: [
-                  Text(profile.name, style: InstrumentSerifFontStyle.font22W400Ink),
-                  if (profile.isPro) ...[horizontalSpace(6), _ProBadge()],
-                ],
-              ),
-
-              Text(profile.handle, style: InterFontStyle.font12W500MediumGrey),
-              Text(profile.subtitleLabel, style: InterFontStyle.font12W500MediumGrey),
+              Text(profile.username, style: InstrumentSerifFontStyle.font22W400Ink),
+              Text(profile.email, style: InterFontStyle.font12W500MediumGrey),
+              if (profile.memberSinceLabel.isNotEmpty)
+                Text(profile.memberSinceLabel, style: InterFontStyle.font12W500MediumGrey),
             ],
           ),
         ),
       ],
-    );
-  }
-}
-
-class _ProBadge extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
-      decoration: BoxDecoration(
-        color: DesertColors.gold.withValues(alpha: 0.12),
-        borderRadius: BorderRadius.circular(8.r),
-      ),
-      child: Row(
-        mainAxisSize: .min,
-        children: [
-          Icon(Icons.diamond, size: 10.sp, color: DesertColors.gold),
-          horizontalSpace(3),
-          Text('PRO', style: JetBrainsMonoFontStyle.font10W700Gold),
-        ],
-      ),
     );
   }
 }
