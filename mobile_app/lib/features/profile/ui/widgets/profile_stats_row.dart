@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/instrument_serif_font_style.dart';
 import '../../../../core/theming/inter_font_style.dart';
@@ -15,26 +14,35 @@ class ProfileStatsRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final xpFormatted = _formatXp(profile.xp);
+
     return Row(
       mainAxisAlignment: .spaceBetween,
       children: [
+        _StatCard(label: 'NIVEAU', value: '${profile.level}', sublabel: 'actuel'),
+        _StatCard(label: 'XP TOTAL', value: xpFormatted, sublabel: 'points'),
         _StatCard(
-          label: 'SÉRIE\nACTUELLE',
-          value: '${profile.streakDays}',
-          sublabelWidget: Row(
-            children: [
-              Text('jours', style: InterFontStyle.font11W500LightGrey),
-              horizontalSpace(4),
-              Icon(Icons.whatshot, size: 14, color: DesertColors.accent),
-            ],
+          label: 'BATTLES',
+          value: profile.isBattleUnlocked ? 'Actif' : 'Bloqué',
+          sublabelWidget: Icon(
+            profile.isBattleUnlocked ? Icons.lock_open_rounded : Icons.lock_rounded,
+            size: 14,
+            color: profile.isBattleUnlocked ? SemanticColors.success : ColorsManager.lightGrey,
           ),
         ),
-
-        _StatCard(label: 'PRÉCISION', value: '${profile.precisionPercent}', sublabel: profile.precisionSublabel),
-
-        _StatCard(label: 'BATTLES\nN/L', value: profile.battlesLabel, sublabel: '${profile.battleWinRatePercent}%'),
       ],
     );
+  }
+
+  String _formatXp(int xp) {
+    if (xp < 1000) return '$xp';
+    final s = xp.toString();
+    final buf = StringBuffer();
+    for (int i = 0; i < s.length; i++) {
+      if (i > 0 && (s.length - i) % 3 == 0) buf.write(' ');
+      buf.write(s[i]);
+    }
+    return buf.toString();
   }
 }
 
@@ -42,7 +50,6 @@ class _StatCard extends StatelessWidget {
   final String label;
   final String value;
   final String? sublabel;
-
   final Widget? sublabelWidget;
 
   const _StatCard({required this.label, required this.value, this.sublabel, this.sublabelWidget});
@@ -64,7 +71,10 @@ class _StatCard extends StatelessWidget {
         children: [
           Text(label, style: InterFontStyle.font10W600MediumGrey, maxLines: 2),
           Text(value, style: InstrumentSerifFontStyle.font22W400Ink),
-          if (sublabelWidget != null) sublabelWidget! else Text(sublabel!, style: InterFontStyle.font11W500LightGrey),
+          if (sublabelWidget != null)
+            sublabelWidget!
+          else
+            Text(sublabel ?? '', style: InterFontStyle.font11W500LightGrey),
         ],
       ),
     );

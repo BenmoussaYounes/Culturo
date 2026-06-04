@@ -30,7 +30,12 @@ class UserProfileDomainModel {
         streakCount: response.userLevel.level,
         avatarBgColor: avatarBgColor,
       ),
-      userStats: UserStatsDomainModel(xp: response.userLevel.xp, level: response.userLevel.level, rank: 0),
+      userStats: UserStatsDomainModel(
+        xp: response.userLevel.xp,
+        level: response.userLevel.level,
+        rank: 0,
+        isBattleUnlocked: response.userLevel.isBattleUnlocked,
+      ),
       dailyChallenge: DailyChallengeDomainModel(
         date: "2023-09-15",
         resetCountdown: "12:34:56",

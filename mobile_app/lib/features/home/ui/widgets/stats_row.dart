@@ -21,7 +21,21 @@ class StatsRow extends StatelessWidget {
         horizontalSpace(10),
         _StatCard(value: '${stats.level}', label: 'LEVEL'),
         horizontalSpace(10),
-        _StatCard(value: '#${stats.rank}', label: 'RANG'),
+        _StatCard(
+          value: stats.isBattleUnlocked ? 'Actif' : 'Bloqué',
+          label: 'BATTLES',
+          valueWidget: Row(
+            children: [
+              Icon(
+                stats.isBattleUnlocked ? Icons.lock_open_rounded : Icons.lock_rounded,
+                size: 20.sp,
+                color: stats.isBattleUnlocked ? SemanticColors.success : ColorsManager.lightGrey,
+              ),
+              horizontalSpace(6),
+              Text(stats.isBattleUnlocked ? 'Actif' : 'Bloqué', style: InstrumentSerifFontStyle.font22W400Ink),
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -30,12 +44,14 @@ class StatsRow extends StatelessWidget {
 class _StatCard extends StatelessWidget {
   final String value;
   final String label;
+  final Widget? valueWidget;
 
-  const _StatCard({required this.value, required this.label});
+  const _StatCard({required this.value, required this.label, this.valueWidget});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 76.h,
       width: 106.w,
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
       decoration: BoxDecoration(
@@ -46,7 +62,7 @@ class _StatCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: .start,
         children: [
-          Text(value, style: InstrumentSerifFontStyle.font26W500Ink),
+          valueWidget ?? Text(value, style: InstrumentSerifFontStyle.font26W500Ink),
           verticalSpace(1),
           Text(label, style: JetBrainsMonoFontStyle.font10W500MediumGrey),
         ],

@@ -1,48 +1,58 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../domain/models/category_accuracy_model.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../data/repositories/profile_repository.dart';
 import '../../domain/models/profile_model.dart';
+import '../../domain/models/user_profile_model.dart';
 
 part 'profile_state.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
-  ProfileCubit() : super(ProfileInitial());
+  final ProfileRepository _repository;
 
-  void loadProfile() {
-    emit(
-      ProfileLoaded(
-        profile: ProfileModel(
-          name: 'Amine B.',
-          handle: '@amine.dz',
-          initial: 'A',
-          avatarBgColor: const Color(0xFF2D6A4F),
-          isPro: true,
-          subtitleLabel: 'Alger (16) · membre depuis fév. 2026',
-          streakDays: 12,
-          precisionPercent: 78,
-          precisionSublabel: '% 1 240 Q',
-          battlesLabel: '38/22',
-          battleWinRatePercent: 63,
-          activityGrid: const [
-            [2, 4, 1, 3, 0],
-            [1, 0, 3, 4, 2],
-            [3, 2, 4, 1, 3],
-            [0, 3, 2, 4, 1],
-            [4, 2, 3, 1, 4],
-            [4, 2, 3, 1, 4],
-          ],
-          categoryAccuracies: const [
-            CategoryAccuracyModel(name: 'Histoire', percent: 86, barColor: SemanticColors.success),
-            CategoryAccuracyModel(name: 'Darja', percent: 74, barColor: SemanticColors.success),
-            CategoryAccuracyModel(name: 'Géographie', percent: 91, barColor: SemanticColors.success),
-            CategoryAccuracyModel(name: 'Football', percent: 52, barColor: SemanticColors.danger),
-            CategoryAccuracyModel(name: 'Musique', percent: 68, barColor: SemanticColors.success),
-          ],
-        ),
-      ),
+  ProfileCubit(this._repository) : super(ProfileInitial());
+
+  Future<void> loadProfile() async {
+    emit(ProfileInitial());
+
+    final result = await _repository.getProfile();
+
+    result.when(
+      success: (UserProfileModel raw) => emit(ProfileLoaded(profile: _toDisplayModel(raw))),
+      failure: (error) => emit(ProfileError(error.message)),
     );
+  }
+
+  ProfileModel _toDisplayModel(UserProfileModel raw) {
+    final initial = raw.username.isNotEmpty ? raw.username[0].toUpperCase() : '?';
+
+    return ProfileModel(
+      username: raw.username,
+      email: raw.email,
+      initial: initial,
+      avatarBgColor: _parseColor(raw.color),
+      memberSinceLabel: _formatMemberSince(raw.createdAt),
+      xp: raw.xp,
+      level: raw.level,
+      isBattleUnlocked: raw.isBattleUnlocked,
+    );
+  }
+
+  String _formatMemberSince(String createdAt) {
+    final dt = DateTime.tryParse(createdAt);
+    if (dt == null) return '';
+    const months = ['janv.', 'fév.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+    return 'membre depuis ${months[dt.month - 1]} ${dt.year}';
+  }
+
+  Color _parseColor(String hex) {
+    try {
+      final cleaned = hex.replaceAll('#', '');
+      final padded = cleaned.padLeft(6, '0');
+      return Color(int.parse('FF$padded', radix: 16));
+    } catch (_) {
+      return const Color(0xFF2D6A4F);
+    }
   }
 }
