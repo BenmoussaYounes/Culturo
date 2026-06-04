@@ -33,7 +33,7 @@ class CategoriesSection extends StatelessWidget {
           height: 292.h,
           child: ListView.builder(
             itemBuilder: (context, index) => Padding(
-              padding: EdgeInsets.only(bottom: 10.h),
+              padding: EdgeInsets.only(bottom: 6.h),
               child: CategoryItem(category: categories[index]),
             ),
             itemCount: categories.length,

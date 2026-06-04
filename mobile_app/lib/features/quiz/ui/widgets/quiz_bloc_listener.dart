@@ -18,6 +18,7 @@ class QuizBlocListener extends StatelessWidget {
           context,
           MaterialPageRoute(builder: (_) => QuizResultScreen(result: state)),
         ),
+        QuizSubmitError(:final message) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message))),
         _ => null,
       },
       child: child,

@@ -10,7 +10,7 @@ class QuizAnswerOption extends StatelessWidget {
   final String text;
   final int? selectedOptionIndex;
   final bool validated;
-  final int correctIndex;
+  final int? correctIndex;
   final VoidCallback onTap;
 
   const QuizAnswerOption({
@@ -26,7 +26,7 @@ class QuizAnswerOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isSelected = selectedOptionIndex == index;
-    final isCorrect = index == correctIndex;
+    final isCorrect = correctIndex != null && index == correctIndex;
 
     final (cardColor, borderColor, labelBg, labelTextColor, textColor, trailing) = _resolveStyle(
       isSelected: isSelected,

@@ -30,7 +30,7 @@ class CategoryCard extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 8.h),
             decoration: BoxDecoration(color: category.theme.bgColor, borderRadius: BorderRadius.circular(10.r)),
-            child: AppCachedNetworkImage(imageUrl: category.iconUrl, width: 24.w, height: 24.h),
+            child: AppCachedNetworkImage(imageUrl: category.iconUrl, width: 48.w, height: 48.h),
           ),
           Column(
             crossAxisAlignment: .start,

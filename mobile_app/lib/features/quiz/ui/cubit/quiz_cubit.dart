@@ -2,145 +2,106 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/networking/api_result.dart';
+import '../../data/repositories/quiz_repository.dart';
+import '../../domain/models/answer_result_model.dart';
+import '../../domain/models/game_session_model.dart';
 import '../../domain/models/quiz_category_result.dart';
 import '../../domain/models/quiz_question_model.dart';
+import '../../domain/models/session_result_model.dart';
 
 part 'quiz_state.dart';
 
 class QuizCubit extends Cubit<QuizState> {
-  QuizCubit() : super(QuizInitial());
+  final QuizRepository _repository;
+
+  QuizCubit(this._repository) : super(QuizInitial());
 
   Timer? _ticker;
   static const int _timePerQuestion = 20;
 
-  static const _questions = <QuizQuestionModel>[
-    QuizQuestionModel(
-      textBefore: 'Quelle est la date de ',
-      textHighlight: "l'indépendance de l'Algérie",
-      textAfter: ' ?',
-      options: ['1 novembre 1954', '5 juillet 1962', '19 mars 1962', '1 novembre 1962'],
-      correctIndex: 1,
-      category: 'Histoire',
-    ),
-    QuizQuestionModel(
-      textBefore: 'Quelle ville est surnommée ',
-      textHighlight: '« la cité des ponts suspendus »',
-      textAfter: ' ?',
-      options: ['Tlemcen', 'Constantine', 'Alger', 'Oran'],
-      correctIndex: 1,
-      category: 'Histoire',
-    ),
-    QuizQuestionModel(
-      textBefore: 'Quel est le premier président de ',
-      textHighlight: "l'Algérie indépendante",
-      textAfter: ' ?',
-      options: ['Houari Boumédiène', 'Ahmed Ben Bella', 'Chadli Bendjedid', 'Mohamed Boudiaf'],
-      correctIndex: 1,
-      category: 'Histoire',
-    ),
-    QuizQuestionModel(
-      textBefore: 'Comment dit-on ',
-      textHighlight: '« merci beaucoup »',
-      textAfter: ' en darja algérienne ?',
-      options: ['Barak Allah fik', 'Chokran jazilan', 'Yizhak lik', 'Saħħa'],
-      correctIndex: 0,
-      category: 'Darja',
-    ),
-    QuizQuestionModel(
-      textBefore: 'Que signifie ',
-      textHighlight: '« mliħ bezzaf »',
-      textAfter: ' en darja ?',
-      options: ['Très fatigué', 'Très bien', 'Beaucoup de monde', 'Trop tard'],
-      correctIndex: 1,
-      category: 'Darja',
-    ),
-    QuizQuestionModel(
-      textBefore: 'Comment dit-on ',
-      textHighlight: '« tu exagères »',
-      textAfter: ' en darja ?',
-      options: ['Nta zaʿam', 'Nta khouya', 'Nta bezzaf', 'Nta weld bladi'],
-      correctIndex: 2,
-      category: 'Darja',
-    ),
-    QuizQuestionModel(
-      textBefore: 'Quelle est la plus grande ',
-      textHighlight: 'wilaya d\'Algérie',
-      textAfter: ' en superficie ?',
-      options: ['Adrar', 'Tamanrasset', 'Illizi', 'Tindouf'],
-      correctIndex: 1,
-      category: 'Géographie',
-    ),
-    QuizQuestionModel(
-      textBefore: 'Quel fleuve traverse ',
-      textHighlight: 'Constantine',
-      textAfter: ' ?',
-      options: ['La Soummam', 'Le Chéliff', 'Le Rhumel', 'La Seybouse'],
-      correctIndex: 2,
-      category: 'Géographie',
-    ),
-    QuizQuestionModel(
-      textBefore: 'Combien de fois l\'Algérie a-t-elle remporté ',
-      textHighlight: 'la CAN',
-      textAfter: ' ?',
-      options: ['1 fois', '2 fois', '3 fois', '4 fois'],
-      correctIndex: 1,
-      category: 'Football',
-    ),
-    QuizQuestionModel(
-      textBefore: 'Dans quel club ',
-      textHighlight: 'Riyad Mahrez',
-      textAfter: ' a-t-il été révélé au grand public ?',
-      options: ['Arsenal', 'Leicester City', 'Manchester City', 'Nice'],
-      correctIndex: 1,
-      category: 'Football',
-    ),
-  ];
+  Future<void> loadQuiz({String countrySelection = 'all', String difficulty = 'Easy'}) async {
+    emit(QuizInitial());
 
-  void loadQuiz() {
-    emit(
-      QuizInProgress(
-        questions: _questions,
-        currentIndex: 0,
-        timerSecondsLeft: _timePerQuestion,
-        selectedOptionIndex: null,
-        validated: false,
-        answerRecord: List.filled(_questions.length, null),
-        totalElapsedSeconds: 0,
-      ),
+    final result = await _repository.startSession(countrySelection: countrySelection, difficulty: difficulty);
+
+    result.when(
+      success: (GameSessionModel session) {
+        emit(
+          QuizInProgress(
+            sessionId: session.sessionId,
+            currentQuestion: session.firstQuestion,
+            currentIndex: 0,
+            totalQuestions: session.totalQuestions,
+            timerSecondsLeft: _timePerQuestion,
+            selectedOptionIndex: null,
+            isSubmitting: false,
+            validated: false,
+            isCorrect: null,
+            correctAnswer: null,
+            score: 0,
+            nextQuestion: null,
+            answerRecord: const [],
+            totalElapsedSeconds: 0,
+            difficulty: difficulty,
+          ),
+        );
+        _startTicker();
+      },
+      failure: (error) => emit(QuizLoadError(error.message)),
     );
-    _startTicker();
   }
 
   void selectOption(int index) {
     final s = state;
-    if (s is! QuizInProgress || s.validated) return;
+    if (s is! QuizInProgress || s.validated || s.isSubmitting) return;
     emit(s.copyWith(selectedOptionIndex: index));
   }
 
-  void validateAnswer() {
+  Future<void> validateAnswer() async {
     final s = state;
-    if (s is! QuizInProgress || s.validated) return;
+    if (s is! QuizInProgress || s.validated || s.isSubmitting) return;
     _ticker?.cancel();
 
-    final isCorrect = s.selectedOptionIndex == s.currentQuestion.correctIndex;
-    final newRecord = List<bool?>.from(s.answerRecord)..[s.currentIndex] = isCorrect;
+    final answer = s.selectedOptionIndex != null ? s.currentQuestion.options[s.selectedOptionIndex!] : '';
 
-    emit(s.copyWith(validated: true, answerRecord: newRecord));
+    emit(s.copyWith(isSubmitting: true));
+    await _submitAnswer(answer);
   }
 
-  void nextQuestion() {
+  Future<void> nextQuestion() async {
     final s = state;
-    if (s is! QuizInProgress || !s.validated) return;
+    if (s is! QuizInProgress || !s.validated || s.isSubmitting) return;
 
-    if (s.isLastQuestion) {
-      _completeQuiz(s);
+    if (s.nextQuestion == null) {
+      emit(s.copyWith(isSubmitting: true));
+      final result = await _repository.completeSession(sessionId: s.sessionId);
+      if (isClosed) return;
+      result.when(
+        success: (SessionResultModel data) => _buildCompletedState(s, data),
+        failure: (error) {
+          emit(QuizSubmitError(error.message));
+          emit(s.copyWith(isSubmitting: false));
+        },
+      );
     } else {
       emit(
-        s.copyWith(
+        QuizInProgress(
+          sessionId: s.sessionId,
+          currentQuestion: s.nextQuestion!,
           currentIndex: s.currentIndex + 1,
+          totalQuestions: s.totalQuestions,
           timerSecondsLeft: _timePerQuestion,
+          selectedOptionIndex: null,
+          isSubmitting: false,
           validated: false,
-          clearSelectedOption: true,
+          isCorrect: null,
+          correctAnswer: null,
+          score: s.score,
+          nextQuestion: null,
+          answerRecord: s.answerRecord,
+          totalElapsedSeconds: s.totalElapsedSeconds,
+          difficulty: s.difficulty,
         ),
       );
       _startTicker();
@@ -154,39 +115,88 @@ class QuizCubit extends Cubit<QuizState> {
 
   void _tick() {
     final s = state;
-    if (s is! QuizInProgress || s.validated) return;
+    if (s is! QuizInProgress || s.validated || s.isSubmitting) return;
 
     final newTimer = s.timerSecondsLeft - 1;
     final newElapsed = s.totalElapsedSeconds + 1;
 
     if (newTimer <= 0) {
       _ticker?.cancel();
-      final newRecord = List<bool?>.from(s.answerRecord)..[s.currentIndex] = false;
-      emit(s.copyWith(timerSecondsLeft: 0, totalElapsedSeconds: newElapsed, validated: true, answerRecord: newRecord));
+      emit(s.copyWith(timerSecondsLeft: 0, totalElapsedSeconds: newElapsed, isSubmitting: true));
+      _submitAnswer('');
     } else {
       emit(s.copyWith(timerSecondsLeft: newTimer, totalElapsedSeconds: newElapsed));
     }
   }
 
-  void _completeQuiz(QuizInProgress s) {
-    final answers = s.answerRecord.map((r) => r ?? false).toList();
-    final score = answers.where((a) => a).length;
-    final total = s.questions.length;
+  Future<void> _submitAnswer(String answer) async {
+    final s = state;
+    if (s is! QuizInProgress) return;
+
+    final result = await _repository.submitAnswer(
+      sessionId: s.sessionId,
+      quizId: s.currentQuestion.quizId,
+      answer: answer,
+    );
+
+    if (isClosed) return;
+
+    result.when(
+      success: (AnswerResultModel data) {
+        // API doesn't always return correctAnswer — derive it from the selection when correct
+        final resolvedCorrectAnswer =
+            data.correctAnswer ??
+            (data.isCorrect && s.selectedOptionIndex != null
+                ? s.currentQuestion.options[s.selectedOptionIndex!]
+                : null);
+
+        emit(
+          s.copyWith(
+            isSubmitting: false,
+            validated: true,
+            isCorrect: data.isCorrect,
+            correctAnswer: resolvedCorrectAnswer,
+            score: data.score,
+            nextQuestion: data.nextQuestion,
+            answerRecord: [...s.answerRecord, data.isCorrect],
+          ),
+        );
+      },
+      failure: (error) {
+        final restored = s.copyWith(isSubmitting: false);
+        emit(QuizSubmitError(error.message));
+        emit(restored);
+      },
+    );
+  }
+
+  void _buildCompletedState(QuizInProgress s, SessionResultModel data) {
     final elapsed = s.totalElapsedSeconds;
     final mm = (elapsed ~/ 60).toString().padLeft(2, '0');
     final ss = (elapsed % 60).toString().padLeft(2, '0');
 
-    final categoryMap = <String, ({int correct, int total})>{};
-    for (int i = 0; i < s.questions.length; i++) {
-      final cat = s.questions[i].category;
-      final prev = categoryMap[cat] ?? (correct: 0, total: 0);
-      categoryMap[cat] = (correct: prev.correct + (answers[i] ? 1 : 0), total: prev.total + 1);
-    }
-    final categoryResults = categoryMap.entries
-        .map((e) => QuizCategoryResult(name: e.key, correct: e.value.correct, total: e.value.total))
-        .toList();
+    // correctAnswers and totalQuestions come from local tracking
+    final correctAnswers = s.answerRecord.where((a) => a).length;
+    final totalQuestions = s.answerRecord.length;
 
-    final ratio = score / total;
+    const months = [
+      'JANVIER',
+      'FÉVRIER',
+      'MARS',
+      'AVRIL',
+      'MAI',
+      'JUIN',
+      'JUILLET',
+      'AOÛT',
+      'SEPTEMBRE',
+      'OCTOBRE',
+      'NOVEMBRE',
+      'DÉCEMBRE',
+    ];
+    final now = DateTime.now();
+    final dateLabel = '${now.day} ${months[now.month - 1]} ${now.year}';
+
+    final ratio = totalQuestions > 0 ? correctAnswers / totalQuestions : 0.0;
     final (headline, encouragement) = switch (ratio) {
       >= 0.8 => ('SĦIĦ YA KHOUYA — BIEN JOUÉ 🔥', 'Sħiħ bezzaf.'),
       >= 0.6 => ('SAHIT YA KHOUYA — BIEN JOUÉ', 'Mliħ bezzaf.'),
@@ -197,18 +207,20 @@ class QuizCubit extends Cubit<QuizState> {
 
     emit(
       QuizCompleted(
-        dateLabel: '28 AVRIL 2026 · #042',
-        tahaddiRef: 'Tahaddi #042',
+        dateLabel: dateLabel,
+        tahaddiRef: 'Culturo Quiz',
         headlineLabel: headline,
-        score: score,
-        total: total,
+        score: correctAnswers,
+        total: totalQuestions,
+        xpEarned: data.earnedXp,
+        level: data.level,
         durationLabel: '$mm:$ss',
-        shareCardLabel: '$score/$total · $mm:$ss',
-        shareUrl: 'TAHADDI.DZ/042',
-        beatPercentLabel: 'Tu bats $beatPercent% des Algérois aujourd\'hui.',
+        shareCardLabel: '$correctAnswers/$totalQuestions · $mm:$ss',
+        shareUrl: 'CULTURO.DZ',
+        beatPercentLabel: "Tu bats $beatPercent% des joueurs aujourd'hui.",
         encouragementLabel: encouragement,
-        answerResults: answers,
-        categoryResults: categoryResults,
+        answerResults: s.answerRecord,
+        categoryResults: const [],
       ),
     );
   }

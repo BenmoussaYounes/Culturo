@@ -29,7 +29,7 @@ class CategoryItem extends StatelessWidget {
             height: 44.w,
             decoration: BoxDecoration(color: category.theme.bgColor, borderRadius: BorderRadius.circular(10.r)),
             alignment: Alignment.center,
-            child: AppCachedNetworkImage(imageUrl: category.iconUrl, width: 20.sp, height: 20.sp),
+            child: AppCachedNetworkImage(imageUrl: category.iconUrl, width: 30.w, height: 32.h),
           ),
           horizontalSpace(14),
           Expanded(
