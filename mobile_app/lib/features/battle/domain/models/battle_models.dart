@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class BattleCategoryModel {
+  final String? id;
   final String label;
   final bool isSelected;
 
-  const BattleCategoryModel({required this.label, required this.isSelected});
+  const BattleCategoryModel({this.id, required this.label, required this.isSelected});
 }
 
 class BattleRecentOpponentModel {

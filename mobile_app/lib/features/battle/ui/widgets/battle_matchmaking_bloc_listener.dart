@@ -13,9 +13,26 @@ class BattleMatchmakingBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<BattleMatchmakingCubit, BattleMatchmakingState>(
       listener: (context, state) => switch (state) {
-        BattleMatchmakingNavigateToGame() => Navigator.of(
-          context,
-        ).pushReplacement(MaterialPageRoute(builder: (_) => const BattleGameScreen())),
+        BattleMatchmakingNavigateToGame(
+          :final battleId,
+          :final playerName,
+          :final playerInitial,
+          :final playerAvatarBg,
+          :final opponentName,
+          :final opponentElo,
+        ) =>
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (_) => BattleGameScreen(
+                battleId: battleId,
+                playerName: playerName,
+                playerInitial: playerInitial,
+                playerAvatarBg: playerAvatarBg,
+                opponentName: opponentName,
+                opponentElo: opponentElo,
+              ),
+            ),
+          ),
         BattleMatchmakingPop() => Navigator.of(context).pop(),
         _ => null,
       },

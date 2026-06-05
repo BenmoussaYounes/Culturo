@@ -1,5 +1,6 @@
 class ApiConstants {
   static const String baseUrl = "https://culturo-backend-g5n9.onrender.com/api/";
+  static const String battleSocketUrl = "https://culturo-backend-g5n9.onrender.com/battle";
 
   static const String siginIn = "auth/signin";
   static const String signup = "auth/signup";

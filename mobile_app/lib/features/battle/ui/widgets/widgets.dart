@@ -1,5 +1,6 @@
 export 'battle_action_buttons.dart';
 export 'battle_bloc_listener.dart';
+export 'battle_game_bloc_listener.dart';
 export 'battle_category_section.dart';
 export 'battle_elo_card.dart';
 export 'battle_invite_section.dart';

@@ -46,6 +46,8 @@ dependencies:
   dio: ^5.9.2
   # Pretty Dio logger is a Dio interceptor that logs network calls in a pretty, easy to read format.
   pretty_dio_logger: ^1.4.0
+  # Socket.IO client for real-time bidirectional communication (battle feature).
+  socket_io_client: ^2.0.3+1
   
   # Theming
   # Use with the CupertinoIcons class for iOS style icons.

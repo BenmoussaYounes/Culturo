@@ -11,11 +11,37 @@ import 'cubit/battle_game_cubit.dart';
 import 'widgets/widgets.dart';
 
 class BattleGameScreen extends StatelessWidget {
-  const BattleGameScreen({super.key});
+  final String battleId;
+  final String playerName;
+  final String playerInitial;
+  final Color playerAvatarBg;
+  final String opponentName;
+  final int opponentElo;
+
+  const BattleGameScreen({
+    super.key,
+    required this.battleId,
+    required this.playerName,
+    required this.playerInitial,
+    required this.playerAvatarBg,
+    required this.opponentName,
+    required this.opponentElo,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: (_) => getIt<BattleGameCubit>()..loadGame(), child: const _GameContent());
+    return BlocProvider(
+      create: (_) => getIt<BattleGameCubit>()
+        ..loadGame(
+          battleId: battleId,
+          playerName: playerName,
+          playerInitial: playerInitial,
+          playerAvatarBg: playerAvatarBg,
+          opponentName: opponentName,
+          opponentElo: opponentElo,
+        ),
+      child: const BattleGameBlocListener(child: _GameContent()),
+    );
   }
 }
 
@@ -29,6 +55,7 @@ class _GameContent extends StatelessWidget {
       body: BlocBuilder<BattleGameCubit, BattleGameState>(
         builder: (context, state) => switch (state) {
           BattleGameInitial() => const AppCircularProgressIndicator(),
+          BattleGameFinished() => const AppCircularProgressIndicator(),
           BattleGameInProgress() => SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 14.h),
@@ -63,7 +90,13 @@ class _GameContent extends StatelessWidget {
                     after: state.questionAfter,
                   ),
                   verticalSpace(20),
-                  for (final answer in state.answers) ...[BattleGameAnswerOption(answer: answer), verticalSpace(10)],
+                  for (final answer in state.answers) ...[
+                    BattleGameAnswerOption(
+                      answer: answer,
+                      onTap: () => context.read<BattleGameCubit>().onAnswerSelected(answer.text),
+                    ),
+                    verticalSpace(10),
+                  ],
                   const Spacer(),
                   const BattleGameReactions(),
                   verticalSpace(8),
