@@ -1,0 +1,1327 @@
+{
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\settings.json": {
+    "mtime": 1780663825.515433,
+    "ast_hash": "f24fb5b67ad30ffdfb2abf16ae3a494f",
+    "semantic_hash": "f24fb5b67ad30ffdfb2abf16ae3a494f"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\settings.local.json": {
+    "mtime": 1780576093.2966144,
+    "ast_hash": "72a018fb0087dc5f68ecd6edbc8459f7",
+    "semantic_hash": "72a018fb0087dc5f68ecd6edbc8459f7"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.vscode\\launch.json": {
+    "mtime": 1778141294.220198,
+    "ast_hash": "72525cc73593e37daccd60d510b4b9d9",
+    "semantic_hash": "72525cc73593e37daccd60d510b4b9d9"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.vscode\\settings.json": {
+    "mtime": 1778407309.519701,
+    "ast_hash": "3232004f4d16b0cbc59f9a255bd36bba",
+    "semantic_hash": "3232004f4d16b0cbc59f9a255bd36bba"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\build.gradle.kts": {
+    "mtime": 1777899685.7208624,
+    "ast_hash": "f060a8b1f4d5b7f472ccbfd8ecd4a724",
+    "semantic_hash": "f060a8b1f4d5b7f472ccbfd8ecd4a724"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\java\\io\\flutter\\plugins\\GeneratedPluginRegistrant.java": {
+    "mtime": 1780151086.7163918,
+    "ast_hash": "d5b20a69d0d19fce8417aecbfb54e601",
+    "semantic_hash": "d5b20a69d0d19fce8417aecbfb54e601"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\kotlin\\com\\culturo\\culturo\\MainActivity.kt": {
+    "mtime": 1777899685.7258713,
+    "ast_hash": "edc3251d11f7d60ee92bb63bc2567054",
+    "semantic_hash": "edc3251d11f7d60ee92bb63bc2567054"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\build.gradle.kts": {
+    "mtime": 1777899685.7270815,
+    "ast_hash": "803fe22651fbe96ed401eb0b66a492d1",
+    "semantic_hash": "803fe22651fbe96ed401eb0b66a492d1"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\gradlew": {
+    "mtime": 1777899685.8876722,
+    "ast_hash": "7f1cd7eb3f75a1dc85cd37753972a6e2",
+    "semantic_hash": "7f1cd7eb3f75a1dc85cd37753972a6e2"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\settings.gradle.kts": {
+    "mtime": 1777899685.7620451,
+    "ast_hash": "f276a44edd917afd836899357fdae60e",
+    "semantic_hash": "f276a44edd917afd836899357fdae60e"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Flutter\\ephemeral\\flutter_lldb_helper.py": {
+    "mtime": 1778676244.6142633,
+    "ast_hash": "98fc75412162af387e2e3461e4e58094",
+    "semantic_hash": "98fc75412162af387e2e3461e4e58094"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Flutter\\flutter_export_environment.sh": {
+    "mtime": 1778676244.632204,
+    "ast_hash": "b32c170533966ceff4684af32cb85383",
+    "semantic_hash": "b32c170533966ceff4684af32cb85383"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\RunnerTests\\RunnerTests.swift": {
+    "mtime": 1777899685.8535883,
+    "ast_hash": "24e5d095048eb86c30423f4e04b6e57b",
+    "semantic_hash": "24e5d095048eb86c30423f4e04b6e57b"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\AppDelegate.swift": {
+    "mtime": 1768580675.7718637,
+    "ast_hash": "e277c49e98c9f80e9e71c0524a5cb60f",
+    "semantic_hash": "e277c49e98c9f80e9e71c0524a5cb60f"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Contents.json": {
+    "mtime": 1777925705.6727564,
+    "ast_hash": "c870f277d0c83d1af12f8dc2d368879a",
+    "semantic_hash": "c870f277d0c83d1af12f8dc2d368879a"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\LaunchBackground.imageset\\Contents.json": {
+    "mtime": 1777967940.7889402,
+    "ast_hash": "b5f36b5cc2eecbd74b7cfcb6a89fe6d1",
+    "semantic_hash": "b5f36b5cc2eecbd74b7cfcb6a89fe6d1"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\Contents.json": {
+    "mtime": 1777967940.7780793,
+    "ast_hash": "0827e8a9ba504cc1db6605cbd01fc656",
+    "semantic_hash": "0827e8a9ba504cc1db6605cbd01fc656"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\GeneratedPluginRegistrant.h": {
+    "mtime": 1777899686.431767,
+    "ast_hash": "decb9041b5e91a07e66f4664e5dac408",
+    "semantic_hash": "decb9041b5e91a07e66f4664e5dac408"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\GeneratedPluginRegistrant.m": {
+    "mtime": 1780151086.726016,
+    "ast_hash": "f4683d702964961c633c2386008b7327",
+    "semantic_hash": "f4683d702964961c633c2386008b7327"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Runner-Bridging-Header.h": {
+    "mtime": 1768580675.7840452,
+    "ast_hash": "7ad7b5cea096132de13ba526b2b9efbe",
+    "semantic_hash": "7ad7b5cea096132de13ba526b2b9efbe"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\base_state.dart": {
+    "mtime": 1780222610.8737628,
+    "ast_hash": "82501f726a37462f9b0c807b1e178973",
+    "semantic_hash": "82501f726a37462f9b0c807b1e178973"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\di\\dependency_injection.dart": {
+    "mtime": 1780591909.6691532,
+    "ast_hash": "60325c5b4f2fef03a88ae96e451c61a3",
+    "semantic_hash": "60325c5b4f2fef03a88ae96e451c61a3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\enums\\category_enum.dart": {
+    "mtime": 1780593612.052394,
+    "ast_hash": "d807d026536975db6853d37859eea8f1",
+    "semantic_hash": "d807d026536975db6853d37859eea8f1"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\helpers\\app_regex.dart": {
+    "mtime": 1778574190.505508,
+    "ast_hash": "d9f9d7f41e572df64c3605aa74257675",
+    "semantic_hash": "d9f9d7f41e572df64c3605aa74257675"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\helpers\\app_validators.dart": {
+    "mtime": 1778592782.0865498,
+    "ast_hash": "79f8e6555c44a52c8b892608cf74c0f7",
+    "semantic_hash": "79f8e6555c44a52c8b892608cf74c0f7"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\helpers\\auth_helpers.dart": {
+    "mtime": 1780395370.93728,
+    "ast_hash": "a38177adf3d6fff3dc057d03d9beb3e3",
+    "semantic_hash": "a38177adf3d6fff3dc057d03d9beb3e3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\helpers\\constants.dart": {
+    "mtime": 1780395168.642325,
+    "ast_hash": "8df1319aeea156d73cab437f8d5e4845",
+    "semantic_hash": "8df1319aeea156d73cab437f8d5e4845"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\helpers\\extentions.dart": {
+    "mtime": 1780390808.254967,
+    "ast_hash": "9453df51d40a989a12d7bcfef166d2af",
+    "semantic_hash": "9453df51d40a989a12d7bcfef166d2af"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\helpers\\helpers.dart": {
+    "mtime": 1778755043.716753,
+    "ast_hash": "d729007e39aa694fcd0cd17f8bdbbde6",
+    "semantic_hash": "d729007e39aa694fcd0cd17f8bdbbde6"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\helpers\\shared_pref_helper.dart": {
+    "mtime": 1778591892.730613,
+    "ast_hash": "a107d9c67545b4e9e3605dae1296273e",
+    "semantic_hash": "a107d9c67545b4e9e3605dae1296273e"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\helpers\\spacing.dart": {
+    "mtime": 1778099830.5654807,
+    "ast_hash": "3a0aae87ac636a92c8421ca48b3b9263",
+    "semantic_hash": "3a0aae87ac636a92c8421ca48b3b9263"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\networking\\api_constants.dart": {
+    "mtime": 1780590224.1784956,
+    "ast_hash": "db0b88346dd623e7c39de4bc3a1eb333",
+    "semantic_hash": "db0b88346dd623e7c39de4bc3a1eb333"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\networking\\api_error_handler.dart": {
+    "mtime": 1778592058.1962824,
+    "ast_hash": "095f521d5f47ff6e52e41206cf4472e9",
+    "semantic_hash": "095f521d5f47ff6e52e41206cf4472e9"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\networking\\api_error_model.dart": {
+    "mtime": 1778592075.611063,
+    "ast_hash": "8efd621fceff62e80f92434b28f53f18",
+    "semantic_hash": "8efd621fceff62e80f92434b28f53f18"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\networking\\api_result.dart": {
+    "mtime": 1778576249.5550344,
+    "ast_hash": "b687df16e738b99f641d5a77524a4356",
+    "semantic_hash": "b687df16e738b99f641d5a77524a4356"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\networking\\dio_factory.dart": {
+    "mtime": 1780395396.8705623,
+    "ast_hash": "6935752b3f89e0ff6edf8dbc6092d907",
+    "semantic_hash": "6935752b3f89e0ff6edf8dbc6092d907"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\routing\\app_router.dart": {
+    "mtime": 1780233130.240837,
+    "ast_hash": "e93fa2c9f4c4ed78a9de1b1a4225535a",
+    "semantic_hash": "e93fa2c9f4c4ed78a9de1b1a4225535a"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\routing\\routes.dart": {
+    "mtime": 1778864865.023139,
+    "ast_hash": "f5bf8c4ad19e8a53ce4de6fb04e9a5d7",
+    "semantic_hash": "f5bf8c4ad19e8a53ce4de6fb04e9a5d7"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\states\\action_state.dart": {
+    "mtime": 1780230966.982455,
+    "ast_hash": "e2b843d9594304e8ace27f23ea32d2a0",
+    "semantic_hash": "e2b843d9594304e8ace27f23ea32d2a0"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\theming\\colors_manager.dart": {
+    "mtime": 1778771303.6075406,
+    "ast_hash": "9827a4b30e64e8e30fabf0de339b61d2",
+    "semantic_hash": "9827a4b30e64e8e30fabf0de339b61d2"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\theming\\font_weight_helper.dart": {
+    "mtime": 1778100476.3441732,
+    "ast_hash": "c9f7e12d8b0ac06227e70267d2b50167",
+    "semantic_hash": "c9f7e12d8b0ac06227e70267d2b50167"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\theming\\instrument_serif_font_style.dart": {
+    "mtime": 1778859399.8596795,
+    "ast_hash": "b6fe8794165f2b955704c1e6b38b4477",
+    "semantic_hash": "b6fe8794165f2b955704c1e6b38b4477"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\theming\\inter_font_style.dart": {
+    "mtime": 1778859762.336752,
+    "ast_hash": "90ab3412b62a25598201972b1bd7f68c",
+    "semantic_hash": "90ab3412b62a25598201972b1bd7f68c"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\theming\\jet_brains_mono_font_style.dart": {
+    "mtime": 1778856929.757515,
+    "ast_hash": "696853d198e9cdc0206ecdc4aa5cf820",
+    "semantic_hash": "696853d198e9cdc0206ecdc4aa5cf820"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\theming\\theming.dart": {
+    "mtime": 1778349207.724345,
+    "ast_hash": "2f7b4d4e9f5b411082e9ae1cef4ff86b",
+    "semantic_hash": "2f7b4d4e9f5b411082e9ae1cef4ff86b"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\widgets\\app_avatar.dart": {
+    "mtime": 1778849445.2022643,
+    "ast_hash": "2971363cead195740f6d1171eaa8b45e",
+    "semantic_hash": "2971363cead195740f6d1171eaa8b45e"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\widgets\\app_cached_network_image.dart": {
+    "mtime": 1780579091.179627,
+    "ast_hash": "1b2158861efbc089ee9544a24dcc5225",
+    "semantic_hash": "1b2158861efbc089ee9544a24dcc5225"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\widgets\\app_circular_progress_indicator.dart": {
+    "mtime": 1778754576.8563538,
+    "ast_hash": "fbfb059c8ce3106d4f3d0eee07de9f39",
+    "semantic_hash": "fbfb059c8ce3106d4f3d0eee07de9f39"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\widgets\\app_error_widget.dart": {
+    "mtime": 1780393243.9654725,
+    "ast_hash": "0548f8df08c6ea4a75e8ce1a146e9f83",
+    "semantic_hash": "0548f8df08c6ea4a75e8ce1a146e9f83"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\widgets\\app_text_form_field.dart": {
+    "mtime": 1778864844.8904574,
+    "ast_hash": "0fc76f753cdca504da72070f49670878",
+    "semantic_hash": "0fc76f753cdca504da72070f49670878"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\core\\widgets\\field_label.dart": {
+    "mtime": 1778573797.5277512,
+    "ast_hash": "e24747958172cd6e5297e8a1ca54db6f",
+    "semantic_hash": "e24747958172cd6e5297e8a1ca54db6f"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\culturo_app.dart": {
+    "mtime": 1780588992.07153,
+    "ast_hash": "041b30d45f88f55ffa35788097a71ae6",
+    "semantic_hash": "041b30d45f88f55ffa35788097a71ae6"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\app_scaffold.dart": {
+    "mtime": 1778871917.435903,
+    "ast_hash": "379b7e2d6fa786344fe9508edecfe2d5",
+    "semantic_hash": "379b7e2d6fa786344fe9508edecfe2d5"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\domain\\models\\battle_game_models.dart": {
+    "mtime": 1778873200.5416567,
+    "ast_hash": "fa86cccd1568812a99304c66670f6893",
+    "semantic_hash": "fa86cccd1568812a99304c66670f6893"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\domain\\models\\battle_models.dart": {
+    "mtime": 1778871768.4786031,
+    "ast_hash": "d30b0fb986ecb75135f8c3a6fa4df878",
+    "semantic_hash": "d30b0fb986ecb75135f8c3a6fa4df878"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\battle_game_screen.dart": {
+    "mtime": 1778873200.5526602,
+    "ast_hash": "db39dc5b3819fab4a653ef45f0395ee3",
+    "semantic_hash": "db39dc5b3819fab4a653ef45f0395ee3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\battle_matchmaking_screen.dart": {
+    "mtime": 1778873200.555657,
+    "ast_hash": "3d62f1e8e38f12bb680ed500f8f56b29",
+    "semantic_hash": "3d62f1e8e38f12bb680ed500f8f56b29"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\battle_screen.dart": {
+    "mtime": 1780593258.3729603,
+    "ast_hash": "fe388e74aa502f3be120e9a7f3c82186",
+    "semantic_hash": "fe388e74aa502f3be120e9a7f3c82186"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\cubit\\battle_cubit.dart": {
+    "mtime": 1778872972.249412,
+    "ast_hash": "80eeafdb35fd7427a9955b73c3f6e2ee",
+    "semantic_hash": "80eeafdb35fd7427a9955b73c3f6e2ee"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\cubit\\battle_game_cubit.dart": {
+    "mtime": 1778872547.326412,
+    "ast_hash": "b8ed7d87a686ac66bd000e152b17e56d",
+    "semantic_hash": "b8ed7d87a686ac66bd000e152b17e56d"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\cubit\\battle_game_state.dart": {
+    "mtime": 1778872536.4437733,
+    "ast_hash": "dcac6b3f37b1a7f1dd1a4fc492cc46e4",
+    "semantic_hash": "dcac6b3f37b1a7f1dd1a4fc492cc46e4"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\cubit\\battle_matchmaking_cubit.dart": {
+    "mtime": 1778873790.22506,
+    "ast_hash": "3bd98707a979ca2a0a81e410dc30fefe",
+    "semantic_hash": "3bd98707a979ca2a0a81e410dc30fefe"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\cubit\\battle_matchmaking_state.dart": {
+    "mtime": 1778872516.907105,
+    "ast_hash": "9bb6320a502345de74ede61473ad1172",
+    "semantic_hash": "9bb6320a502345de74ede61473ad1172"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\cubit\\battle_state.dart": {
+    "mtime": 1778872955.0883768,
+    "ast_hash": "ee077f98bde36832fd5315fcd50a3a5a",
+    "semantic_hash": "ee077f98bde36832fd5315fcd50a3a5a"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\battle_action_buttons.dart": {
+    "mtime": 1778871939.0413237,
+    "ast_hash": "2151e4644857c481ae453eb60c120dd5",
+    "semantic_hash": "2151e4644857c481ae453eb60c120dd5"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\battle_bloc_listener.dart": {
+    "mtime": 1778873200.580657,
+    "ast_hash": "66f1605c44b66e9b7b58a016c8c422f6",
+    "semantic_hash": "66f1605c44b66e9b7b58a016c8c422f6"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\battle_category_section.dart": {
+    "mtime": 1778871939.0433192,
+    "ast_hash": "805472d663d73ae5f5b66c0b80cd6e4f",
+    "semantic_hash": "805472d663d73ae5f5b66c0b80cd6e4f"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\battle_elo_card.dart": {
+    "mtime": 1778871939.0488586,
+    "ast_hash": "36a4c38da4cb65b00eafca2b5c442be0",
+    "semantic_hash": "36a4c38da4cb65b00eafca2b5c442be0"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\battle_invite_section.dart": {
+    "mtime": 1778873200.586663,
+    "ast_hash": "8338e55fc32608e7fa16e662adb0e510",
+    "semantic_hash": "8338e55fc32608e7fa16e662adb0e510"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\battle_match_settings_card.dart": {
+    "mtime": 1778873200.588657,
+    "ast_hash": "6ed3fbe35e4caa92ad97f25ef0368322",
+    "semantic_hash": "6ed3fbe35e4caa92ad97f25ef0368322"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\battle_matchmaking_bloc_listener.dart": {
+    "mtime": 1778873200.5906582,
+    "ast_hash": "0707a04237a4aa14005845bb75acd358",
+    "semantic_hash": "0707a04237a4aa14005845bb75acd358"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\battle_quick_match_button.dart": {
+    "mtime": 1778872977.8265474,
+    "ast_hash": "4ad95c365abccdededc960374146ae6c",
+    "semantic_hash": "4ad95c365abccdededc960374146ae6c"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\battle_recent_opponents.dart": {
+    "mtime": 1778871939.0528574,
+    "ast_hash": "95c68183886f24f003c221fc086018cb",
+    "semantic_hash": "95c68183886f24f003c221fc086018cb"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\battle_vs_row.dart": {
+    "mtime": 1778873200.595657,
+    "ast_hash": "b70b4fb7e789c84cacf47e9e2cc3b767",
+    "semantic_hash": "b70b4fb7e789c84cacf47e9e2cc3b767"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\game\\battle_game_answer_option.dart": {
+    "mtime": 1778873200.603657,
+    "ast_hash": "ceebc2342f70c761f1f58a8644a35e57",
+    "semantic_hash": "ceebc2342f70c761f1f58a8644a35e57"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\game\\battle_game_header.dart": {
+    "mtime": 1778873200.6076558,
+    "ast_hash": "8f7843f9cc91297955db4301ce76603a",
+    "semantic_hash": "8f7843f9cc91297955db4301ce76603a"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\game\\battle_game_question.dart": {
+    "mtime": 1778873200.6086595,
+    "ast_hash": "a585428c6501d72774ebf09d3ea142ab",
+    "semantic_hash": "a585428c6501d72774ebf09d3ea142ab"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\game\\battle_game_reactions.dart": {
+    "mtime": 1778873200.6106582,
+    "ast_hash": "9f08cbc05f300d1cacc171a652357938",
+    "semantic_hash": "9f08cbc05f300d1cacc171a652357938"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\battle\\ui\\widgets\\widgets.dart": {
+    "mtime": 1778873011.83566,
+    "ast_hash": "f31e7ab2c24445839168a9286af27599",
+    "semantic_hash": "f31e7ab2c24445839168a9286af27599"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\categories\\data\\models\\categories_response_model.dart": {
+    "mtime": 1780236284.1217089,
+    "ast_hash": "9d1169286ef257d0e2add1051e335960",
+    "semantic_hash": "9d1169286ef257d0e2add1051e335960"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\categories\\data\\repositories\\categories_repository.dart": {
+    "mtime": 1780391190.2081923,
+    "ast_hash": "c0755b33d32164bdd549c7202e68f2d2",
+    "semantic_hash": "c0755b33d32164bdd549c7202e68f2d2"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\categories\\data\\services\\categories_api_service.dart": {
+    "mtime": 1780154772.7937486,
+    "ast_hash": "7ba60093538c8ed9297b032bcf215588",
+    "semantic_hash": "7ba60093538c8ed9297b032bcf215588"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\categories\\domain\\models\\category_domain_model.dart": {
+    "mtime": 1780578831.9331162,
+    "ast_hash": "b63371188b82c9b7357aad1bb6770691",
+    "semantic_hash": "b63371188b82c9b7357aad1bb6770691"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\categories\\ui\\categories_screen.dart": {
+    "mtime": 1780154423.423442,
+    "ast_hash": "2cfb78b2675d67a587865b5fbf05d926",
+    "semantic_hash": "2cfb78b2675d67a587865b5fbf05d926"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\categories\\ui\\cubit\\categories_cubit.dart": {
+    "mtime": 1780153479.155059,
+    "ast_hash": "73954d75b0968ec7fbfab0e6969b829c",
+    "semantic_hash": "73954d75b0968ec7fbfab0e6969b829c"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\categories\\ui\\widgets\\categories_header.dart": {
+    "mtime": 1780154177.5279577,
+    "ast_hash": "2d2100b6fcf57eeb876ced3102e38a22",
+    "semantic_hash": "2d2100b6fcf57eeb876ced3102e38a22"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\categories\\ui\\widgets\\category_card.dart": {
+    "mtime": 1780579043.8276238,
+    "ast_hash": "876a57a299b18ee9bd8bb442c8fdd868",
+    "semantic_hash": "876a57a299b18ee9bd8bb442c8fdd868"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\categories\\ui\\widgets\\widgets.dart": {
+    "mtime": 1778756583.1697476,
+    "ast_hash": "a22cc73eb50e1e4e2bacd59a8b477fdf",
+    "semantic_hash": "a22cc73eb50e1e4e2bacd59a8b477fdf"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\data\\models\\get_user_profile_reponse_model.dart": {
+    "mtime": 1780390808.2615004,
+    "ast_hash": "1d9287651efc8f3bcc37533eb5752afc",
+    "semantic_hash": "1d9287651efc8f3bcc37533eb5752afc"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\data\\repositories\\home_repository.dart": {
+    "mtime": 1780390808.2635024,
+    "ast_hash": "3e51b46ec47a617843196906e6088a73",
+    "semantic_hash": "3e51b46ec47a617843196906e6088a73"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\data\\services\\home_api_service.dart": {
+    "mtime": 1780390808.2656677,
+    "ast_hash": "f0d47ac88658b259591e3654379e03a5",
+    "semantic_hash": "f0d47ac88658b259591e3654379e03a5"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\domain\\models\\daily_challenge_domain_model.dart": {
+    "mtime": 1780390808.2656677,
+    "ast_hash": "c245e71409d28b1d8af47f99f443e305",
+    "semantic_hash": "c245e71409d28b1d8af47f99f443e305"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\domain\\models\\models.dart": {
+    "mtime": 1780390808.2670932,
+    "ast_hash": "bf91f7d9d1478025eb3100af8cf5d9f9",
+    "semantic_hash": "bf91f7d9d1478025eb3100af8cf5d9f9"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\domain\\models\\user_info_domain_model.dart": {
+    "mtime": 1780390808.2670932,
+    "ast_hash": "01085d11eada1086b55bbd9376c2b8e2",
+    "semantic_hash": "01085d11eada1086b55bbd9376c2b8e2"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\domain\\models\\user_profile_domain_model.dart": {
+    "mtime": 1780592155.0002837,
+    "ast_hash": "a6e28a5331fce3ee41e0a67c86ecb866",
+    "semantic_hash": "a6e28a5331fce3ee41e0a67c86ecb866"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\domain\\models\\user_stats_domain_model.dart": {
+    "mtime": 1780592145.8180442,
+    "ast_hash": "be03c358001a0f57d579bfd486314d5a",
+    "semantic_hash": "be03c358001a0f57d579bfd486314d5a"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\ui\\cubit\\home_cubit.dart": {
+    "mtime": 1780391364.9553843,
+    "ast_hash": "d762804c5fa17c97cde4b9fd1618a47d",
+    "semantic_hash": "d762804c5fa17c97cde4b9fd1618a47d"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\ui\\cubit\\home_state.dart": {
+    "mtime": 1780390808.2711606,
+    "ast_hash": "a22d891ec40a1a811562284176bfd132",
+    "semantic_hash": "a22d891ec40a1a811562284176bfd132"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\ui\\home_screen.dart": {
+    "mtime": 1780393266.386762,
+    "ast_hash": "e7504273d8c1cb378ddc71e00c15d603",
+    "semantic_hash": "e7504273d8c1cb378ddc71e00c15d603"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\ui\\widgets\\categories_section.dart": {
+    "mtime": 1780579176.2908616,
+    "ast_hash": "4a7d25e0e01ecebf503d459681f80a3c",
+    "semantic_hash": "4a7d25e0e01ecebf503d459681f80a3c"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\ui\\widgets\\category_item.dart": {
+    "mtime": 1780579132.512325,
+    "ast_hash": "94de4f239a55166076da0b2c5ed1059a",
+    "semantic_hash": "94de4f239a55166076da0b2c5ed1059a"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\ui\\widgets\\daily_challenge_card.dart": {
+    "mtime": 1780390808.275163,
+    "ast_hash": "8907eded7e44907ad7b37da7211f67be",
+    "semantic_hash": "8907eded7e44907ad7b37da7211f67be"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\ui\\widgets\\home_header.dart": {
+    "mtime": 1780390808.275163,
+    "ast_hash": "1fbccf74a708671ee6d2a2fb163ecc58",
+    "semantic_hash": "1fbccf74a708671ee6d2a2fb163ecc58"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\ui\\widgets\\stats_row.dart": {
+    "mtime": 1780592797.1055794,
+    "ast_hash": "9091a8a0bc337fc7045b03d2ccc8c694",
+    "semantic_hash": "9091a8a0bc337fc7045b03d2ccc8c694"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\home\\ui\\widgets\\widgets.dart": {
+    "mtime": 1778693238.1711788,
+    "ast_hash": "a75ff63d471611e2343aa0255e3c6a8d",
+    "semantic_hash": "a75ff63d471611e2343aa0255e3c6a8d"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\onboarding\\presentation\\cubit\\onboarding_cubit.dart": {
+    "mtime": 1778421602.5881095,
+    "ast_hash": "46ad21292ea327e4a36446a622ba3ed4",
+    "semantic_hash": "46ad21292ea327e4a36446a622ba3ed4"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\onboarding\\presentation\\cubit\\onboarding_state.dart": {
+    "mtime": 1778421521.4109037,
+    "ast_hash": "0463a35348dbe772a4d46e140c417d25",
+    "semantic_hash": "0463a35348dbe772a4d46e140c417d25"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\onboarding\\presentation\\onboarding_screen.dart": {
+    "mtime": 1780581604.5125687,
+    "ast_hash": "b68d59065c4d970611767025b5b20b16",
+    "semantic_hash": "b68d59065c4d970611767025b5b20b16"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\onboarding\\presentation\\widgets\\country_quiz.dart": {
+    "mtime": 1778359739.1788971,
+    "ast_hash": "25aaf2631e6d2ac959de13c80666e31f",
+    "semantic_hash": "25aaf2631e6d2ac959de13c80666e31f"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\onboarding\\presentation\\widgets\\do_you_really_now_text.dart": {
+    "mtime": 1778508020.7754002,
+    "ast_hash": "06da89878cddb44ac93a8ba746a3b1bc",
+    "semantic_hash": "06da89878cddb44ac93a8ba746a3b1bc"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\onboarding\\presentation\\widgets\\onboarding_bloc_listener.dart": {
+    "mtime": 1778572433.0965104,
+    "ast_hash": "318fb6765c80ff1f92913f0763dce571",
+    "semantic_hash": "318fb6765c80ff1f92913f0763dce571"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\onboarding\\presentation\\widgets\\widgets.dart": {
+    "mtime": 1780581612.5844834,
+    "ast_hash": "f7ab8b582cb03b9812f1c01f904ac634",
+    "semantic_hash": "f7ab8b582cb03b9812f1c01f904ac634"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\data\\dtos\\user_profile_dto.dart": {
+    "mtime": 1780591761.8800411,
+    "ast_hash": "d611fffdbbf66dafa7d6521abeb44b7e",
+    "semantic_hash": "d611fffdbbf66dafa7d6521abeb44b7e"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\data\\repositories\\profile_repository.dart": {
+    "mtime": 1780591786.0552306,
+    "ast_hash": "dc3c487b54b712929a4394cb7e487713",
+    "semantic_hash": "dc3c487b54b712929a4394cb7e487713"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\data\\services\\profile_api_service.dart": {
+    "mtime": 1780591776.6591852,
+    "ast_hash": "b6f4b111053bc599c2275e550116b341",
+    "semantic_hash": "b6f4b111053bc599c2275e550116b341"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\domain\\models\\category_accuracy_model.dart": {
+    "mtime": 1778799628.8116727,
+    "ast_hash": "aa58011047cdbe0caddf1a400b6ca0da",
+    "semantic_hash": "aa58011047cdbe0caddf1a400b6ca0da"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\domain\\models\\profile_model.dart": {
+    "mtime": 1780591800.4211743,
+    "ast_hash": "cede57502a0ce58b9d59106a6f95ca09",
+    "semantic_hash": "cede57502a0ce58b9d59106a6f95ca09"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\domain\\models\\user_profile_model.dart": {
+    "mtime": 1780591751.0281465,
+    "ast_hash": "48034264e8a1255c56e9f70ff1664922",
+    "semantic_hash": "48034264e8a1255c56e9f70ff1664922"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\ui\\cubit\\profile_cubit.dart": {
+    "mtime": 1780591828.353763,
+    "ast_hash": "15a199bb173378897155e989f2f4c72e",
+    "semantic_hash": "15a199bb173378897155e989f2f4c72e"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\ui\\cubit\\profile_state.dart": {
+    "mtime": 1780591808.6219583,
+    "ast_hash": "5f8871c6f55501bdf094f37333266df3",
+    "semantic_hash": "5f8871c6f55501bdf094f37333266df3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\ui\\profile_screen.dart": {
+    "mtime": 1780591886.3717334,
+    "ast_hash": "526c4b10a4fce7ec81886d3f20e4dd99",
+    "semantic_hash": "526c4b10a4fce7ec81886d3f20e4dd99"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\ui\\widgets\\activity_heatmap.dart": {
+    "mtime": 1778853818.9028585,
+    "ast_hash": "060f7941593d7760c9de9c27a91c4404",
+    "semantic_hash": "060f7941593d7760c9de9c27a91c4404"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\ui\\widgets\\category_accuracy_bar.dart": {
+    "mtime": 1778853739.8148935,
+    "ast_hash": "96fbb3049be35f6c54eae34e36510f14",
+    "semantic_hash": "96fbb3049be35f6c54eae34e36510f14"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\ui\\widgets\\category_accuracy_section.dart": {
+    "mtime": 1778852477.9739504,
+    "ast_hash": "0a8cc9a6a30396d5bd97b111ebb12a5c",
+    "semantic_hash": "0a8cc9a6a30396d5bd97b111ebb12a5c"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\ui\\widgets\\profile_header.dart": {
+    "mtime": 1780591853.9389675,
+    "ast_hash": "9a5d57f439eae5cecf55b436526bb2e4",
+    "semantic_hash": "9a5d57f439eae5cecf55b436526bb2e4"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\ui\\widgets\\profile_stats_row.dart": {
+    "mtime": 1780591871.2804127,
+    "ast_hash": "db9a41a37ca3fccecf73cf71601d68b7",
+    "semantic_hash": "db9a41a37ca3fccecf73cf71601d68b7"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\profile\\ui\\widgets\\widgets.dart": {
+    "mtime": 1778799596.3243606,
+    "ast_hash": "cea1707729d3d75dcbf959413bf71e4a",
+    "semantic_hash": "cea1707729d3d75dcbf959413bf71e4a"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\data\\dtos\\complete_session_response_dto.dart": {
+    "mtime": 1780578329.9384425,
+    "ast_hash": "dc4902b91a9b20119f1ef1e72ce75768",
+    "semantic_hash": "dc4902b91a9b20119f1ef1e72ce75768"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\data\\dtos\\quiz_question_dto.dart": {
+    "mtime": 1780577842.95207,
+    "ast_hash": "f260f0c4fc7e80236a229cba4380115b",
+    "semantic_hash": "f260f0c4fc7e80236a229cba4380115b"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\data\\dtos\\start_game_session_response_dto.dart": {
+    "mtime": 1780577852.804665,
+    "ast_hash": "e23a6a80023e60c41f3db3e8e5a9a0c7",
+    "semantic_hash": "e23a6a80023e60c41f3db3e8e5a9a0c7"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\data\\dtos\\submit_answer_response_dto.dart": {
+    "mtime": 1780578103.213068,
+    "ast_hash": "798a898656035fd1edf42a5a548a45df",
+    "semantic_hash": "798a898656035fd1edf42a5a548a45df"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\data\\repositories\\quiz_repository.dart": {
+    "mtime": 1780578347.609815,
+    "ast_hash": "a0c5cfbff3320ae474d41acb1ea5df05",
+    "semantic_hash": "a0c5cfbff3320ae474d41acb1ea5df05"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\data\\services\\quiz_api_service.dart": {
+    "mtime": 1780577153.8765354,
+    "ast_hash": "d5ebc2b12af6f4cd8b0d0bed58f67e5e",
+    "semantic_hash": "d5ebc2b12af6f4cd8b0d0bed58f67e5e"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\domain\\models\\answer_result_model.dart": {
+    "mtime": 1780578113.7773361,
+    "ast_hash": "89b3700e1e0a792c4bf00b678f107f98",
+    "semantic_hash": "89b3700e1e0a792c4bf00b678f107f98"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\domain\\models\\game_session_model.dart": {
+    "mtime": 1780577872.3873174,
+    "ast_hash": "7d12fcc0dc6e2c04ab7eb0a42ea2b21b",
+    "semantic_hash": "7d12fcc0dc6e2c04ab7eb0a42ea2b21b"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\domain\\models\\quiz_category_result.dart": {
+    "mtime": 1778855384.4313812,
+    "ast_hash": "6cd7c322e9e5c46a992648fb6ebebdf0",
+    "semantic_hash": "6cd7c322e9e5c46a992648fb6ebebdf0"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\domain\\models\\quiz_question_model.dart": {
+    "mtime": 1780577830.026872,
+    "ast_hash": "83d3c03dd2780976ac62773c6ed439cc",
+    "semantic_hash": "83d3c03dd2780976ac62773c6ed439cc"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\domain\\models\\session_result_model.dart": {
+    "mtime": 1780578338.6625621,
+    "ast_hash": "4df9ae28fd3c40bf3f686810f0b66c40",
+    "semantic_hash": "4df9ae28fd3c40bf3f686810f0b66c40"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\ui\\cubit\\quiz_cubit.dart": {
+    "mtime": 1780578401.3066814,
+    "ast_hash": "a83d7f403327ff7b24241c538776d97d",
+    "semantic_hash": "a83d7f403327ff7b24241c538776d97d"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\ui\\cubit\\quiz_state.dart": {
+    "mtime": 1780578374.615103,
+    "ast_hash": "80a8eaf76ab39027f201ef17af6f92a6",
+    "semantic_hash": "80a8eaf76ab39027f201ef17af6f92a6"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\ui\\quiz_result_screen.dart": {
+    "mtime": 1780578430.6343176,
+    "ast_hash": "0620b42417be4502063aa960cfc13228",
+    "semantic_hash": "0620b42417be4502063aa960cfc13228"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\ui\\quiz_screen.dart": {
+    "mtime": 1780577915.1262167,
+    "ast_hash": "48c6e1a3a0478ab0f7da7a3e318dd311",
+    "semantic_hash": "48c6e1a3a0478ab0f7da7a3e318dd311"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\ui\\widgets\\quiz_answer_option.dart": {
+    "mtime": 1780577348.9481058,
+    "ast_hash": "75501d68618731bc8d5754652f6fa81a",
+    "semantic_hash": "75501d68618731bc8d5754652f6fa81a"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\ui\\widgets\\quiz_bloc_listener.dart": {
+    "mtime": 1780577359.987079,
+    "ast_hash": "f7de8ae3a2f2ab566bec68cd70aa9f71",
+    "semantic_hash": "f7de8ae3a2f2ab566bec68cd70aa9f71"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\ui\\widgets\\quiz_progress_header.dart": {
+    "mtime": 1778858136.4173598,
+    "ast_hash": "8324f0f4f2f569c9070f2956b8d47919",
+    "semantic_hash": "8324f0f4f2f569c9070f2956b8d47919"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\ui\\widgets\\quiz_result_category_row.dart": {
+    "mtime": 1778855496.3627012,
+    "ast_hash": "93ebdbd5df1c4ca9776b6b714f9e6b0e",
+    "semantic_hash": "93ebdbd5df1c4ca9776b6b714f9e6b0e"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\ui\\widgets\\quiz_result_share_card.dart": {
+    "mtime": 1778859582.9576962,
+    "ast_hash": "1796c61717b638b65ee61c6b58938cb3",
+    "semantic_hash": "1796c61717b638b65ee61c6b58938cb3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\quiz\\ui\\widgets\\widgets.dart": {
+    "mtime": 1778855514.701832,
+    "ast_hash": "fee6692e8dd437e68e939585fe274932",
+    "semantic_hash": "fee6692e8dd437e68e939585fe274932"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\data\\dtos\\leaderboard_response_dto.dart": {
+    "mtime": 1780590249.052017,
+    "ast_hash": "34b5e99f7c348b2e99305efa6030b6f7",
+    "semantic_hash": "34b5e99f7c348b2e99305efa6030b6f7"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\data\\repositories\\ranking_repository.dart": {
+    "mtime": 1780590299.8929577,
+    "ast_hash": "6996850e78e4a62bf8640c62aae9a799",
+    "semantic_hash": "6996850e78e4a62bf8640c62aae9a799"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\data\\services\\ranking_api_service.dart": {
+    "mtime": 1780590285.9434972,
+    "ast_hash": "c7ef3ac4a097b73e8b6fb88ab17a0fbe",
+    "semantic_hash": "c7ef3ac4a097b73e8b6fb88ab17a0fbe"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\domain\\models\\leaderboard_player_model.dart": {
+    "mtime": 1780590263.8747432,
+    "ast_hash": "548748ec6d5955deada881e70fc430e2",
+    "semantic_hash": "548748ec6d5955deada881e70fc430e2"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\domain\\models\\ranking_entry_model.dart": {
+    "mtime": 1780590658.7581465,
+    "ast_hash": "c2fcbf94ca6e3b643ebad10948ae9164",
+    "semantic_hash": "c2fcbf94ca6e3b643ebad10948ae9164"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\ui\\cubit\\ranking_cubit.dart": {
+    "mtime": 1780590687.815519,
+    "ast_hash": "a4f02381c7b6dc72c0b006dc44683181",
+    "semantic_hash": "a4f02381c7b6dc72c0b006dc44683181"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\ui\\cubit\\ranking_state.dart": {
+    "mtime": 1780590318.2437701,
+    "ast_hash": "1a1a4d88cdd7d0135d93cb13a3631223",
+    "semantic_hash": "1a1a4d88cdd7d0135d93cb13a3631223"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\ui\\ranking_screen.dart": {
+    "mtime": 1780593197.3541203,
+    "ast_hash": "d7d9ab3621a8043465a055fb45854a4f",
+    "semantic_hash": "d7d9ab3621a8043465a055fb45854a4f"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\ui\\widgets\\ranking_header.dart": {
+    "mtime": 1778777345.023306,
+    "ast_hash": "37c94c2a839bc83fcca1fc7b49fe1420",
+    "semantic_hash": "37c94c2a839bc83fcca1fc7b49fe1420"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\ui\\widgets\\ranking_row.dart": {
+    "mtime": 1780590733.5352552,
+    "ast_hash": "e45ab9155aabd8974287c1a3c5962baf",
+    "semantic_hash": "e45ab9155aabd8974287c1a3c5962baf"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\ui\\widgets\\top_entry_card.dart": {
+    "mtime": 1780590709.521052,
+    "ast_hash": "cf4959985fb9c152bc0d172548a1a705",
+    "semantic_hash": "cf4959985fb9c152bc0d172548a1a705"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\ranking\\ui\\widgets\\widgets.dart": {
+    "mtime": 1778762058.8711553,
+    "ast_hash": "6103106b8d4e6d52a884c43e88248b34",
+    "semantic_hash": "6103106b8d4e6d52a884c43e88248b34"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\data\\models\\sigin_in_response.dart": {
+    "mtime": 1778506713.3388827,
+    "ast_hash": "ae438069fbfe641557abf93b5b41947b",
+    "semantic_hash": "ae438069fbfe641557abf93b5b41947b"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\data\\models\\sign_in_request_body.dart": {
+    "mtime": 1778506405.6820931,
+    "ast_hash": "8c98cd34d6637c16d1bc35f4fdec849f",
+    "semantic_hash": "8c98cd34d6637c16d1bc35f4fdec849f"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\data\\repositories\\sign_in_repository.dart": {
+    "mtime": 1780395406.5818102,
+    "ast_hash": "0d78155637cd6b7dc97a07e613578d57",
+    "semantic_hash": "0d78155637cd6b7dc97a07e613578d57"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\data\\service\\sign_in_api.dart": {
+    "mtime": 1778863840.906527,
+    "ast_hash": "7b0ffa172dd1b0766ee4bf7bb03f0d28",
+    "semantic_hash": "7b0ffa172dd1b0766ee4bf7bb03f0d28"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\ui\\cubit\\sign_in_cubit.dart": {
+    "mtime": 1780154709.9719677,
+    "ast_hash": "5eef1a9f94a023376539dd481b7916f9",
+    "semantic_hash": "5eef1a9f94a023376539dd481b7916f9"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\ui\\cubit\\sign_in_state.dart": {
+    "mtime": 1778597640.708457,
+    "ast_hash": "6dc0a2b0760799e143e55dc979e3afec",
+    "semantic_hash": "6dc0a2b0760799e143e55dc979e3afec"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\ui\\screens\\sign_in_screen.dart": {
+    "mtime": 1778864958.5847812,
+    "ast_hash": "2f2b05c09232b4a33ad3ba081f5b0e4e",
+    "semantic_hash": "2f2b05c09232b4a33ad3ba081f5b0e4e"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\ui\\widgets\\sigin_in_bloc_listener.dart": {
+    "mtime": 1780155097.7657108,
+    "ast_hash": "de057adc5ab175fffd168bf991c45dba",
+    "semantic_hash": "de057adc5ab175fffd168bf991c45dba"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\ui\\widgets\\sign_in_footer.dart": {
+    "mtime": 1778863873.648762,
+    "ast_hash": "6f53652ac0977edcff2ee7642f4dad45",
+    "semantic_hash": "6f53652ac0977edcff2ee7642f4dad45"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\ui\\widgets\\sign_in_form.dart": {
+    "mtime": 1778592986.3608797,
+    "ast_hash": "157604962a5e507a71ee8a340f3220e2",
+    "semantic_hash": "157604962a5e507a71ee8a340f3220e2"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\ui\\widgets\\sign_in_header.dart": {
+    "mtime": 1778575125.2764764,
+    "ast_hash": "5cb31acf73fa927c81a0a7d464d5c5c8",
+    "semantic_hash": "5cb31acf73fa927c81a0a7d464d5c5c8"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\ui\\widgets\\sign_in_social_buttons.dart": {
+    "mtime": 1778755170.1416967,
+    "ast_hash": "327eba68e3cc8ebff0980ea4cd52b467",
+    "semantic_hash": "327eba68e3cc8ebff0980ea4cd52b467"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signin\\ui\\widgets\\widgets.dart": {
+    "mtime": 1778576107.413229,
+    "ast_hash": "ff50ec3b0870dd6de5333fc1120daa76",
+    "semantic_hash": "ff50ec3b0870dd6de5333fc1120daa76"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\data\\models\\sign_up_request_body.dart": {
+    "mtime": 1780221736.3822296,
+    "ast_hash": "256b559ae5bf6ef3b2d15886eab21b4a",
+    "semantic_hash": "256b559ae5bf6ef3b2d15886eab21b4a"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\data\\models\\verify_email_request_body.dart": {
+    "mtime": 1778864744.3628955,
+    "ast_hash": "b60a5d86ba1fb0fab9163df23c2b610e",
+    "semantic_hash": "b60a5d86ba1fb0fab9163df23c2b610e"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\data\\repositories\\sign_up_repository.dart": {
+    "mtime": 1780221768.321453,
+    "ast_hash": "b79f2460f5bca0ae9065e218b15a8331",
+    "semantic_hash": "b79f2460f5bca0ae9065e218b15a8331"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\data\\services\\sign_up_api_service.dart": {
+    "mtime": 1780222095.7651472,
+    "ast_hash": "2f8c365f8627bde1d2892b5b39b48488",
+    "semantic_hash": "2f8c365f8627bde1d2892b5b39b48488"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\cubit\\enter_email_otp_cubit.dart": {
+    "mtime": 1780233910.9488897,
+    "ast_hash": "41a845febb1d5726c2f39b2d32a403bf",
+    "semantic_hash": "41a845febb1d5726c2f39b2d32a403bf"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\cubit\\enter_email_otp_state.dart": {
+    "mtime": 1780231717.939011,
+    "ast_hash": "6a9edd3aceb798a3b6a7bcedb88313e0",
+    "semantic_hash": "6a9edd3aceb798a3b6a7bcedb88313e0"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\cubit\\sign_up_cubit.dart": {
+    "mtime": 1780233587.1807692,
+    "ast_hash": "4a97c7eec14adaf734d89b7ca5590bda",
+    "semantic_hash": "4a97c7eec14adaf734d89b7ca5590bda"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\screens\\enter_email_otp_screen.dart": {
+    "mtime": 1780233620.1616957,
+    "ast_hash": "01d7affc3698bed1507de8b172189518",
+    "semantic_hash": "01d7affc3698bed1507de8b172189518"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\screens\\sign_up_screen.dart": {
+    "mtime": 1778864985.3947084,
+    "ast_hash": "d17c2cc2fdf1f5a51f73dc16c3aecdc3",
+    "semantic_hash": "d17c2cc2fdf1f5a51f73dc16c3aecdc3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\widgets\\enter_otp_email_bloc_listener.dart": {
+    "mtime": 1780231775.8524127,
+    "ast_hash": "e7703153afc7cfdb3177c34731b2d2e1",
+    "semantic_hash": "e7703153afc7cfdb3177c34731b2d2e1"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\widgets\\enter_otp_footer.dart": {
+    "mtime": 1780232050.0315042,
+    "ast_hash": "0dbc3d9ee1f6d92a80e31b2597b24894",
+    "semantic_hash": "0dbc3d9ee1f6d92a80e31b2597b24894"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\widgets\\otp_input.dart": {
+    "mtime": 1778864985.4037054,
+    "ast_hash": "b2e623ffb730b8c7cdc8e5b859f31165",
+    "semantic_hash": "b2e623ffb730b8c7cdc8e5b859f31165"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\widgets\\sign_up_bloc_listener.dart": {
+    "mtime": 1780233958.9609632,
+    "ast_hash": "94f5c92b8aef5fc35d8964a776858035",
+    "semantic_hash": "94f5c92b8aef5fc35d8964a776858035"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\widgets\\sign_up_footer.dart": {
+    "mtime": 1780234003.679471,
+    "ast_hash": "03582fd0782cdf5049f527c49b45a32b",
+    "semantic_hash": "03582fd0782cdf5049f527c49b45a32b"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\widgets\\sign_up_form.dart": {
+    "mtime": 1778864985.4087057,
+    "ast_hash": "be25787e93d752d5c5001a4c0e038430",
+    "semantic_hash": "be25787e93d752d5c5001a4c0e038430"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\widgets\\sign_up_header.dart": {
+    "mtime": 1778864804.5021865,
+    "ast_hash": "a7d94d0ae6009f858dfda18b40c35ab4",
+    "semantic_hash": "a7d94d0ae6009f858dfda18b40c35ab4"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\widgets\\sign_up_social_buttons.dart": {
+    "mtime": 1778864829.7990873,
+    "ast_hash": "c003602379e98f7de3a9fbd685f4fdb4",
+    "semantic_hash": "c003602379e98f7de3a9fbd685f4fdb4"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\widgets\\verify_email_header.dart": {
+    "mtime": 1778864873.734792,
+    "ast_hash": "6eb7dba803b3c40b7e7d6f25b01bcd0e",
+    "semantic_hash": "6eb7dba803b3c40b7e7d6f25b01bcd0e"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\features\\signup\\ui\\widgets\\widgets.dart": {
+    "mtime": 1780232085.6496134,
+    "ast_hash": "f7e8bd4cb8ee28a228103f987ef06e72",
+    "semantic_hash": "f7e8bd4cb8ee28a228103f987ef06e72"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\lib\\main_development.dart": {
+    "mtime": 1780395333.1130867,
+    "ast_hash": "acc5d830eded440837415ba9eafd46ff",
+    "semantic_hash": "acc5d830eded440837415ba9eafd46ff"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\test\\widget_test.dart": {
+    "mtime": 1778098979.781545,
+    "ast_hash": "d68b031d1f6c2f2b14837b9a234cb8f5",
+    "semantic_hash": "d68b031d1f6c2f2b14837b9a234cb8f5"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\code-review\\SKILL.md": {
+    "mtime": 1778453236.7848816,
+    "ast_hash": "adb2e9fd19466e5c35be902e3c9b7018",
+    "semantic_hash": "adb2e9fd19466e5c35be902e3c9b7018"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\commit-message\\SKILL.md": {
+    "mtime": 1778453346.4428911,
+    "ast_hash": "f34594cd2bcadca84fc96c1ad74d16b3",
+    "semantic_hash": "f34594cd2bcadca84fc96c1ad74d16b3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\create-pr\\SKILL.md": {
+    "mtime": 1778424396.481498,
+    "ast_hash": "3265fca8fb8f0b3b8b18abe3a57925f3",
+    "semantic_hash": "3265fca8fb8f0b3b8b18abe3a57925f3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\flutter-add-integration-test\\SKILL.md": {
+    "mtime": 1778434458.873095,
+    "ast_hash": "fedf086d6bd5450c9d917e863d9dc2fd",
+    "semantic_hash": "fedf086d6bd5450c9d917e863d9dc2fd"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\flutter-add-widget-preview\\SKILL.md": {
+    "mtime": 1778434470.2602234,
+    "ast_hash": "b2b52ee6d90911bc4ad287026ec90996",
+    "semantic_hash": "b2b52ee6d90911bc4ad287026ec90996"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\flutter-add-widget-test\\SKILL.md": {
+    "mtime": 1778434473.0181415,
+    "ast_hash": "0268529aca7b57ec90d325e3e4e60618",
+    "semantic_hash": "0268529aca7b57ec90d325e3e4e60618"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\flutter-apply-architecture-best-practices\\SKILL.md": {
+    "mtime": 1778434475.9405293,
+    "ast_hash": "028255574719f035ca5a18208b401f1b",
+    "semantic_hash": "028255574719f035ca5a18208b401f1b"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\flutter-build-responsive-layout\\SKILL.md": {
+    "mtime": 1778434479.6904032,
+    "ast_hash": "8a37634a5def06d47c1dcf60db9f5eab",
+    "semantic_hash": "8a37634a5def06d47c1dcf60db9f5eab"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\flutter-fix-layout-issues\\SKILL.md": {
+    "mtime": 1778434522.9158745,
+    "ast_hash": "0227d262dd3e6f0f9f68db65754fd877",
+    "semantic_hash": "0227d262dd3e6f0f9f68db65754fd877"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\flutter-implement-json-serialization\\SKILL.md": {
+    "mtime": 1778434560.5485415,
+    "ast_hash": "6ca85e4ddc91b4ee02ff3cc03b95f5c8",
+    "semantic_hash": "6ca85e4ddc91b4ee02ff3cc03b95f5c8"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\flutter-setup-declarative-routing\\SKILL.md": {
+    "mtime": 1778434582.7031195,
+    "ast_hash": "ca6c8ac7c2f09a3a95e23040ed0ca6a0",
+    "semantic_hash": "ca6c8ac7c2f09a3a95e23040ed0ca6a0"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\graphify\\SKILL.md": {
+    "mtime": 1780663825.503949,
+    "ast_hash": "c0ac08140ebbce36e6562f1a8d3a97b9",
+    "semantic_hash": "c0ac08140ebbce36e6562f1a8d3a97b9"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\graphify\\references\\add-watch.md": {
+    "mtime": 1780663680.7309191,
+    "ast_hash": "0df0589623217ca38a12bdcabfb42f4c",
+    "semantic_hash": "0df0589623217ca38a12bdcabfb42f4c"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\graphify\\references\\exports.md": {
+    "mtime": 1780663680.7309191,
+    "ast_hash": "7fb1a81aca17a462db70684a324fcfb0",
+    "semantic_hash": "7fb1a81aca17a462db70684a324fcfb0"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\graphify\\references\\extraction-spec.md": {
+    "mtime": 1780663680.7319186,
+    "ast_hash": "24808b03abfeaf5f6435bb69c0125b2c",
+    "semantic_hash": "24808b03abfeaf5f6435bb69c0125b2c"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\graphify\\references\\github-and-merge.md": {
+    "mtime": 1780663680.7329216,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": "cde13df085e4c492aeb7ba298a996d0d"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\graphify\\references\\hooks.md": {
+    "mtime": 1780663680.733918,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": "3f545db6ce646650bb9de588f5512a27"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\graphify\\references\\query.md": {
+    "mtime": 1780663680.7361135,
+    "ast_hash": "c2a8e798674a81b02aa9975f43023819",
+    "semantic_hash": "c2a8e798674a81b02aa9975f43023819"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\graphify\\references\\transcribe.md": {
+    "mtime": 1780663680.7371905,
+    "ast_hash": "70f6aa30d6211f3a2c7e9fc45479f50c",
+    "semantic_hash": "70f6aa30d6211f3a2c7e9fc45479f50c"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\.claude\\skills\\graphify\\references\\update.md": {
+    "mtime": 1780663680.7381275,
+    "ast_hash": "735932eaa4f0c8fef9566c538ae3e5f8",
+    "semantic_hash": "735932eaa4f0c8fef9566c538ae3e5f8"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\CLAUDE.md": {
+    "mtime": 1780663966.1266384,
+    "ast_hash": "5cc07a2a8662b01e76d96e7ea280a453",
+    "semantic_hash": "5cc07a2a8662b01e76d96e7ea280a453"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\README.md": {
+    "mtime": 1777899685.8590007,
+    "ast_hash": "1fc667120c51b4cab935ee544036d2ea",
+    "semantic_hash": "1fc667120c51b4cab935ee544036d2ea"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\analysis_options.yaml": {
+    "mtime": 1778348211.6916714,
+    "ast_hash": "381022eaf8ec757e51f23641ef83a5bc",
+    "semantic_hash": "381022eaf8ec757e51f23641ef83a5bc"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\flutter_launcher_icons.yaml": {
+    "mtime": 1777925661.5407116,
+    "ast_hash": "19d2b0b65c51b9625081203e2b727e12",
+    "semantic_hash": "19d2b0b65c51b9625081203e2b727e12"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\flutter_native_splash.yaml": {
+    "mtime": 1777967924.467744,
+    "ast_hash": "ba86a63c814247f1b8b6603d93f3dc9c",
+    "semantic_hash": "ba86a63c814247f1b8b6603d93f3dc9c"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\README.md": {
+    "mtime": 1768580675.7818654,
+    "ast_hash": "f7ee1b402881509d197f34963e569927",
+    "semantic_hash": "f7ee1b402881509d197f34963e569927"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\pubspec.yaml": {
+    "mtime": 1780151081.0066054,
+    "ast_hash": "421e5610f5598b5a6337f897a5ea2e91",
+    "semantic_hash": "421e5610f5598b5a6337f897a5ea2e91"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher_foreground.png": {
+    "mtime": 1777925704.737694,
+    "ast_hash": "42368e4120923725560f939e277e10f2",
+    "semantic_hash": "42368e4120923725560f939e277e10f2"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher_foreground.png": {
+    "mtime": 1777925704.737694,
+    "ast_hash": "e0fd3602d92718d5807eb0acf33d423c",
+    "semantic_hash": "e0fd3602d92718d5807eb0acf33d423c"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\drawable-v21\\background.png": {
+    "mtime": 1777967940.6918623,
+    "ast_hash": "34933249fa9d331f4de1d57d3ab99ea3",
+    "semantic_hash": "34933249fa9d331f4de1d57d3ab99ea3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher_foreground.png": {
+    "mtime": 1777925704.737694,
+    "ast_hash": "e4c377c2e0ee945a29f476487baa8b15",
+    "semantic_hash": "e4c377c2e0ee945a29f476487baa8b15"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher_foreground.png": {
+    "mtime": 1777925704.737694,
+    "ast_hash": "f7a93ca1ade24d5fc2fbd28a672dc1e8",
+    "semantic_hash": "f7a93ca1ade24d5fc2fbd28a672dc1e8"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_launcher_foreground.png": {
+    "mtime": 1777925704.737694,
+    "ast_hash": "a7ea55eb2f9c527b7a5ff6e9d83f4cd3",
+    "semantic_hash": "a7ea55eb2f9c527b7a5ff6e9d83f4cd3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\drawable\\background.png": {
+    "mtime": 1777967940.690861,
+    "ast_hash": "34933249fa9d331f4de1d57d3ab99ea3",
+    "semantic_hash": "34933249fa9d331f4de1d57d3ab99ea3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png": {
+    "mtime": 1768580675.7490518,
+    "ast_hash": "13e9c72ec37fac220397aa819fa1ef2d",
+    "semantic_hash": "13e9c72ec37fac220397aa819fa1ef2d"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\mipmap-hdpi\\launcher_icon.png": {
+    "mtime": 1777925704.737694,
+    "ast_hash": "6221a6181b4cff370f1f795f269cf9a0",
+    "semantic_hash": "6221a6181b4cff370f1f795f269cf9a0"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png": {
+    "mtime": 1768580675.7490518,
+    "ast_hash": "6270344430679711b81476e29878caa7",
+    "semantic_hash": "6270344430679711b81476e29878caa7"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\mipmap-mdpi\\launcher_icon.png": {
+    "mtime": 1777925704.737694,
+    "ast_hash": "715af614939fec0f84d38cb4cd509b4f",
+    "semantic_hash": "715af614939fec0f84d38cb4cd509b4f"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png": {
+    "mtime": 1768580675.7490518,
+    "ast_hash": "a0a8db5985280b3679d99a820ae2db79",
+    "semantic_hash": "a0a8db5985280b3679d99a820ae2db79"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\mipmap-xhdpi\\launcher_icon.png": {
+    "mtime": 1777925704.7387066,
+    "ast_hash": "971b5bf784848156775c02febb63547d",
+    "semantic_hash": "971b5bf784848156775c02febb63547d"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png": {
+    "mtime": 1768580675.7490518,
+    "ast_hash": "afe1b655b9f32da22f9a4301bb8e6ba8",
+    "semantic_hash": "afe1b655b9f32da22f9a4301bb8e6ba8"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\launcher_icon.png": {
+    "mtime": 1777925704.737694,
+    "ast_hash": "300787660e715a2fb427d9d9923dadd1",
+    "semantic_hash": "300787660e715a2fb427d9d9923dadd1"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png": {
+    "mtime": 1768580675.7490518,
+    "ast_hash": "57838d52c318faff743130c3fcfae0c6",
+    "semantic_hash": "57838d52c318faff743130c3fcfae0c6"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\launcher_icon.png": {
+    "mtime": 1777925704.7387066,
+    "ast_hash": "03881df52c4be3708bfc320ae46506f8",
+    "semantic_hash": "03881df52c4be3708bfc320ae46506f8"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\assets\\icon.png": {
+    "mtime": 1777925212.3422558,
+    "ast_hash": "ff46134ed9837751e3ed7b5dcc8ab659",
+    "semantic_hash": "ff46134ed9837751e3ed7b5dcc8ab659"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\assets\\icon_foreground.png": {
+    "mtime": 1777925212.3241594,
+    "ast_hash": "deb98d96b68fc5fde656a527a211f226",
+    "semantic_hash": "deb98d96b68fc5fde656a527a211f226"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-1024x1024@1x.png": {
+    "mtime": 1777925705.6552167,
+    "ast_hash": "495e83f56c1edda01cd70c924b179eed",
+    "semantic_hash": "495e83f56c1edda01cd70c924b179eed"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-20x20@1x.png": {
+    "mtime": 1777925705.6532614,
+    "ast_hash": "393cf67fd617365140dcc6a997ac2797",
+    "semantic_hash": "393cf67fd617365140dcc6a997ac2797"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-20x20@2x.png": {
+    "mtime": 1777925705.6532614,
+    "ast_hash": "f58f1afb24621639bcc89a00fb3be638",
+    "semantic_hash": "f58f1afb24621639bcc89a00fb3be638"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-20x20@3x.png": {
+    "mtime": 1777925705.6532614,
+    "ast_hash": "bf8a84cb33ad0e35dd7ce9ef9d36f12e",
+    "semantic_hash": "bf8a84cb33ad0e35dd7ce9ef9d36f12e"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-29x29@1x.png": {
+    "mtime": 1777925705.6532614,
+    "ast_hash": "7ad9ca39d2168748f5a71679d70a45a7",
+    "semantic_hash": "7ad9ca39d2168748f5a71679d70a45a7"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-29x29@2x.png": {
+    "mtime": 1777925705.6532614,
+    "ast_hash": "dd77308cce4f00ace9c27811d2cf294b",
+    "semantic_hash": "dd77308cce4f00ace9c27811d2cf294b"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-29x29@3x.png": {
+    "mtime": 1777925705.6532614,
+    "ast_hash": "0cdf6f0f80f5989b571b2303081e767a",
+    "semantic_hash": "0cdf6f0f80f5989b571b2303081e767a"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-40x40@1x.png": {
+    "mtime": 1777925705.6532614,
+    "ast_hash": "f58f1afb24621639bcc89a00fb3be638",
+    "semantic_hash": "f58f1afb24621639bcc89a00fb3be638"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-40x40@2x.png": {
+    "mtime": 1777925705.6532614,
+    "ast_hash": "cbea68a951dfd0358f14dd9272375920",
+    "semantic_hash": "cbea68a951dfd0358f14dd9272375920"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-40x40@3x.png": {
+    "mtime": 1777925705.6532614,
+    "ast_hash": "8f6b26454dd2892fa8dc1ed264c833c8",
+    "semantic_hash": "8f6b26454dd2892fa8dc1ed264c833c8"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-50x50@1x.png": {
+    "mtime": 1777925705.65422,
+    "ast_hash": "8ca0cea0cd57596e90e26d8592500f34",
+    "semantic_hash": "8ca0cea0cd57596e90e26d8592500f34"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-50x50@2x.png": {
+    "mtime": 1777925705.65422,
+    "ast_hash": "6f582510eea6fa082611010e4e325560",
+    "semantic_hash": "6f582510eea6fa082611010e4e325560"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-57x57@1x.png": {
+    "mtime": 1777925705.65422,
+    "ast_hash": "ef3a53397873df3182372870dc170535",
+    "semantic_hash": "ef3a53397873df3182372870dc170535"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-57x57@2x.png": {
+    "mtime": 1777925705.65422,
+    "ast_hash": "2cdd7e6c3c367ca1afb07301cf427b3f",
+    "semantic_hash": "2cdd7e6c3c367ca1afb07301cf427b3f"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-60x60@2x.png": {
+    "mtime": 1777925705.65422,
+    "ast_hash": "8f6b26454dd2892fa8dc1ed264c833c8",
+    "semantic_hash": "8f6b26454dd2892fa8dc1ed264c833c8"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-60x60@3x.png": {
+    "mtime": 1777925705.65422,
+    "ast_hash": "7dc71c29b95f6b0fbaa6e23078f2e1d1",
+    "semantic_hash": "7dc71c29b95f6b0fbaa6e23078f2e1d1"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-72x72@1x.png": {
+    "mtime": 1777925705.65422,
+    "ast_hash": "40527a96561c8eecd7e2bfdac360dbce",
+    "semantic_hash": "40527a96561c8eecd7e2bfdac360dbce"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-72x72@2x.png": {
+    "mtime": 1777925705.65422,
+    "ast_hash": "61b7768a3272641038852296639deffb",
+    "semantic_hash": "61b7768a3272641038852296639deffb"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-76x76@1x.png": {
+    "mtime": 1777925705.65422,
+    "ast_hash": "e27fc8e99b56dd1c762dac36c3d3b230",
+    "semantic_hash": "e27fc8e99b56dd1c762dac36c3d3b230"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-76x76@2x.png": {
+    "mtime": 1777925705.65422,
+    "ast_hash": "7091296de091f9db57a381067c765cfd",
+    "semantic_hash": "7091296de091f9db57a381067c765cfd"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-83.5x83.5@2x.png": {
+    "mtime": 1777925705.65422,
+    "ast_hash": "4ea69273a2a4e644797a2b15a4b8ee6b",
+    "semantic_hash": "4ea69273a2a4e644797a2b15a4b8ee6b"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\LaunchBackground.imageset\\background.png": {
+    "mtime": 1777967940.7884352,
+    "ast_hash": "34933249fa9d331f4de1d57d3ab99ea3",
+    "semantic_hash": "34933249fa9d331f4de1d57d3ab99ea3"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\LaunchImage.png": {
+    "mtime": 1777967940.774563,
+    "ast_hash": "7eae69a00ea33b681015ec05cb369352",
+    "semantic_hash": "7eae69a00ea33b681015ec05cb369352"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\LaunchImage@2x.png": {
+    "mtime": 1777967940.7755637,
+    "ast_hash": "7eae69a00ea33b681015ec05cb369352",
+    "semantic_hash": "7eae69a00ea33b681015ec05cb369352"
+  },
+  "C:\\Users\\youne\\Desktop\\repos\\culturo\\mobile_app\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\LaunchImage@3x.png": {
+    "mtime": 1777967940.7770302,
+    "ast_hash": "7eae69a00ea33b681015ec05cb369352",
+    "semantic_hash": "7eae69a00ea33b681015ec05cb369352"
+  }
+}

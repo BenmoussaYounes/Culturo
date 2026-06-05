@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theming/colors_manager.dart';
 import '../../../core/theming/instrument_serif_font_style.dart';
-import '../../../core/theming/inter_font_style.dart';
 import '../../../core/theming/jet_brains_mono_font_style.dart';
 import '../../../core/widgets/app_circular_progress_indicator.dart';
 import 'cubit/battle_cubit.dart';
@@ -45,10 +45,6 @@ class BattleScreen extends StatelessWidget {
                     BattleQuickMatchButton(onTap: () => context.read<BattleCubit>().onQuickMatchTapped()),
                     verticalSpace(12),
                     const BattleActionButtons(),
-                    verticalSpace(20),
-                    BattleCategorySection(categories: state.categories),
-                    verticalSpace(20),
-                    BattleRecentOpponents(opponents: state.recentOpponents),
                   ],
                 ),
               ),
@@ -67,51 +63,12 @@ class _BattleHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: .spaceBetween,
-      crossAxisAlignment: .center,
+    return Column(
+      crossAxisAlignment: .start,
       children: [
-        Column(
-          crossAxisAlignment: .start,
-          children: [
-            Text('MODE', style: JetBrainsMonoFontStyle.font10W500MediumGrey.copyWith(letterSpacing: 1.0)),
-            Text('Battle lvl', style: InstrumentSerifFontStyle.font26W500ItalicInk),
-          ],
-        ),
-        _OnlineChip(label: onlineCountLabel),
+        Text('MODE', style: JetBrainsMonoFontStyle.font10W500MediumGrey.copyWith(letterSpacing: 1.0)),
+        Text('Battle lvl', style: InstrumentSerifFontStyle.font26W500ItalicInk),
       ],
-    );
-  }
-}
-
-class _OnlineChip extends StatelessWidget {
-  final String label;
-
-  const _OnlineChip({required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-      decoration: BoxDecoration(
-        color: DesertColors.accent.withValues(alpha: 0.12),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Row(
-        mainAxisSize: .min,
-        children: [
-          Container(
-            width: 6.w,
-            height: 6.w,
-            decoration: const BoxDecoration(color: DesertColors.accent, shape: .circle),
-          ),
-          horizontalSpace(5),
-          Text(
-            '$label EN LIGNE',
-            style: InterFontStyle.font12W400GreyGreen.copyWith(color: DesertColors.accent, fontWeight: FontWeight.w600),
-          ),
-        ],
-      ),
     );
   }
 }
