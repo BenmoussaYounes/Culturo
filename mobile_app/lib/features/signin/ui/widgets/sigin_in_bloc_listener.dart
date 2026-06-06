@@ -21,7 +21,7 @@ class SiginInBlocListener extends StatelessWidget {
       listener: (context, state) => switch (state) {
         SignInSuccess() => context.pushNamed(Routes.home),
         SignInError(:final message) => showErrorSnackbar(context, message),
-        ForgotPasswordState(:final email) => showSuccessSnackbar(context, 'Password reset link sent to $email'),
+        ForgotPasswordState(:final email) => context.pushNamed(Routes.forgotPassword, arguments: email),
         CreateAccountState(:final email) => showSuccessSnackbar(
           context,
           'Account created successfully! Please check your email at $email',

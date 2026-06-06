@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../features/forgot_password/ui/forgot_password_screen.dart';
 import '../../features/signin/ui/cubit/sign_in_cubit.dart';
 import '../../features/signin/ui/screens/sign_in_screen.dart';
 import '../../features/signup/ui/cubit/sign_up_cubit.dart';
@@ -44,6 +45,10 @@ class AppRouter {
 
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const AppScaffold());
+
+      case Routes.forgotPassword:
+        final email = (settings.arguments as String?) ?? '';
+        return MaterialPageRoute(builder: (_) => ForgotPasswordScreen(initialEmail: email));
 
       default:
         return null;

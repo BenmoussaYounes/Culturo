@@ -4,4 +4,5 @@ class Routes {
   static const String signUp = '/sign-up';
   static const String verifyEmail = '/verify-email';
   static const String home = '/home';
+  static const String forgotPassword = '/forgot-password';
 }

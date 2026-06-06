@@ -3,6 +3,7 @@ class ApiConstants {
   static const String battleSocketUrl = "https://culturo-backend-g5n9.onrender.com/battle";
 
   static const String siginIn = "auth/signin";
+  static const String forgotPassword = "auth/forgot-password";
   static const String signup = "auth/signup";
   static const String verifyEmail = "auth/signup-otp";
   static const String signUpOtp = "auth/signup-otp";
