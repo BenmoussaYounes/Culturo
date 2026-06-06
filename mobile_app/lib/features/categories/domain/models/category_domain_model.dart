@@ -2,6 +2,7 @@ import '../../../../core/enums/category_enum.dart';
 import '../../data/models/categories_response_model.dart';
 
 class CategoryDomainModel {
+  final String id;
   final String iconUrl;
   final String name;
   final String subtitle;
@@ -10,6 +11,7 @@ class CategoryDomainModel {
   final bool isPremium;
 
   const CategoryDomainModel({
+    required this.id,
     required this.iconUrl,
     required this.name,
     required this.subtitle,
@@ -20,6 +22,7 @@ class CategoryDomainModel {
 
   factory CategoryDomainModel.fromResponseModel(CategoriesResponseModel response) {
     return CategoryDomainModel(
+      id: response.id,
       iconUrl: response.icon,
       name: response.name,
       subtitle: response.subtitle,

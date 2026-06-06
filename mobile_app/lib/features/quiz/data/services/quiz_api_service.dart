@@ -13,10 +13,15 @@ class QuizApiService {
   Future<StartGameSessionResponseDto> startSession({
     required String countrySelection,
     required String difficulty,
+    String? categoryId,
   }) async {
     final response = await _dio.post(
       ApiConstants.gameSessionStart,
-      data: {'countrySelection': countrySelection, 'difficulty': difficulty},
+      data: {
+        'countrySelection': countrySelection,
+        'difficulty': difficulty,
+        if (categoryId case final id?) 'categoryId': id,
+      },
     );
     return StartGameSessionResponseDto.fromJson(response.data as Map<String, dynamic>);
   }

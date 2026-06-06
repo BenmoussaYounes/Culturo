@@ -13,9 +13,14 @@ class QuizRepository {
   Future<ApiResult<GameSessionModel>> startSession({
     required String countrySelection,
     required String difficulty,
+    String? categoryId,
   }) async {
     try {
-      final dto = await _api.startSession(countrySelection: countrySelection, difficulty: difficulty);
+      final dto = await _api.startSession(
+        countrySelection: countrySelection,
+        difficulty: difficulty,
+        categoryId: categoryId,
+      );
       return ApiSuccess(
         GameSessionModel(
           sessionId: dto.sessionId,

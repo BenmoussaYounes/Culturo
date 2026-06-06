@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theming/colors_manager.dart';
 import '../../../core/widgets/app_circular_progress_indicator.dart';
+import '../../quiz/ui/quiz_screen.dart';
 import '../domain/models/category_domain_model.dart';
 import 'cubit/categories_cubit.dart';
 import 'widgets/widgets.dart';
@@ -38,7 +39,12 @@ class CategoriesScreen extends StatelessWidget {
                         crossAxisSpacing: 10.w,
                         childAspectRatio: 1.15.h,
                       ),
-                      itemBuilder: (context, index) => CategoryCard(category: categories[index]),
+                      itemBuilder: (context, index) => CategoryCard(
+                        category: categories[index],
+                        onTap: () => Navigator.of(
+                          context,
+                        ).push(MaterialPageRoute(builder: (_) => QuizScreen(categoryId: categories[index].id))),
+                      ),
                       itemCount: categories.length,
                     ),
                   ),
