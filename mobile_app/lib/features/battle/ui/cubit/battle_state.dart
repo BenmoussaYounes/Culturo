@@ -4,7 +4,10 @@ sealed class BattleState {}
 
 final class BattleInitial extends BattleState {}
 
-final class BattleNavigateToMatchmaking extends BattleState {}
+final class BattleNavigateToMatchmaking extends BattleState {
+  final String categoryId;
+  BattleNavigateToMatchmaking({required this.categoryId});
+}
 
 final class BattleLoaded extends BattleState {
   final String onlineCountLabel;

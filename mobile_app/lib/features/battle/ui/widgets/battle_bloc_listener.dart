@@ -13,9 +13,9 @@ class BattleBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<BattleCubit, BattleState>(
       listener: (context, state) => switch (state) {
-        BattleNavigateToMatchmaking() => Navigator.of(
+        BattleNavigateToMatchmaking(:final categoryId) => Navigator.of(
           context,
-        ).push(MaterialPageRoute(builder: (_) => const BattleMatchmakingScreen())),
+        ).push(MaterialPageRoute(builder: (_) => BattleMatchmakingScreen(categoryId: categoryId))),
         _ => null,
       },
       child: child,

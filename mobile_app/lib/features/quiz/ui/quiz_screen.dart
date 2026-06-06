@@ -14,19 +14,23 @@ import 'cubit/quiz_cubit.dart';
 import 'widgets/widgets.dart';
 
 class QuizScreen extends StatelessWidget {
-  const QuizScreen({super.key});
+  final String? categoryId;
+
+  const QuizScreen({super.key, this.categoryId});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<QuizCubit>()..loadQuiz(),
-      child: const QuizBlocListener(child: _QuizContent()),
+      create: (_) => getIt<QuizCubit>()..loadQuiz(categoryId: categoryId),
+      child: QuizBlocListener(child: _QuizContent(categoryId: categoryId)),
     );
   }
 }
 
 class _QuizContent extends StatelessWidget {
-  const _QuizContent();
+  final String? categoryId;
+
+  const _QuizContent({this.categoryId});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +42,7 @@ class _QuizContent extends StatelessWidget {
           QuizInitial() => const AppCircularProgressIndicator(),
           QuizLoadError(:final message) => _QuizErrorView(
             message: message,
-            onRetry: () => context.read<QuizCubit>().loadQuiz(),
+            onRetry: () => context.read<QuizCubit>().loadQuiz(categoryId: categoryId),
           ),
           QuizCompleted() => const AppCircularProgressIndicator(),
           QuizSubmitError() => const AppCircularProgressIndicator(),

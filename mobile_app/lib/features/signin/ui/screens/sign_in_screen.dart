@@ -41,7 +41,12 @@ class _SignInScreenState extends State<SignInScreen> {
               verticalSpace(32),
               const SignInHeader(),
               verticalSpace(32),
-              SignInForm(formKey: _formKey, emailController: _emailController, passwordController: _passwordController),
+              SignInForm(
+                formKey: _formKey,
+                emailController: _emailController,
+                passwordController: _passwordController,
+                onForgotPassword: () => context.read<SignInCubit>().forgotPassword(_emailController.text.trim()),
+              ),
               verticalSpace(28),
               const SignInSocialButtons(),
               const SiginInBlocListener(),

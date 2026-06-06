@@ -23,6 +23,11 @@ import '../../features/ranking/data/repositories/ranking_repository.dart';
 import '../../features/ranking/data/services/ranking_api_service.dart';
 import '../../features/ranking/ui/cubit/ranking_cubit.dart';
 import '../../features/home/ui/cubit/home_cubit.dart';
+import '../../features/battle/data/repositories/battle_repository.dart';
+import '../../features/forgot_password/data/repositories/forgot_password_repository.dart';
+import '../../features/forgot_password/data/services/forgot_password_api_service.dart';
+import '../../features/forgot_password/ui/cubit/forgot_password_cubit.dart';
+import '../../features/battle/data/services/battle_socket_service.dart';
 import '../../features/battle/ui/cubit/battle_cubit.dart';
 import '../../features/battle/ui/cubit/battle_game_cubit.dart';
 import '../../features/battle/ui/cubit/battle_matchmaking_cubit.dart';
@@ -65,9 +70,16 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<QuizRepository>(() => QuizRepository(getIt()));
   getIt.registerFactory<QuizCubit>(() => QuizCubit(getIt()));
 
+  getIt.registerLazySingleton<ForgotPasswordApiService>(() => ForgotPasswordApiService(dio));
+  getIt.registerLazySingleton<ForgotPasswordRepository>(() => ForgotPasswordRepository(getIt()));
+  getIt.registerFactory<ForgotPasswordCubit>(() => ForgotPasswordCubit(getIt()));
+
   getIt.registerFactory<BattleCubit>(() => BattleCubit());
 
-  getIt.registerFactory<BattleMatchmakingCubit>(() => BattleMatchmakingCubit());
+  getIt.registerLazySingleton<BattleSocketService>(() => BattleSocketService());
+  getIt.registerLazySingleton<BattleRepository>(() => BattleRepository(getIt()));
 
-  getIt.registerFactory<BattleGameCubit>(() => BattleGameCubit());
+  getIt.registerFactory<BattleMatchmakingCubit>(() => BattleMatchmakingCubit(getIt()));
+
+  getIt.registerFactory<BattleGameCubit>(() => BattleGameCubit(getIt()));
 }

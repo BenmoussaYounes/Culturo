@@ -28,6 +28,22 @@ final class BattleMatchmakingSearching extends BattleMatchmakingState {
   });
 }
 
-final class BattleMatchmakingNavigateToGame extends BattleMatchmakingState {}
+final class BattleMatchmakingNavigateToGame extends BattleMatchmakingState {
+  final String battleId;
+  final String playerName;
+  final String playerInitial;
+  final Color playerAvatarBg;
+  final String opponentName;
+  final int opponentElo;
+
+  BattleMatchmakingNavigateToGame({
+    required this.battleId,
+    required this.playerName,
+    required this.playerInitial,
+    required this.playerAvatarBg,
+    required this.opponentName,
+    required this.opponentElo,
+  });
+}
 
 final class BattleMatchmakingPop extends BattleMatchmakingState {}

@@ -8,6 +8,11 @@ Do not restate language defaults Claude already knows. Only write rules
 that override defaults or encode decisions specific to this project.
 -->
 
+
+# graphify
+- **graphify** (`.claude/skills/graphify/SKILL.md`) - any input to knowledge graph. Trigger: `/graphify`
+When the user types `/graphify`, invoke the Skill tool with `skill: "graphify"` before doing anything else.
+
 ---
 
 # Section A — General Engineering Rules
@@ -258,3 +263,13 @@ features/{feature_name}/
 - Prefer small, composed widgets to minimize rebuild scope
 - UI files must not exceed 200 lines — if a file approaches this limit, extract sections into dedicated widget classes
 - Only extract widgets when the file actually needs it — do not split prematurely
+
+## graphify
+
+This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+
+Rules:
+- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
+- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
+- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
+- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).

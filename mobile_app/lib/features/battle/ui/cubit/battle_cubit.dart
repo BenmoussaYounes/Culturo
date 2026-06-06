@@ -45,7 +45,10 @@ class BattleCubit extends Cubit<BattleState> {
   }
 
   void onQuickMatchTapped() {
-    emit(BattleNavigateToMatchmaking());
-    if (_loadedState != null) emit(_loadedState!);
+    final loaded = _loadedState;
+    if (loaded == null) return;
+    final selected = loaded.categories.firstWhere((c) => c.isSelected, orElse: () => loaded.categories.first);
+    emit(BattleNavigateToMatchmaking(categoryId: selected.id ?? ''));
+    emit(loaded);
   }
 }

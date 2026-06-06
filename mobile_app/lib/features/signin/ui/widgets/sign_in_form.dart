@@ -13,8 +13,15 @@ class SignInForm extends StatefulWidget {
   final GlobalKey<FormState> formKey;
   final TextEditingController emailController;
   final TextEditingController passwordController;
+  final VoidCallback onForgotPassword;
 
-  const SignInForm({super.key, required this.formKey, required this.emailController, required this.passwordController});
+  const SignInForm({
+    super.key,
+    required this.formKey,
+    required this.emailController,
+    required this.passwordController,
+    required this.onForgotPassword,
+  });
 
   @override
   State<SignInForm> createState() => _SignInFormState();
@@ -69,7 +76,7 @@ class _SignInFormState extends State<SignInForm> {
           Align(
             alignment: Alignment.centerRight,
             child: GestureDetector(
-              onTap: () {},
+              onTap: widget.onForgotPassword,
               child: Text('Forgot password?', style: InterFontStyle.font13W700Accent),
             ),
           ),

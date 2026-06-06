@@ -20,10 +20,14 @@ class QuizCubit extends Cubit<QuizState> {
   Timer? _ticker;
   static const int _timePerQuestion = 20;
 
-  Future<void> loadQuiz({String countrySelection = 'all', String difficulty = 'Easy'}) async {
+  Future<void> loadQuiz({String countrySelection = 'all', String difficulty = 'Easy', String? categoryId}) async {
     emit(QuizInitial());
 
-    final result = await _repository.startSession(countrySelection: countrySelection, difficulty: difficulty);
+    final result = await _repository.startSession(
+      countrySelection: countrySelection,
+      difficulty: difficulty,
+      categoryId: categoryId,
+    );
 
     result.when(
       success: (GameSessionModel session) {

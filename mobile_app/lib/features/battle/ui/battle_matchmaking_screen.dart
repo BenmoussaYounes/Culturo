@@ -13,12 +13,14 @@ import 'cubit/battle_matchmaking_cubit.dart';
 import 'widgets/widgets.dart';
 
 class BattleMatchmakingScreen extends StatelessWidget {
-  const BattleMatchmakingScreen({super.key});
+  final String categoryId;
+
+  const BattleMatchmakingScreen({super.key, required this.categoryId});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<BattleMatchmakingCubit>()..loadMatchmaking(),
+      create: (_) => getIt<BattleMatchmakingCubit>()..loadMatchmaking(categoryId),
       child: const BattleMatchmakingBlocListener(child: _MatchmakingContent()),
     );
   }
