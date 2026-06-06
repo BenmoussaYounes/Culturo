@@ -15,3 +15,5 @@ final class ProfileLoaded extends ProfileState {
 
   ProfileLoaded({required this.profile});
 }
+
+final class ProfileLoggedOut extends ProfileState {}

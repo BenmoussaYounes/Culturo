@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../data/repositories/profile_repository.dart';
 import '../../domain/models/profile_model.dart';
@@ -12,6 +13,12 @@ class ProfileCubit extends Cubit<ProfileState> {
   final ProfileRepository _repository;
 
   ProfileCubit(this._repository) : super(ProfileInitial());
+
+  Future<void> logout() async {
+    await SharedPrefHelper.clearAllData();
+    await SharedPrefHelper.clearAllSecuredData();
+    emit(ProfileLoggedOut());
+  }
 
   Future<void> loadProfile() async {
     emit(ProfileInitial());

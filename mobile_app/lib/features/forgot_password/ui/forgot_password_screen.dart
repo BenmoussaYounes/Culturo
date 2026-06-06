@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,6 +8,7 @@ import '../../../core/helpers/app_regex.dart';
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theming/theming.dart';
 import '../../../core/widgets/app_text_form_field.dart';
+import '../../../core/widgets/back_button.dart';
 import '../../../core/widgets/field_label.dart';
 import 'cubit/forgot_password_cubit.dart';
 import 'widgets/forgot_password_bloc_listener.dart';
@@ -41,10 +43,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         child: Scaffold(
           body: SafeArea(
             child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
               child: Column(
                 crossAxisAlignment: .start,
                 children: [
+                  AppBackButton(),
                   verticalSpace(32),
                   _Header(),
                   verticalSpace(32),
