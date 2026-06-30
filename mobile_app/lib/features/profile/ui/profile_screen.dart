@@ -15,30 +15,54 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: DesertColors.bg,
-      body: BlocBuilder<ProfileCubit, ProfileState>(
-        builder: (context, state) => switch (state) {
-          ProfileInitial() => const AppCircularProgressIndicator(),
-          ProfileError(:final message) => _ProfileErrorView(
-            message: message,
-            onRetry: () => context.read<ProfileCubit>().loadProfile(),
-          ),
-          ProfileLoaded() => SafeArea(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 20.h),
-              child: Column(
-                crossAxisAlignment: .start,
-                children: [
-                  ProfileHeader(profile: state.profile),
-                  verticalSpace(20),
-                  ProfileStatsRow(profile: state.profile),
-                  verticalSpace(16),
-                ],
+    return ProfileBlocListener(
+      child: Scaffold(
+        backgroundColor: DesertColors.bg,
+        body: BlocBuilder<ProfileCubit, ProfileState>(
+          builder: (context, state) => switch (state) {
+            ProfileInitial() => const AppCircularProgressIndicator(),
+            ProfileError(:final message) => _ProfileErrorView(
+              message: message,
+              onRetry: () => context.read<ProfileCubit>().loadProfile(),
+            ),
+            ProfileLoaded() => SafeArea(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 20.h),
+                child: Column(
+                  crossAxisAlignment: .start,
+                  children: [
+                    ProfileHeader(profile: state.profile),
+                    verticalSpace(20),
+                    ProfileStatsRow(profile: state.profile),
+                    verticalSpace(24),
+                    _LogoutButton(),
+                    verticalSpace(16),
+                  ],
+                ),
               ),
             ),
-          ),
-        },
+            ProfileLoggedOut() => const SizedBox.shrink(),
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class _LogoutButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: OutlinedButton(
+        onPressed: () => context.read<ProfileCubit>().logout(),
+        style: OutlinedButton.styleFrom(
+          foregroundColor: SemanticColors.danger,
+          side: const BorderSide(color: SemanticColors.danger),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+          padding: EdgeInsets.symmetric(vertical: 14.h),
+        ),
+        child: Text('Se déconnecter', style: InterFontStyle.font16W600White.copyWith(color: SemanticColors.danger)),
       ),
     );
   }

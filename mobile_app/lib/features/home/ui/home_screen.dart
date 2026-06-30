@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   verticalSpace(16),
                   StatsRow(stats: userProfile.userStats),
-                  verticalSpace(16),
+                  verticalSpace(8),
                   CategoriesSection(categories: userProfile.categories),
                 ],
               ),

@@ -4,8 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/instrument_serif_font_style.dart';
-import '../../../../core/theming/inter_font_style.dart';
-
 import '../../../categories/domain/models/category_domain_model.dart';
 import 'category_item.dart';
 
@@ -17,18 +15,10 @@ class CategoriesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: .start,
       children: [
-        Row(
-          mainAxisAlignment: .spaceBetween,
-          children: [
-            Text('Catégories', style: InstrumentSerifFontStyle.font22W400Ink.copyWith(fontStyle: FontStyle.italic)),
-            GestureDetector(
-              onTap: () {},
-              child: Text('Tout voir', style: InterFontStyle.font12W600Accent.copyWith(fontWeight: FontWeight.w800)),
-            ),
-          ],
-        ),
-        verticalSpace(4),
+        Text('Catégories', style: InstrumentSerifFontStyle.font22W400Ink.copyWith(fontStyle: FontStyle.italic)),
+        verticalSpace(8),
         SizedBox(
           height: 292.h,
           child: ListView.builder(

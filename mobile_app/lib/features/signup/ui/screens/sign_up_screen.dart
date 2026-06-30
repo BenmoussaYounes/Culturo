@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/helpers/extentions.dart';
 import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theming/theming.dart';
+import '../../../../core/widgets/back_button.dart';
 import '../cubit/sign_up_cubit.dart';
 import '../widgets/widgets.dart';
 
@@ -34,12 +33,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
           child: Column(
             crossAxisAlignment: .start,
             children: [
-              verticalSpace(16),
-              _BackButton(),
+              AppBackButton(),
               verticalSpace(24),
               const SignUpHeader(),
               verticalSpace(32),
@@ -71,24 +69,5 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
-  }
-}
-
-class _BackButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: context.pop,
-      child: Container(
-        width: 36.w,
-        height: 36.w,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10.r),
-          border: Border.all(color: ColorsManager.primaryBlack.withValues(alpha: 0.15)),
-        ),
-        child: Icon(Icons.arrow_back, size: 18.sp, color: ColorsManager.primaryBlack),
-      ),
-    );
   }
 }

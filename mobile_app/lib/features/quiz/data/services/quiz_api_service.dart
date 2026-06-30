@@ -17,11 +17,7 @@ class QuizApiService {
   }) async {
     final response = await _dio.post(
       ApiConstants.gameSessionStart,
-      data: {
-        'countrySelection': countrySelection,
-        'difficulty': difficulty,
-        if (categoryId case final id?) 'categoryId': id,
-      },
+      data: {'countrySelection': countrySelection, 'difficulty': difficulty, 'categoryId': ?categoryId},
     );
     return StartGameSessionResponseDto.fromJson(response.data as Map<String, dynamic>);
   }

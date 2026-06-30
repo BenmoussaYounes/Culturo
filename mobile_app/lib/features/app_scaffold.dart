@@ -12,8 +12,6 @@ import 'profile/ui/profile_screen.dart';
 import 'ranking/ui/cubit/ranking_cubit.dart';
 import 'ranking/ui/ranking_screen.dart';
 import 'home/ui/cubit/home_cubit.dart';
-import 'battle/ui/battle_screen.dart';
-import 'battle/ui/cubit/battle_cubit.dart';
 import 'home/ui/home_screen.dart';
 
 class AppScaffold extends StatefulWidget {
@@ -25,23 +23,52 @@ class AppScaffold extends StatefulWidget {
 
 class _AppScaffoldState extends State<AppScaffold> {
   int _currentIndex = 0;
+  final _visitedTabs = <int>{0};
+
+  late final _homeCubit = getIt<HomeCubit>()..loadHome();
+  late final _categoriesCubit = getIt<CategoriesCubit>();
+  late final _rankingCubit = getIt<RankingCubit>();
+  late final _profileCubit = getIt<ProfileCubit>();
+
+  @override
+  void dispose() {
+    _homeCubit.close();
+    _categoriesCubit.close();
+    _rankingCubit.close();
+    _profileCubit.close();
+    super.dispose();
+  }
+
+  void _onTabTap(int index) {
+    if (!_visitedTabs.contains(index)) {
+      _visitedTabs.add(index);
+      switch (index) {
+        case 1:
+          _categoriesCubit.loadCategories();
+        case 2:
+          _rankingCubit.loadRanking();
+        case 3:
+          _profileCubit.loadProfile();
+      }
+    }
+    setState(() => _currentIndex = index);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: IndexedStack(
-        index: _currentIndex,
-        children: [
-          BlocProvider(create: (_) => getIt<HomeCubit>()..loadHome(), child: const HomeScreen()),
-          BlocProvider(create: (_) => getIt<CategoriesCubit>()..loadCategories(), child: const CategoriesScreen()),
-          BlocProvider(create: (_) => getIt<BattleCubit>()..loadBattle(), child: const BattleScreen()),
-          BlocProvider(create: (_) => getIt<RankingCubit>()..loadRanking(), child: const RankingScreen()),
-          BlocProvider(create: (_) => getIt<ProfileCubit>()..loadProfile(), child: const ProfileScreen()),
-        ],
-      ),
-      bottomNavigationBar: _BottomNav(
-        currentIndex: _currentIndex,
-        onTap: (index) => setState(() => _currentIndex = index),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider.value(value: _homeCubit),
+        BlocProvider.value(value: _categoriesCubit),
+        BlocProvider.value(value: _rankingCubit),
+        BlocProvider.value(value: _profileCubit),
+      ],
+      child: Scaffold(
+        body: IndexedStack(
+          index: _currentIndex,
+          children: const [HomeScreen(), CategoriesScreen(), RankingScreen(), ProfileScreen()],
+        ),
+        bottomNavigationBar: _BottomNav(currentIndex: _currentIndex, onTap: _onTabTap),
       ),
     );
   }
@@ -68,11 +95,6 @@ class _BottomNav extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.diamond_outlined), activeIcon: Icon(Icons.diamond), label: 'Accueil'),
         BottomNavigationBarItem(icon: Icon(Icons.apps_outlined), activeIcon: Icon(Icons.apps), label: 'Catégories'),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.diversity_3_outlined),
-          activeIcon: Icon(Icons.diversity_3),
-          label: 'Battle',
-        ),
         BottomNavigationBarItem(
           icon: Icon(Icons.star_border_outlined),
           activeIcon: Icon(Icons.star),
