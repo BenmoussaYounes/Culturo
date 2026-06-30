@@ -12,8 +12,6 @@ import 'profile/ui/profile_screen.dart';
 import 'ranking/ui/cubit/ranking_cubit.dart';
 import 'ranking/ui/ranking_screen.dart';
 import 'home/ui/cubit/home_cubit.dart';
-import 'battle/ui/battle_screen.dart';
-import 'battle/ui/cubit/battle_cubit.dart';
 import 'home/ui/home_screen.dart';
 
 class AppScaffold extends StatefulWidget {
@@ -29,7 +27,6 @@ class _AppScaffoldState extends State<AppScaffold> {
 
   late final _homeCubit = getIt<HomeCubit>()..loadHome();
   late final _categoriesCubit = getIt<CategoriesCubit>();
-  late final _battleCubit = getIt<BattleCubit>();
   late final _rankingCubit = getIt<RankingCubit>();
   late final _profileCubit = getIt<ProfileCubit>();
 
@@ -37,7 +34,6 @@ class _AppScaffoldState extends State<AppScaffold> {
   void dispose() {
     _homeCubit.close();
     _categoriesCubit.close();
-    _battleCubit.close();
     _rankingCubit.close();
     _profileCubit.close();
     super.dispose();
@@ -50,10 +46,8 @@ class _AppScaffoldState extends State<AppScaffold> {
         case 1:
           _categoriesCubit.loadCategories();
         case 2:
-          _battleCubit.loadBattle();
-        case 3:
           _rankingCubit.loadRanking();
-        case 4:
+        case 3:
           _profileCubit.loadProfile();
       }
     }
@@ -66,14 +60,13 @@ class _AppScaffoldState extends State<AppScaffold> {
       providers: [
         BlocProvider.value(value: _homeCubit),
         BlocProvider.value(value: _categoriesCubit),
-        BlocProvider.value(value: _battleCubit),
         BlocProvider.value(value: _rankingCubit),
         BlocProvider.value(value: _profileCubit),
       ],
       child: Scaffold(
         body: IndexedStack(
           index: _currentIndex,
-          children: const [HomeScreen(), CategoriesScreen(), BattleScreen(), RankingScreen(), ProfileScreen()],
+          children: const [HomeScreen(), CategoriesScreen(), RankingScreen(), ProfileScreen()],
         ),
         bottomNavigationBar: _BottomNav(currentIndex: _currentIndex, onTap: _onTabTap),
       ),
@@ -102,11 +95,6 @@ class _BottomNav extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.diamond_outlined), activeIcon: Icon(Icons.diamond), label: 'Accueil'),
         BottomNavigationBarItem(icon: Icon(Icons.apps_outlined), activeIcon: Icon(Icons.apps), label: 'Catégories'),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.diversity_3_outlined),
-          activeIcon: Icon(Icons.diversity_3),
-          label: 'Battle',
-        ),
         BottomNavigationBarItem(
           icon: Icon(Icons.star_border_outlined),
           activeIcon: Icon(Icons.star),

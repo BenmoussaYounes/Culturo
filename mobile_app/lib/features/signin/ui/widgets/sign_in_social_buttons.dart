@@ -68,7 +68,7 @@ class _SocialButton extends StatelessWidget {
       height: 52.h,
       child: OutlinedButton(
         // TODO: Remove hardcoded navigation and use onTap callback instead
-        onPressed: () => context.pushNamed(Routes.home), //onTap,
+        onPressed: () => context.pushNamed(Routes.home),
         style: OutlinedButton.styleFrom(
           side: BorderSide(color: ColorsManager.primaryBlack.withValues(alpha: 0.2)),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.r)),
